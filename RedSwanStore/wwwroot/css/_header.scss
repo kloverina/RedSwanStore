@@ -1,0 +1,103 @@
+header{
+  background-color: #222222;
+  max-height: 120px;
+  height: 50px;
+  color: #E6E6E6;
+  padding: 0;
+  margin: 0 auto;
+  font-family: 'OpenSans', sans-serif, Arial;
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 16px;
+  overflow: hidden;
+  z-index: 100;
+  top: 0;
+  position: fixed;
+  width: 100%;
+
+
+  .container{
+
+    max-width: none;
+    margin: 0 0;
+
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px 0 0;
+    justify-content: space-between;
+    .menu {
+      margin: 0 0 0 10px;
+      padding: 0;
+      list-style: none;
+      min-width: 300px; //check!
+      flex: 1 1 60%;
+      display: flex;
+      justify-content: flex-start;
+      li {
+        .logo{
+          display: inline-block;
+          width: 80px;
+          height: 60px;
+          margin: 20px;
+        }
+        a{
+          padding: 0 15px;
+          color: inherit;
+          text-decoration: none;
+        }
+
+        :hover::after, :active::after{
+          display: inline-block;
+          width: 100%;
+          height: 5px;
+          position: relative;
+          top: -3px;
+          background-color: darkcyan;
+          content: "";
+          z-index: 10;
+        }
+        :hover{
+          color: white;
+        }
+
+
+      }
+
+    }
+
+    .rightNav{
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0;
+      flex: 0 1 40%;
+      height: 100%;
+      .sign-in{
+        padding: 0 30px 0 0;
+
+      }
+      a{
+        color: inherit;
+      }
+      div:hover{
+        color: white;
+      }
+    }
+  }
+}
+.download {
+  a {
+    padding: 20px 10px;
+    background-color: darkcyan;
+
+  }
+
+  :hover {
+    background-color: #009e9e;
+  }
+
+  vertical-align: middle;
+}

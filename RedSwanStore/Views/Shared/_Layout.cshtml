@@ -1,15 +1,38 @@
-﻿@{
-    // здесь сделаешь шапку и футер, а так же все нужные подключения css и js
-    // в этот лейаут будут вставляться куски страниц твоих
-}
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>@ViewData["Title"]</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] Самый лучший магазин игр!!</title>
+    <link rel="stylesheet" href="~/css/index.css"/>
+
 </head>
 <body>
+<header>
+      
+    <nav>
+        <ul class="menu">
+            <li class="logo"><a asp-area="" asp-controller="Home" asp-action="Index">Гордое название нашего магазина</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Магазин</a></li>
+            <li><a href="#search">Поиск</a></li>
+        </ul>
+        <div class="rightNav">
+            <div class="rightNav__item sign-in"><a asp-area="" asp-controller="Home" asp-action="LogIn">Bход</a></div>
+            <div class="rightNav__item download"><a href="#download">Установить приложение</a></div>
+        </div>
+    </nav>
+      
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
 
-@RenderBody()
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

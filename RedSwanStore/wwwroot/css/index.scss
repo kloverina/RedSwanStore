@@ -1,0 +1,272 @@
+@import "header";
+
+
+body{
+  background-color: #121212;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Brutal', sans-serif, Arial;
+  line-height: 30px;
+  color: white;
+
+}
+
+
+.container{
+  max-width: 100%;
+  padding: 0;
+
+  margin: 80px auto 0;
+}
+
+
+/*@media (min-width: 768px) {
+  //перестроить меню
+}*/
+$image_height: 240px;
+$image_width: 180px;
+
+@media (min-width: 960px) {
+  .container {
+    max-width: 880px;
+  }
+  .game-card__image {
+
+    min-height: $image_height;
+    min-width: $image_width;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1040px;
+  }
+
+}
+
+@media only screen and (min-width: 1440px) {
+  /* styles for browsers larger than 1440px; */
+  .container {
+    max-width: 1240px;
+  }
+  .game-card__image {
+
+    min-height: $image_height * 1.25;
+    min-width: $image_width * 1.25;
+  }
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  cursor: pointer;
+}
+h4{
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 16px;
+}
+//основной контент страницы магазина
+.game-catalog {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+
+  &__browse {
+    flex: 1 1 80%;
+
+  }
+
+  &__filter {
+    flex: 1 0 20%;
+  }
+
+  //сортировка
+  .dropdown {
+    min-width: 150px;
+    width: max-content;
+    position: relative;
+    margin-bottom: 15px;
+
+    .dropdown_button {
+      padding: 0 15px 0 5px;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      width: 100%;
+
+      &:active {
+
+        border: 1px solid white;
+      }
+    }
+
+    h4 {
+      color: rgba(245, 245, 245, 0.6);
+      padding: 0;
+      margin: 0 5px 0;
+      span{
+        line-height: 20px;
+      }
+    }
+
+    .dropdown_button__toggleLabel {
+
+      font-size: 14px;
+    }
+
+    &__submenu {
+      color: rgba(245, 245, 245, 0.6);
+      font-size: 14px;
+      background-color: rgb(32, 32, 32);
+      border-radius: 3px;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px 20px;
+      position: absolute;
+      top: 35px;
+      z-index: 1000;
+      box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.5);
+
+      .submenu__button {
+        :hover {
+          //border-bottom: 1px solid white;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .dropdown__submenu.hidden {
+    visibility: hidden;
+  }
+
+}
+
+//область под все карточки с играми
+.games {
+
+  &__item {
+    flex: 0 0;
+    margin: 0 0 50px;
+    font-family: 'Brutal', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #f5f5f5;
+    line-height: 20px;
+
+  }
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+
+//карточка игры
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-start;
+  margin-right: 20px;
+  width: 100%;
+
+  //изображение игры
+  &__image {
+
+    background-color: gray;
+    border-radius: 10px;
+    flex: 7 0 70%;
+    //min-height: 240px;
+    //min-width: 180px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+
+  }
+
+  //заголовок игры
+  &__title {
+    flex: 1 0 10%;
+  }
+
+  &__dev {
+    color: rgba(245, 245, 245, 0.6);
+    flex: 1 0 10%;
+  }
+
+  &__price {
+    margin-top: 10px;
+    flex: 1 0 10%;
+    font-size: 16px;
+  }
+}
+
+.filter {
+  margin-left: 10px;
+
+  .filter__options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+
+    > li {
+      text-transform: uppercase;
+
+      padding: 10px 0;
+      border-top: solid 1px #909090;
+    }
+
+    :hover {
+      color: white;
+    }
+  }
+
+  h4 {
+    padding: 0;
+    margin: 5px 0 20px;
+  }
+
+  li {
+    color: #909090;
+    text-decoration: none;
+    text-transform: none;
+
+    :nth-of-type(1n) {
+      text-decoration: none;
+      list-style: none;
+    }
+
+    ul {
+      margin-left: 20px;
+      padding: 0;
+    }
+
+  }
+
+  .options__item.options__item_hidden {
+    ul {
+      display: none;
+    }
+  }
+}
+
+

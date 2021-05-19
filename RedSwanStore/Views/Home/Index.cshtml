@@ -1,1 +1,102 @@
 ﻿
+
+@{ //stuff
+   var sortingItems = new List<string> {"Актуальность", "Дата выхода", "По алфавиту", "Цена: По возрастанию", "Цена: по убыванию"};
+   
+   var gameCards = new List<GameCard>
+   {
+     new GameCard {Title = "Название N", Developer = "DVD Project Green", Price = "2 999 ₽"},
+     new GameCard {Title = "Название N: Redux", Developer = "DVD Project Green", Price = "3 999 ₽"},
+     new GameCard {Title = "Скромное название", Developer = "Ноунейм", Price = "29 ₽"},
+     new GameCard {Title = "Крутое название", Developer = "СтУдиЯ", Price = "350 ₽"},
+     new GameCard {Title = "World Peace X", Developer = "Tartalia Inc", Price = "650 ₽"},
+     new GameCard {Title = "Бла Бла Бла", Developer = "Господин Никто", Price = "666 ₽"}
+   };
+
+  var filterGenre = new List<string>
+  {
+    "Приключение", "Инди", "Ролевая", "Стратегия", "Шутер", "Симулятор", "Головоломка", "Хоррор"
+  };
+
+  var filterPrice = new List<string>
+  {
+    "Очень многа", "Тоже много но поменьше", "Реально купить без продажи почки", "Ниже среднего",
+    "Цена для галочки", "Бесплатно"
+  };
+  var filterFeatures = new List<string>
+  {
+    "Одиночная", "Многопользовательская", "Кооперативная", "Виртуальная рельность", "Поддержка контроллеров"
+  };
+   
+ }
+
+<div class="container">
+  <div class="game-catalog">
+    <section class="game-catalog__browse section">
+      <!--добавить дропдаун-->
+      <div class="section_dropdown">
+        <div class="dropdown">
+          <button class="dropdown_button" aria-expanded="false" aria-haspopup="true">
+            <h4>Сортировка:</h4><span class="dropdown_button__toggleLabel">Дата выхода и еще слово</span>
+          </button>
+             
+          <div class="dropdown__submenu submenu hidden">
+            @foreach (var item in sortingItems)
+            {
+              <button class="submenu__button"><span> @item </span></button>
+            }
+          </div>
+        </div>
+      </div>
+      <!--тут будут сами игры (миксин?)-->
+      <div class="section__games games">
+        
+        @foreach (var gamecard in gameCards)
+        {
+          <div class="games__item">
+            <a class="game-card" href="#game-page">
+              <div class="game-card__image">
+                <!-- должна принимать картинку<img> -->
+              </div>
+              <div class="game-card__title"> @gamecard.Title </div>
+              <div class="game-card__dev"> @gamecard.Developer </div>
+              <div class="game-card__price"> @gamecard.Price </div>
+            </a>
+          </div>
+        }
+  
+        
+      </div>
+    </section>
+    <aside class="game-catalog__filter filter">
+      <h4 class="check">Фильтр</h4>
+      <ul class="filter__options options">
+        <li class="options__item"> <span> Жанр </span>
+          <ul>
+            @foreach (var item in filterGenre)
+            {
+              <li> @item </li>
+            }
+          </ul>
+        </li>
+        <li class="options__item"> <span>Цена</span>
+          <ul>
+            @foreach (var item in filterPrice)
+            {
+              <li> @item </li>
+            }
+          </ul>
+        </li>
+        <li class="options__item"> <span>Особенности</span>
+          <ul>
+            @foreach (var item in filterFeatures)
+            {
+              <li> @item </li>
+            }
+          </ul>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</div>
+<script src="~/js/index.js"></script> 
