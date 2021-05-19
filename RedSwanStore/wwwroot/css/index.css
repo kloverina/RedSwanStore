@@ -1,0 +1,317 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Brutal";
+  src: url("../fonts/Brutal/BrutalType.eot");
+  src: local("Brutal Type"), local("BrutalType"), url("../fonts/Brutal/BrutalType.eot?#iefix") format("embedded-opentype"), url("../fonts/Brutal/BrutalType.woff2") format("woff2"), url("../fonts/Brutal/BrutalType.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans/OpenSans-Regular.eot");
+  src: local("OpenSans"), local("Open Sans"), url("../fonts/OpenSans/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Regular.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+header {
+  background-color: #222222;
+  max-height: 120px;
+  height: 50px;
+  color: #E6E6E6;
+  padding: 0;
+  margin: 0 auto;
+  font-family: "OpenSans", sans-serif, Arial;
+  font-weight: 400;
+  line-height: 18px;
+  font-size: 16px;
+  overflow: hidden;
+  z-index: 100;
+  top: 0;
+  position: fixed;
+  width: 100%;
+}
+header .container {
+  max-width: none;
+  margin: 0 0;
+}
+header nav {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 20px 0 0;
+  justify-content: space-between;
+}
+header nav .menu {
+  margin: 0 0 0 10px;
+  padding: 0;
+  list-style: none;
+  min-width: 300px;
+  flex: 1 1 60%;
+  display: flex;
+  justify-content: flex-start;
+}
+header nav .menu li .logo {
+  display: inline-block;
+  width: 80px;
+  height: 60px;
+  margin: 20px;
+}
+header nav .menu li a {
+  padding: 0 15px;
+  color: inherit;
+  text-decoration: none;
+}
+header nav .menu li :hover::after, header nav .menu li :active::after {
+  display: inline-block;
+  width: 100%;
+  height: 5px;
+  position: relative;
+  top: -3px;
+  background-color: darkcyan;
+  content: "";
+  z-index: 10;
+}
+header nav .menu li :hover {
+  color: white;
+}
+header nav .rightNav {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  flex: 0 1 40%;
+  height: 100%;
+}
+header nav .rightNav .sign-in {
+  padding: 0 30px 0 0;
+}
+header nav .rightNav a {
+  color: inherit;
+}
+header nav .rightNav div:hover {
+  color: white;
+}
+
+.download {
+  vertical-align: middle;
+}
+.download a {
+  padding: 20px 10px;
+  background-color: darkcyan;
+}
+.download :hover {
+  background-color: #009e9e;
+}
+
+body {
+  background-color: #121212;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Brutal", sans-serif, Arial;
+  line-height: 30px;
+  color: white;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0;
+  margin: 80px auto 0;
+}
+
+/*@media (min-width: 768px) {
+  //перестроить меню
+}*/
+@media (min-width: 960px) {
+  .container {
+    max-width: 880px;
+  }
+
+  .game-card__image {
+    min-height: 240px;
+    min-width: 180px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1040px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  /* styles for browsers larger than 1440px; */
+  .container {
+    max-width: 1240px;
+  }
+
+  .game-card__image {
+    min-height: 300px;
+    min-width: 225px;
+  }
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+h4 {
+  font-weight: 400;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.game-catalog {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.game-catalog__browse {
+  flex: 1 1 80%;
+}
+.game-catalog__filter {
+  flex: 1 0 20%;
+}
+.game-catalog .dropdown {
+  min-width: 150px;
+  width: max-content;
+  position: relative;
+  margin-bottom: 15px;
+}
+.game-catalog .dropdown .dropdown_button {
+  padding: 0 15px 0 5px;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  width: 100%;
+}
+.game-catalog .dropdown .dropdown_button:active {
+  border: 1px solid white;
+}
+.game-catalog .dropdown h4 {
+  color: rgba(245, 245, 245, 0.6);
+  padding: 0;
+  margin: 0 5px 0;
+}
+.game-catalog .dropdown h4 span {
+  line-height: 20px;
+}
+.game-catalog .dropdown .dropdown_button__toggleLabel {
+  font-size: 14px;
+}
+.game-catalog .dropdown__submenu {
+  color: rgba(245, 245, 245, 0.6);
+  font-size: 14px;
+  background-color: #202020;
+  border-radius: 3px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 20px;
+  position: absolute;
+  top: 35px;
+  z-index: 1000;
+  box-shadow: 0 2px 35px 0 rgba(0, 0, 0, 0.5);
+}
+.game-catalog .dropdown__submenu .submenu__button :hover {
+  color: white;
+}
+.game-catalog .dropdown__submenu.hidden {
+  visibility: hidden;
+}
+
+.games {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
+}
+.games__item {
+  flex: 0 0;
+  margin: 0 0 50px;
+  font-family: "Brutal", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #f5f5f5;
+  line-height: 20px;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: flex-start;
+  margin-right: 20px;
+  width: 100%;
+}
+.game-card__image {
+  background-color: gray;
+  border-radius: 10px;
+  flex: 7 0 70%;
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+.game-card__title {
+  flex: 1 0 10%;
+}
+.game-card__dev {
+  color: rgba(245, 245, 245, 0.6);
+  flex: 1 0 10%;
+}
+.game-card__price {
+  margin-top: 10px;
+  flex: 1 0 10%;
+  font-size: 16px;
+}
+
+.filter {
+  margin-left: 10px;
+}
+.filter .filter__options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.filter .filter__options > li {
+  text-transform: uppercase;
+  padding: 10px 0;
+  border-top: solid 1px #909090;
+}
+.filter .filter__options :hover {
+  color: white;
+}
+.filter h4 {
+  padding: 0;
+  margin: 5px 0 20px;
+}
+.filter li {
+  color: #909090;
+  text-decoration: none;
+  text-transform: none;
+}
+.filter li :nth-of-type(1n) {
+  text-decoration: none;
+  list-style: none;
+}
+.filter li ul {
+  margin-left: 20px;
+  padding: 0;
+}
+.filter .options__item.options__item_hidden ul {
+  display: none;
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Brutal';
+  src: url('../fonts/Brutal/BrutalType.eot');
+  src: local('Brutal Type'), local('BrutalType'),
+  url('../fonts/Brutal/BrutalType.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Brutal/BrutalType.woff2') format('woff2'),
+  url('../fonts/Brutal/BrutalType.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans/OpenSans-Regular.eot');
+  src: local('OpenSans'), local('Open Sans'),
+  url('../fonts/OpenSans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/OpenSans/OpenSans-Regular.woff') format('woff'),
+  url("../fonts/OpenSans/OpenSans-Regular.ttf") format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
