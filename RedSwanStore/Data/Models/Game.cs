@@ -19,6 +19,9 @@ namespace RedSwanStore.Data.Models
         public GameInfo GameInfo { get; set; }
         
         // for 'single to single' relation with GameSystemRequirements
-        public GameSystemRequirements GameSystemRequirements { get; set; }
+        public GameSystemRequirements GameSystemRequirements { get; set; } 
+        
+        // for 'single to single' relation with GameMedia
+        public GameMedia GameMedia { get; set; }
     }
 }
