@@ -29,6 +29,6 @@ namespace RedSwanStore.Data.Models
         [Required]
         public string Photo { get; set; }
         
-        public UserLibrary Library { get; set; }
+        public UserLibrary Library { get; set; } // 'single to single' relation with Library
     }
 }

@@ -17,7 +17,7 @@ namespace RedSwanStore.Data.Models
         [Required]
         public bool Text { get; set; }
         
-        // for 'many to many' relation with GameSystemRequirements
-        public List<GameSystemRequirements> GameSystemRequirementses { get; set; } = new List<GameSystemRequirements>();
+        // 'many to many' relation with GameSystemRequirements
+        public List<GameSystemRequirement> GameSystemRequirements { get; set; } = new List<GameSystemRequirement>();
     }
 }

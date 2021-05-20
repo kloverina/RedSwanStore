@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RedSwanStore.Data.Models
@@ -15,13 +16,13 @@ namespace RedSwanStore.Data.Models
         [StringLength(100, MinimumLength = 2)]
         public string Developer { get; set; }
         
-        // for 'single to single' relation with GameInfo
-        public GameInfo GameInfo { get; set; }
+        public GameInfo GameInfo { get; set; } // 'single to single' relation with GameInfo
         
-        // for 'single to single' relation with GameSystemRequirements
-        public GameSystemRequirements GameSystemRequirements { get; set; } 
+        public GameSystemRequirement GameSystemRequirements { get; set; } // for 'single to single' relation with GameSystemRequirements
         
-        // for 'single to single' relation with GameMedia
-        public GameMedia GameMedia { get; set; }
+        public GameMedia GameMedia { get; set; } // 'single to single' relation with GameMedia
+        
+        // 'single to many' relation with UserLibraryGame
+        public List<UserLibraryGame> UserLibraryGames { get; set; } = new List<UserLibraryGame>(); 
     }
 }

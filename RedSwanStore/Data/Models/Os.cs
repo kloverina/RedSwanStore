@@ -14,7 +14,7 @@ namespace RedSwanStore.Data.Models
         [StringLength(50)]
         public string ExtraInfo { get; set; }
         
-        // for 'many to many' relation with GameSystemRequirements
-        public List<GameSystemRequirements> GameSystemRequirementses { get; set; } = new List<GameSystemRequirements>();
+        // 'many to many' relation with GameSystemRequirements
+        public List<GameSystemRequirement> GameSystemRequirements { get; set; } = new List<GameSystemRequirement>();
     }
 }
