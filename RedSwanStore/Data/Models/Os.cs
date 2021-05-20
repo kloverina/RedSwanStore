@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RedSwanStore.Data.Models
 {
@@ -12,5 +13,8 @@ namespace RedSwanStore.Data.Models
         
         [StringLength(50)]
         public string ExtraInfo { get; set; }
+        
+        // for 'many to many' relation with GameSystemRequirements
+        public List<GameSystemRequirements> GameSystemRequirementses { get; set; } = new List<GameSystemRequirements>();
     }
 }

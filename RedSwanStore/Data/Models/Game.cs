@@ -15,6 +15,10 @@ namespace RedSwanStore.Data.Models
         [StringLength(100, MinimumLength = 2)]
         public string Developer { get; set; }
         
+        // for 'single to single' relation with GameInfo
         public GameInfo GameInfo { get; set; }
+        
+        // for 'single to single' relation with GameSystemRequirements
+        public GameSystemRequirements GameSystemRequirements { get; set; }
     }
 }
