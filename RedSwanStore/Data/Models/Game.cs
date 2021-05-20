@@ -14,5 +14,7 @@ namespace RedSwanStore.Data.Models
         [Required]
         [StringLength(100, MinimumLength = 2)]
         public string Developer { get; set; }
+        
+        public GameInfo GameInfo { get; set; }
     }
 }
