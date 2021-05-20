@@ -7,6 +7,7 @@ namespace RedSwanStore.Data.Models
         public int Id { get; set; }
         
         [Required]
+        [Key]
         public string UserId { get; set; }
         
         [Required]
@@ -27,5 +28,7 @@ namespace RedSwanStore.Data.Models
         
         [Required]
         public string Photo { get; set; }
+        
+        public UserLibrary Library { get; set; }
     }
 }
