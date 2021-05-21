@@ -10,6 +10,9 @@ namespace RedSwanStore.Data.Models
         public Game Game { get; set; }
         public int GameId { get; set; } // 'single to single' relation with Game
         
+        [Required]
+        public string Cover { get; set; }
+        
         [Required] 
         public decimal Price { get; set; }
         
