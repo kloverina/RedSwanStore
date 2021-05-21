@@ -24,5 +24,8 @@ namespace RedSwanStore.Data.Models
         
         // 'single to many' relation with UserLibraryGame
         public List<UserLibraryGame> UserLibraryGames { get; set; } = new List<UserLibraryGame>(); 
+        
+        // 'single to single' relation with GameFilter
+        public GameFilter GameFilter { get; set; }
     }
 }
