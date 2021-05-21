@@ -6,7 +6,7 @@ namespace RedSwanStore.Controllers
     public class LoginController : Controller
     {
         [Route("")]
-        public IActionResult Login()
+        public ViewResult Login()
         {
             return View();
         }

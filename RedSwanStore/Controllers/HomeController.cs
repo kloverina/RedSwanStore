@@ -8,7 +8,7 @@ namespace RedSwanStore.Controllers
     public class HomeController : Controller
     {
         [Route("")]
-        public ViewResult Index()
+        public IActionResult Index()
         {
             return View();
         }
