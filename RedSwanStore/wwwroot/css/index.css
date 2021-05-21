@@ -102,6 +102,189 @@ header nav .rightNav div:hover {
   background-color: #009e9e;
 }
 
+.login-card {
+  text-align: center;
+  width: 100%;
+}
+
+.login {
+  text-align: center;
+  margin: 40px auto;
+  padding: 28px 60px 10px;
+  background-color: #202020;
+  display: inline-block;
+}
+.login p {
+  font-family: "Brutal", sans-serif;
+  color: #f4f4f4;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.login-element.login-element__info,
+.login-element.login-element__sign-in {
+  width: 100%;
+}
+.login-element.login-element__info p,
+.login-element.login-element__sign-in p {
+  font-family: "Brutal", sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.login-element.login-element__forget-pass p.p-header {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #f4f4f4;
+}
+.login-element.login-element__forget-pass p {
+  text-transform: none;
+  color: #808A8A;
+  max-width: 350px;
+  margin-top: 10px;
+}
+
+.login-element.login-element__sign-in p {
+  text-align: left;
+}
+
+.login-element.logo {
+  margin: 10px auto;
+  width: 90px;
+  height: 120px;
+  background: url(../img/3.png) no-repeat 0 0;
+  background-size: cover;
+}
+
+.login-element__forget-pass.logo {
+  margin: 10px auto;
+  width: 90px;
+  height: 120px;
+  background: url(../img/3.png) no-repeat -90px 0;
+  background-size: cover;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 350px;
+}
+
+.form_element {
+  width: 100%;
+}
+.form_element input, .form_element button {
+  width: 100%;
+  height: 50px;
+  font: inherit;
+  font-family: Brutal, sans-serif;
+  border-radius: 5px;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+.form_element input:active, .form_element input:focus, .form_element button:active, .form_element button:focus {
+  background-color: #484848;
+  outline: none;
+}
+.form_element input {
+  margin-top: 15px;
+  box-sizing: border-box;
+  display: block;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: #2B2B2B;
+  color: #f4f4f4;
+}
+.form_element input:-webkit-autofill,
+.form_element input:-webkit-autofill:hover,
+.form_element input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f4f4f4;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.form_element .button {
+  background-color: #191919;
+  text-transform: uppercase;
+}
+.form_element .button span {
+  font-weight: 600;
+  line-height: 17px;
+  color: #5b5d5e;
+  font-size: 14px;
+}
+.form_element .button.active {
+  background-color: #037BEE;
+}
+.form_element .button.active span {
+  color: white;
+}
+
+.form_element.form_element_forget-pass input {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.form_element.form_element_forget-pass .button {
+  margin: 15px 0;
+}
+
+.form_element__forgot {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 15px;
+}
+.form_element__forgot p {
+  color: #8A8A8A;
+  line-height: 21px;
+}
+
+.form_element_checkbox {
+  align-self: flex-start;
+  margin: 10px 0 0px;
+  color: #8A8A8A;
+}
+.form_element_checkbox a {
+  text-decoration: underline;
+}
+.terms {
+  margin-bottom: 30px;
+}
+
+div.alternative > p {
+  color: #8A8A8A;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+div.alternative a {
+  margin: 0;
+  padding: 0;
+}
+div.alternative a p {
+  margin-top: 0;
+  padding: 0;
+}
+
+.login-element__forget-pass.alternative,
+.login-element__sign-in.alternative {
+  margin-bottom: 45px;
+}
+.login-element__forget-pass.alternative a,
+.login-element__sign-in.alternative a {
+  margin-left: 5px;
+}
+
+.login-element__sign-in.alternative {
+  margin-top: 30px;
+}
+
 body {
   background-color: #121212;
   padding: 0;

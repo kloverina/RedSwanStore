@@ -1,1 +1,60 @@
-﻿
+﻿<div class="container login-card">
+    <div class="login-card"></div>
+    <!-- Все поле для регистрации-->
+    <div class="login">
+        <div class="login-element logo">
+            <!-- Место под логотип-->
+           <!-- <p> *лого*</p> -->
+            
+        </div>
+
+        <div class="login-element login-element__info">
+            <p>Войдите с помощью учетной записи *shop name*</p>
+        </div>
+        
+        <!-- Добавить дейсвие при отправке формы -->
+        <form class="login-element form"  action="" method="post">
+           
+            
+            <div class="form_element">
+                <input class="form-element__email" id="email" name="email" placeholder="Адрес электронной почты"
+                       type="email" autocomplete="username" aria-label="Адрес электронной почты" required>
+            </div>
+
+            <div class="form_element">
+                <input class="form_element__password" id="password" name="password" placeholder="Пароль"
+                       type="password" autocomplete="current-password" aria-label="Пароль" required>
+            </div>
+
+
+
+            <div class="form_element">
+                <div class="form_element__forgot">
+                    <a asp-area="" asp-controller="Home" asp-action="ForgotPassword" id="to-forgot-password" aria-label="Забыли пароль" class="LinkButton">
+
+                        <p>Забыли пароль</p>
+
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="form_element">
+                <button class="form_element__button button" id="sign-in" type="submit" readonly>
+                    <span class="button-label"> Войти </span>
+                </button>
+            </div>
+
+
+        </form>
+
+        <div class="login-element alternative">
+            <p> У Вас нет учетной записи?</p>
+            <a asp-area="" asp-controller="Home" asp-action="SignUp"  id="to-register">
+                <p> Зарегистрироваться</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/login.js"></script> 
