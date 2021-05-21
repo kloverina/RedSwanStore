@@ -48,6 +48,7 @@ header nav .menu {
   flex: 1 1 60%;
   display: flex;
   justify-content: flex-start;
+  align-items: baseline;
 }
 header nav .menu li .logo {
   display: inline-block;
@@ -55,18 +56,29 @@ header nav .menu li .logo {
   height: 60px;
   margin: 20px;
 }
+header nav .menu li div.store-icon {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  top: -33px;
+  margin: 0 10px 0 10px;
+  padding: 0;
+  background: url(../favicon.ico) no-repeat 0 0;
+  background-size: cover;
+  z-index: 20;
+}
 header nav .menu li a {
   padding: 0 15px;
   color: inherit;
   text-decoration: none;
 }
-header nav .menu li :hover::after, header nav .menu li :active::after {
+header nav .menu li :not(.store-icon):hover::after, header nav .menu li :not(.store-icon):active::after {
   display: inline-block;
   width: 100%;
   height: 5px;
   position: relative;
   top: -3px;
-  background-color: darkcyan;
+  background-color: #7d0011;
   content: "";
   z-index: 10;
 }
@@ -96,10 +108,10 @@ header nav .rightNav div:hover {
 }
 .download a {
   padding: 20px 10px;
-  background-color: darkcyan;
+  background-color: rgba(125, 0, 17, 0.75);
 }
 .download :hover {
-  background-color: #009e9e;
+  background-color: #7d0011;
 }
 
 .login-card {
@@ -156,7 +168,7 @@ header nav .rightNav div:hover {
   text-align: left;
 }
 
-.login-element.logo {
+.logo {
   margin: 10px auto;
   width: 90px;
   height: 120px;
@@ -165,17 +177,11 @@ header nav .rightNav div:hover {
 }
 
 .login-element__forget-pass.logo {
-  margin: 10px auto;
-  width: 90px;
-  height: 120px;
   background: url(../img/3.png) no-repeat -90px 0;
   background-size: cover;
 }
 
 .login-element__sign-up.logo {
-  margin: 10px auto;
-  width: 90px;
-  height: 120px;
   background: url(../img/3.png) no-repeat -180px 0;
   background-size: cover;
 }
@@ -230,10 +236,13 @@ header nav .rightNav div:hover {
   font-size: 14px;
 }
 .form_element .button.active {
-  background-color: #037BEE;
+  background-color: rgba(125, 0, 17, 0.75);
 }
 .form_element .button.active span {
   color: white;
+}
+.form_element .button.active:hover {
+  background-color: #7d0011;
 }
 
 .form_element.form_element_forget-pass input {
@@ -253,11 +262,20 @@ header nav .rightNav div:hover {
   color: #8A8A8A;
   line-height: 21px;
 }
+.form_element__forgot a:active {
+  text-decoration: underline;
+}
+.form_element__forgot a:active p {
+  color: white;
+}
 
 .form_element_checkbox {
   align-self: flex-start;
-  margin: 10px 0 0px;
+  margin: 10px 0 0;
   color: #8A8A8A;
+}
+.form_element_checkbox span {
+  max-width: 350px;
 }
 .form_element_checkbox a {
   text-decoration: underline;
@@ -280,6 +298,10 @@ div.alternative a p {
   padding: 0;
 }
 
+.login-element.alternative a:active {
+  text-decoration: underline;
+}
+
 .login-element__forget-pass.alternative,
 .login-element__sign-in.alternative {
   margin-bottom: 45px;
@@ -291,6 +313,12 @@ div.alternative a p {
 
 .login-element__sign-in.alternative {
   margin-top: 30px;
+}
+.login-element__sign-in.alternative p {
+  text-transform: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 body {

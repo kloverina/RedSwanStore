@@ -36,6 +36,7 @@ header{
       flex: 1 1 60%;
       display: flex;
       justify-content: flex-start;
+      align-items: baseline;
       li {
         .logo{
           display: inline-block;
@@ -43,19 +44,32 @@ header{
           height: 60px;
           margin: 20px;
         }
+        div.store-icon{
+          height: 40px ;
+          width: 40px;
+          position: relative;
+          top: -33px;
+          margin: 0 10px 0 10px;
+          padding: 0;
+
+          background: url(../favicon.ico) no-repeat 0 0;
+          background-size: cover;
+          z-index: 20;
+        }
         a{
           padding: 0 15px;
           color: inherit;
           text-decoration: none;
         }
 
-        :hover::after, :active::after{
+        :not(.store-icon):hover::after, :not(.store-icon):active::after{
           display: inline-block;
           width: 100%;
           height: 5px;
           position: relative;
           top: -3px;
-          background-color: darkcyan;
+          //background-color: #961809;
+          background-color: #7d0011;
           content: "";
           z-index: 10;
         }
@@ -91,13 +105,11 @@ header{
 .download {
   a {
     padding: 20px 10px;
-    background-color: darkcyan;
-
+    background-color: rgba(125, 0, 17, 0.75);
   }
 
   :hover {
-    background-color: #009e9e;
+    background-color: #7d0011;
   }
-
   vertical-align: middle;
 }
