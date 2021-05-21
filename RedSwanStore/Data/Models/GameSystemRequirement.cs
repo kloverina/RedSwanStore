@@ -38,8 +38,9 @@ namespace RedSwanStore.Data.Models
         [StringLength(250, MinimumLength = 5)]
         public string MaxGpu { get; set; }
         
-        //'many to many' relation with Os
-        public List<Os> SupportedOses { get; set; } = new List<Os>();
+        [Required]
+        [StringLength(250, MinimumLength = 3)]
+        public string SupportedOses { get; set; }
         
         [StringLength(200)]
         public string ExtraInfo { get; set; }
