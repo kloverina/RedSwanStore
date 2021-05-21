@@ -46,6 +46,7 @@ namespace RedSwanStore.Data.Models
         public string ExtraInfo { get; set; }
         
         //'many to many' relation with Language
-        public List<Language> SupportedLanguages { get; set; } = new List<Language>();
+        public List<Language> SupportedVoiceLanguages { get; set; } = new List<Language>();
+        public List<Language> SupportedTextLanguages { get; set; } = new List<Language>();
     }
 }

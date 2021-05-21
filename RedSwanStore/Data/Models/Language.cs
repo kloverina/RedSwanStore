@@ -10,13 +10,7 @@ namespace RedSwanStore.Data.Models
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public string Name { get; set; }
-        
-        [Required]
-        public bool Voice { get; set; }
-        
-        [Required]
-        public bool Text { get; set; }
-        
+
         // 'many to many' relation with GameSystemRequirements
         public List<GameSystemRequirement> GameSystemRequirements { get; set; } = new List<GameSystemRequirement>();
     }
