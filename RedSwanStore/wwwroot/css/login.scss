@@ -65,7 +65,7 @@
   }
 }
 
-//загрушка
+
 .login-element.logo{
   margin: 10px auto;
   width: 90px;
@@ -83,9 +83,17 @@
   background-size: cover;
 }
 
+.login-element__sign-up.logo{
+  margin: 10px auto;
+  width: 90px;
+  height: 120px;
+  background: url(../img/3.png) no-repeat -180px 0;
+  background-size: cover;
+}
+
+
 
 .form {
-  //margin: 0 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -223,6 +231,8 @@ div.alternative{
 .login-element__sign-in.alternative {
   margin-top: 30px;
 }
+
+
 
 
 

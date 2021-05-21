@@ -1,1 +1,90 @@
-﻿
+﻿<div class="container login-card">
+    <div class="login-card"></div>
+    <!-- Все поле для регистрации-->
+    <div class="login">
+        <div class="login-element logo login-element__sign-up">
+            <!-- Место под логотип-->
+        </div>
+
+        <div class="login-element login-element__sign-in">
+            <p>Зарегистрироваться</p>
+        </div>
+        
+        <!-- Добавить дейсвие при отправке формы -->
+        <form class="login-element form" action="" method="post">
+            
+            <div class="form_element form_element_sign-in">
+                <input class="form-element__name" id="name" name="name" placeholder="*Имя"
+                       type="text" autocomplete="given-name" inputmode="text" aria-label="*Имя" required >
+            </div>
+
+
+            <div class="form_element form_element_sign-in">
+                <input class="form-element__surname" id="surname" name="surname" placeholder="*Фамилия"
+                       type="text" autocomplete="family-name" inputmode="text" aria-label="*Фамилия" required>
+            </div>
+            
+            <div class="form_element form_element_sign-in">
+                <input class="form-element__nickname" id="nickname" name="login" placeholder="*Логин"
+                       type="text" autocomplete="nickname" inputmode="text" aria-label="*Логин" maxlength="16" required>
+            </div>
+            
+            
+            <div class="form_element form_element_sign-in">
+                <input class="form-element__email" id="email" name="email" placeholder="*Адрес электронной почты"
+                       type="email" autocomplete="username" aria-label="Адрес электронной почты" required>
+            </div>
+
+            <div class="form_element form_element_sign-in">
+                <input class="form_element__password" id="password" name="password" placeholder="*Пароль"
+                       type="password" autocomplete="current-password" aria-label="Пароль" required>
+            </div>
+            
+            <div class="form_element form_element_sign-in">
+                <input class="form_element__password form_element__checkpass" id="check_password" name="check_password" placeholder="*Повторите пароль"
+                       type="password" aria-label="Повторите пароль" required>
+            </div>
+            
+            
+            
+            <div class="form_element_checkbox form_element_sign-in">
+                <label class="custom-checkbox" for="newsletter">
+                    <input class="form_element__checkbox" id="newsletter" name="newsletter" type="checkbox">
+                    <span>
+                        Я хочу получать обзоры, новости и специальные предложения.
+                    </span>
+                </label>
+            </div>
+            
+            <div class="form_element_checkbox form_element_sign-in terms">
+                <label class="custom-checkbox" for="terms">
+                    <input class="form_element__checkbox" id="terms" name="terms" type="checkbox" required>
+                    <span>
+                        Я прочитал(-а) и принимаю <a href="https://www.epicgames.com/site/ru/tos?lang=ru-RU">условия использования</a>.
+                    </span>
+                </label>
+            </div>
+            
+
+            <div class="form_element form_element_sign-in">
+                <button class="form_element__button button" id="sign-up" type="submit" readonly>
+                    <span class="button-label"> Зарегистрироваться </span>
+                </button>
+            </div>
+
+
+        </form>
+
+        <div class="login-element__sign-in alternative">
+            <p> Уже есть учетная запись?
+                <a asp-area="" asp-controller="Login" asp-action="Login"  id="to-login">
+                    Войти
+                </a>
+            </p>
+            
+        </div>
+    </div>
+</div>
+
+
+

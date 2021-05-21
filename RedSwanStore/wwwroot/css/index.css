@@ -172,6 +172,14 @@ header nav .rightNav div:hover {
   background-size: cover;
 }
 
+.login-element__sign-up.logo {
+  margin: 10px auto;
+  width: 90px;
+  height: 120px;
+  background: url(../img/3.png) no-repeat -180px 0;
+  background-size: cover;
+}
+
 .form {
   display: flex;
   flex-direction: column;
