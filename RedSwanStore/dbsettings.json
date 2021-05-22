@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=RedSwanStore;Trusted_Connection=True;MultipleActiveResultsSets=true"
+    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=RedSwanStore;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
 }

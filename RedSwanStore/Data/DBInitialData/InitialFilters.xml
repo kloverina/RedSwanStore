@@ -25,33 +25,33 @@
     <PriceCategories>
         <PriceCategory>
             <Name>Очень многа</Name>
-            <MinProce>3000.01</MinProce>
-            <MaxPrice>79228162514264337593543950335</MaxPrice>
+            <MinPrice>3000,01</MinPrice>
+            <MaxPrice>1000000000000</MaxPrice>
         </PriceCategory>
         <PriceCategory>
             <Name>Тоже много но поменьше</Name>
-            <MinPrice>1000.01</MinPrice>
+            <MinPrice>1000,01</MinPrice>
             <MaxPrice>3000</MaxPrice>
         </PriceCategory>
         <PriceCategory>
             <Name>Реально купить без продажи почки</Name>
-            <MinPrice>500.01</MinPrice>
+            <MinPrice>500,01</MinPrice>
             <MaxPrice>1000</MaxPrice>
         </PriceCategory>
         <PriceCategory>
             <Name>Ниже среднего</Name>
-            <MinPrice>150.01</MinPrice>
+            <MinPrice>150,01</MinPrice>
             <MaxPrice>500</MaxPrice>
         </PriceCategory>
         <PriceCategory>
             <Name>Цена для галочки</Name>
-            <MinPrice>0.01</MinPrice>
+            <MinPrice>0,01</MinPrice>
             <MaxPrice>150</MaxPrice>
         </PriceCategory>
         <PriceCategory>
             <Name>Бесплатно</Name>
-            <MinPrice>0.00</MinPrice>
-            <MaxPrice>0.00</MaxPrice>
+            <MinPrice>0,00</MinPrice>
+            <MaxPrice>0,00</MaxPrice>
         </PriceCategory>
     </PriceCategories>
 </Filters>

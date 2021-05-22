@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RedSwanStore.Data.Models
 {
@@ -11,9 +12,11 @@ namespace RedSwanStore.Data.Models
         public string Name { get; set; }
         
         [Required]
+        [Column(TypeName = "money")]
         public decimal MinPrice { get; set; }
         
         [Required]
+        [Column(TypeName = "money")]
         public decimal MaxPrice { get; set; }
     }
 }

@@ -71,11 +71,11 @@
                 https://i.ibb.co/dQDPdCz/cb5.png,
                 https://i.ibb.co/2n3x0Bv/cb6.png
             </Screenshots>
-            <Trailsers type="field">
+            <Trailers type="field">
                 https://www.youtube.com/watch?v=qIcTM8WXFjk,
                 https://www.youtube.com/watch?v=aSrFWinrkeQ,
                 https://www.youtube.com/watch?v=BO8lX3hDU30
-            </Trailsers>
+            </Trailers>
         </GameMedia>
         <GameFilter type="model">
             <Genres type="model-list">
@@ -170,9 +170,9 @@
                 https://i.ibb.co/fpv7sjc/hzd4.png,
                 https://i.ibb.co/WFSP7dX/hzd5.png,
             </Screenshots>
-            <Trailsers type="field">
+            <Trailers type="field">
                 https://www.youtube.com/watch?v=R5pYpZPws1c,https://www.youtube.com/watch?v=u4-FCsiF5x4
-            </Trailsers>
+            </Trailers>
         </GameMedia>
         <GameFilter type="model">
             <Genres type="model-list">
@@ -193,7 +193,7 @@
         <GameInfo type="model">
             <Cover type="field">https://i.ibb.co/8g4WBWL/alien.png</Cover>
             <Price type="field">999</Price>
-            <Discount type="field">0.75</Discount>
+            <Discount type="field">0,75</Discount>
             <ReleaseDate type="field">22/12/2020</ReleaseDate>
             <Rating type="field">81</Rating>
             <ShortDescription type="field">
@@ -249,9 +249,9 @@
                 https://i.ibb.co/SRTfj3K/alien3.png,
                 https://i.ibb.co/3hdSxFR/alien4.png
             </Screenshots>
-            <Trailsers type="field">
+            <Trailers type="field">
                 https://www.youtube.com/watch?v=7h0cgmvIrZw
-            </Trailsers>
+            </Trailers>
         </GameMedia>
         <GameFilter type="model">
             <Genres type="model-list">
@@ -310,6 +310,7 @@
             <MinGpu type="field">Совместимая с DirectX 10 видеокарта, минимум 512 МБ видеопамяти</MinGpu>
             <MaxGpu type="field">GeForce GTS 450 (1024 МБ) / Radeon HD</MaxGpu>
             <SupportedOses type="field">Windows Vista/7/8/8.1/10 86- или 64-разрядная</SupportedOses>
+            <ExtraInfo/>
             <SupportedVoiceLanguages type="field">
                 английский
             </SupportedVoiceLanguages>
@@ -326,7 +327,7 @@
                 https://i.ibb.co/fSdvqnC/evan4.png,
                 https://i.ibb.co/PQBfQTC/evan5.png
             </Screenshots>
-            <Trailsers type="field"/>
+            <Trailers type="field"/>
         </GameMedia>
         <GameFilter type="model">
             <Genres type="model-list">

@@ -8,9 +8,9 @@ namespace RedSwanStore.Data
 {
     public class DBInitializer
     {
-        private const string initialFiltersUrl = "..\\..\\Data\\DBInitialData\\InitialFilters.xml";
-        private const string initialGamesUrl = "..\\..\\Data\\DBInitialData\\InitialGames.xml";
-        private const string initialUsersUrl = "..\\..\\Data\\DBInitialData\\InitialUsers.xml";
+        private const string initialFiltersUrl = "Data\\DBInitialData\\InitialFilters.xml";
+        private const string initialGamesUrl = "Data\\DBInitialData\\InitialGames.xml";
+        private const string initialUsersUrl = "Data\\DBInitialData\\InitialUsers.xml";
 
         
         public static void Initialize(RedSwanStoreDBContent dbContent)

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RedSwanStore.Data.Models
 {
@@ -24,6 +25,7 @@ namespace RedSwanStore.Data.Models
         
         public string Photo { get; set; }
 
+        [Column(TypeName = "money")]
         public decimal Balance { get; set; }
         
         public UserLibrary Library { get; set; } // 'single to single' relation with Library
