@@ -52,6 +52,12 @@ namespace RedSwanStore
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+
+            using (IServiceScope scope = app.ApplicationServices.CreateScope())
+            {
+                RedSwanStoreDBContent dbContent = scope.ServiceProvider.GetRequiredService<RedSwanStoreDBContent>();
+                DBInitializer.Initialize(dbContent);
+            }
         }
     }
 }

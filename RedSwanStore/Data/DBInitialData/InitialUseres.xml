@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Users>
+    <User>
+        <Name>RedSwanStore</Name>
+        <Surname>Admin</Surname>
+        <Login>admin</Login>
+        <Password>admin</Password>
+        <Photo>https://i.ibb.co/D8TMdPm/Admin-Photo.jpg</Photo>
+        <Balance>100000</Balance>
+        <Library/>
+    </User>
+</Users>
