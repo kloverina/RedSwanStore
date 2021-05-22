@@ -12,7 +12,6 @@ namespace RedSwanStore.Data
 
         public DbSet<Game> Games { get; set; }
         public DbSet<GameInfo> GameInfos { get; set; }
-        public DbSet<Language> Languages { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<PriceCategory> PriceCategories { get; set; }
