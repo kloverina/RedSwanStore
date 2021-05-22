@@ -7,10 +7,6 @@ namespace RedSwanStore.Data.Models
         public int Id { get; set; }
         
         [Required]
-        [Key]
-        public string UserId { get; set; }
-        
-        [Required]
         [StringLength(50, MinimumLength = 2)]
         public string Name { get; set; }
         
@@ -26,8 +22,9 @@ namespace RedSwanStore.Data.Models
         [MinLength(8)]
         public string Password { get; set; }
         
-        [Required]
         public string Photo { get; set; }
+
+        public decimal Balance { get; set; }
         
         public UserLibrary Library { get; set; } // 'single to single' relation with Library
     }
