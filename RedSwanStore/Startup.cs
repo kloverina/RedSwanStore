@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using RedSwanStore.Data;
+using RedSwanStore.Data.Interfaces;
+using RedSwanStore.Data.Repositories;
 
 namespace RedSwanStore
 {
@@ -34,6 +36,11 @@ namespace RedSwanStore
             services.AddDbContext<RedSwanStoreDBContent>(
                 options => options.UseSqlServer(dbConfig.GetConnectionString("DefaultConnection"))
             );
+            
+            services.AddTransient<IPriceCategoryRepo, PriceCategoryRepo>();
+            services.AddTransient<IFeatureRepo, FeatureRepo>();
+            services.AddTransient<IGenreRepo, GenreRepo>();
+            
             services.AddControllersWithViews();
         }
 
