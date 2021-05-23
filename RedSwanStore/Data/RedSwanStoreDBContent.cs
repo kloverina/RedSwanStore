@@ -3,6 +3,9 @@ using RedSwanStore.Data.Models;
 
 namespace RedSwanStore.Data
 {
+    /// <summary>
+    /// The class used to get/set data from/in the database RedSwanStore.
+    /// </summary>
     public class RedSwanStoreDBContent : DbContext
     {
         public RedSwanStoreDBContent(DbContextOptions<RedSwanStoreDBContent> options) : base(options)

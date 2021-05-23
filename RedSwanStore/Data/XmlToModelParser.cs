@@ -9,7 +9,7 @@ using RedSwanStore.Utils;
 namespace RedSwanStore.Data
 {
     /// <summary>
-    /// The wrapper for methods that allow to parse database initial data from xml
+    /// The wrapper for methods that allow to parse database initial data from XML
     /// to models entities that are used in database initializing.
     /// </summary>
     public class XmlToModelParser
@@ -116,6 +116,15 @@ namespace RedSwanStore.Data
         }
         
         
+        /// <summary>
+        /// Create a list of Game models by parsing models data from the specified XML file. <para/>
+        /// For correct database work, genres and features must be specified by its (already created)
+        /// entities from the database.
+        /// </summary>
+        /// <param name="xmlFilePath">The path to the XML file containing data for Game models.</param>
+        /// <param name="existingGenres">The initialized in database Genre models.</param>
+        /// <param name="existingFeatures">The initialized in database Feature models.</param>
+        /// <returns>The list of Game models parsed from the XML data.</returns>
         public static List<Game> ParseGames(string xmlFilePath, List<Genre> existingGenres, List<Feature> existingFeatures)
         {
             var document = new XmlDocument();
@@ -142,7 +151,12 @@ namespace RedSwanStore.Data
         }
 
 
-
+        
+        /// <summary>
+        /// Create a list of Feature models by parsing models data from the specified XML file.
+        /// </summary>
+        /// <param name="xmlFilePath">The path to the XML file containing data for filters.</param>
+        /// <returns>The list of Feature models parsed from the XML data.</returns>
         public static List<Feature> ParseFeatures(string xmlFilePath)
         {
             var document = new XmlDocument();
@@ -166,6 +180,11 @@ namespace RedSwanStore.Data
         }
 
 
+        /// <summary>
+        /// Create a list of Genre models by parsing models data from the specified XML file.
+        /// </summary>
+        /// <param name="xmlFilePath">The path to the XML file containing data for filters.</param>
+        /// <returns>The list of Genre models parsed from the XML data.</returns>
         public static List<Genre> ParseGenres(string xmlFilePath)
         {
             var document = new XmlDocument();
@@ -192,6 +211,11 @@ namespace RedSwanStore.Data
         }
 
 
+        /// <summary>
+        /// Create a list of Price Category models by parsing models data from the specified XML file.
+        /// </summary>
+        /// <param name="xmlFilePath">The path to the XML file containing data for filters.</param>
+        /// <returns>The list of Price Category models parsed from the XML data.</returns>
         public static List<PriceCategory> ParsePriceCategories(string xmlFilePath)
         {
             var document = new XmlDocument();
@@ -224,6 +248,11 @@ namespace RedSwanStore.Data
             return priceCategoriesList;
         }
 
+        /// <summary>
+        /// Create a list of User models by parsing models data from the specified XML file.
+        /// </summary>
+        /// <param name="xmlFilePath">The path to the XML file containing data for users.</param>
+        /// <returns>The list of User models parsed from the XML data.</returns>
         public static List<User> ParseUsers(string xmlFilePath)
         {
             var document = new XmlDocument();

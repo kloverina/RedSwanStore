@@ -6,6 +6,9 @@ using RedSwanStore.Data.Models;
 
 namespace RedSwanStore.Data
 {
+    /// <summary>
+    /// The class used to initialize database with initial data from .xml files.
+    /// </summary>
     public class DBInitializer
     {
         private const string initialFiltersUrl = "Data\\DBInitialData\\InitialFilters.xml";
@@ -13,6 +16,10 @@ namespace RedSwanStore.Data
         private const string initialUsersUrl = "Data\\DBInitialData\\InitialUsers.xml";
 
         
+        /// <summary>
+        /// Fill the database with initial data if database is empty.
+        /// </summary>
+        /// <param name="dbContent">The database content instance.</param>
         public static void Initialize(RedSwanStoreDBContent dbContent)
         {
             if (!dbContent.PriceCategories.Any())
@@ -73,24 +80,36 @@ namespace RedSwanStore.Data
         private static List<User> users;
 
 
+        /// <summary>
+        /// Get all initial price categories.
+        /// </summary>
         public static List<PriceCategory> InitializedPriceCategories {
             get {
                 return priceCategories ??= XmlToModelParser.ParsePriceCategories(initialFiltersUrl);
             }
         }
 
+        /// <summary>
+        /// Get all initial features.
+        /// </summary>
         public static List<Feature> InitializedFeatures {
             get {
                 return features ??= XmlToModelParser.ParseFeatures(initialFiltersUrl);
             }
         }
 
+        /// <summary>
+        /// Get all initial genres.
+        /// </summary>
         public static List<Genre> InitializedGenres {
             get {
                 return genres ??= XmlToModelParser.ParseGenres(initialFiltersUrl);
             }
         }
 
+        /// <summary>
+        /// Get all initial games.
+        /// </summary>
         public static List<Game> InitializedGames {
             get {
                 genres ??= InitializedGenres;
@@ -100,6 +119,9 @@ namespace RedSwanStore.Data
             }
         }
         
+        /// <summary>
+        /// Get all initial users.
+        /// </summary>
         public static List<User> InitializedUsers {
             get {
                 return users ??= XmlToModelParser.ParseUsers(initialUsersUrl);
