@@ -2,6 +2,7 @@
 <Games>
     <Game type="model">
         <Name type="field">Cyperpunk 2077</Name>
+        <GameUrl type="field">cyberpunk-2077</GameUrl>
         <Developer type="field">CD PROJECT RED</Developer>
         <GameInfo type="model">
             <Cover type="field">https://i.ibb.co/Z8wLWRw/Cyberpunk-2077.png</Cover>
@@ -92,6 +93,7 @@
     </Game>
     <Game type="model">
         <Name type="field">Horizon Zero Dawn™ Complete Edition</Name>
+        <GameUrl type="field">horizon-zero-down-complete-edition</GameUrl>
         <Developer type="field">Guerrilla | Sony Interactive Entertainment</Developer>
         <GameInfo type="model">
             <Cover type="field">https://i.ibb.co/hddX2vN/hzd.png</Cover>
@@ -189,6 +191,7 @@
     </Game>
     <Game type="model">
         <Name type="field">Alien: Isolation</Name>
+        <GameUrl type="field">alien-isolation</GameUrl>
         <Developer type="field">Creative Assembly | SEGA</Developer>
         <GameInfo type="model">
             <Cover type="field">https://i.ibb.co/8g4WBWL/alien.png</Cover>
@@ -266,6 +269,7 @@
     </Game>
     <Game type="model">
         <Name type="field">Evan's Remains</Name>
+        <GameUrl type="field">evans-remains</GameUrl>
         <Developer type="field">Maitan69 | Whitethorn Games</Developer>
         <GameInfo type="model">
             <Cover type="field">https://i.ibb.co/GsPmhzY/evan.png</Cover>

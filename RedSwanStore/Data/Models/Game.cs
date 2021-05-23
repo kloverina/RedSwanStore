@@ -13,6 +13,10 @@ namespace RedSwanStore.Data.Models
         public string Name { get; set; }
         
         [Required]
+        [StringLength(100, MinimumLength = 1)]
+        public string GameUrl { get; set; }
+        
+        [Required]
         [StringLength(100, MinimumLength = 2)]
         public string Developer { get; set; }
         

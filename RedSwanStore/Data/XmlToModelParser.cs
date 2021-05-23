@@ -136,6 +136,7 @@ namespace RedSwanStore.Data
                 select gameNode.ChildNodes.Cast<XmlNode>().ToList() into fieldsList
                 select new Game {
                     Name = fieldsList.GetNodeInnerText(nameof(Game.Name)),
+                    GameUrl = fieldsList.GetNodeInnerText(nameof(Game.GameUrl)),
                     Developer = fieldsList.GetNodeInnerText(nameof(Game.Developer)),
                     GameInfo = ParseGameInfo(fieldsList.GetNode(nameof(GameInfo))),
                     GameSystemRequirements = ParseGameSystemRequirement(fieldsList.GetNode(nameof(GameSystemRequirement))),
@@ -263,6 +264,7 @@ namespace RedSwanStore.Data
                 select userNode.ChildNodes.Cast<XmlNode>().ToList() into fieldsList
                 select new User {
                     Name = fieldsList.GetNodeInnerText(nameof(User.Name)),
+                    UserUrl = fieldsList.GetNodeInnerText(nameof(User.UserUrl)),
                     Surname = fieldsList.GetNodeInnerText(nameof(User.Surname)),
                     Login = fieldsList.GetNodeInnerText(nameof(User.Login)),
                     Password = fieldsList.GetNodeInnerText(nameof(User.Password)),
