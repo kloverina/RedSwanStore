@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Brutal";
   src: url("../fonts/Brutal/BrutalType.eot");
@@ -270,14 +269,24 @@ header nav .rightNav div:hover {
 }
 
 .form_element_checkbox {
+  position: relative;
   align-self: flex-start;
-  margin: 10px 0 0;
-  color: #8A8A8A;
 }
-.form_element_checkbox span {
+
+.form_element__checkbox {
+  margin: 0;
+  padding: 0;
+  color: #8A8A8A;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+}
+.form_element__checkbox span {
   max-width: 350px;
 }
-.form_element_checkbox a {
+.form_element__checkbox a {
   text-decoration: underline;
 }
 .terms {
@@ -321,6 +330,26 @@ div.alternative a p {
   line-height: 21px;
 }
 
+p.form_element__checkpass {
+  display: none;
+}
+
+p.form_element__checkpass.active {
+  display: block;
+  text-align: left;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-size: 16px;
+  color: red;
+}
+
+/*input.form_element__checkpass{
+   &:active, &:focus{
+    border: 2px solid rgba(125, 0, 17, 0.55) ;
+  }
+
+
+}*/
 body {
   background-color: #121212;
   padding: 0;
@@ -337,10 +366,22 @@ body {
   margin: 80px auto 0;
 }
 
-/*@media (min-width: 768px) {
-  //перестроить меню
-}*/
-@media (min-width: 960px) {
+@media (max-width: 950px) {
+  .filter {
+    display: none;
+  }
+
+  .container {
+    max-width: 680px;
+    margin-right: 40px;
+  }
+
+  .game-card__image {
+    min-height: 240px;
+    min-width: 180px;
+  }
+}
+@media (min-width: 950px) {
   .container {
     max-width: 880px;
   }

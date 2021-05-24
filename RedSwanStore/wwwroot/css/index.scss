@@ -21,14 +21,26 @@ body{
   margin: 80px auto 0;
 }
 
-
-/*@media (min-width: 768px) {
-  //перестроить меню
-}*/
 $image_height: 240px;
 $image_width: 180px;
 
-@media (min-width: 960px) {
+@media (max-width: 950px) {
+  //перестроить 
+  .filter{
+    display: none;
+  }
+  .container {
+    max-width: 680px;
+    margin-right: 40px;
+  }
+  .game-card__image {
+
+    min-height: $image_height;
+    min-width: $image_width;
+  }
+}
+
+@media (min-width: 950px) {
   .container {
     max-width: 880px;
   }

@@ -43,6 +43,7 @@
             <div class="form_element form_element_sign-in">
                 <input class="form_element__password form_element__checkpass" id="check_password" name="check_password" placeholder="*Повторите пароль"
                        type="password" aria-label="Повторите пароль" required>
+                <p class="form_element__checkpass"> Пароли не совпадают </p>
             </div>
             
             
@@ -50,6 +51,7 @@
             <div class="form_element_checkbox form_element_sign-in">
                 <label class="custom-checkbox" for="newsletter">
                     <input class="form_element__checkbox" id="newsletter" name="newsletter" type="checkbox">
+                    <div class="custom-checkbox"> </div>
                     <span>
                         Я хочу получать обзоры, новости и специальные предложения.
                     </span>
@@ -59,6 +61,7 @@
             <div class="form_element_checkbox form_element_sign-in terms">
                 <label class="custom-checkbox" for="terms">
                     <input class="form_element__checkbox" id="terms" name="terms" type="checkbox" required>
+                    <div class="custom-checkbox"> </div>
                     <span>
                         Я прочитал(-а) и принимаю <a href="https://www.epicgames.com/site/ru/tos?lang=ru-RU">условия использования</a>.
                     </span>
@@ -85,6 +88,8 @@
         </div>
     </div>
 </div>
+
+<script src="js/login.js"> </script>
 
 
 
