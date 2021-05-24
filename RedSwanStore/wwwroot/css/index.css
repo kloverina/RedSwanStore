@@ -271,24 +271,53 @@ header nav .rightNav div:hover {
 .form_element_checkbox {
   position: relative;
   align-self: flex-start;
+  margin-top: 10px;
 }
-
-.form_element__checkbox {
+.form_element_checkbox a {
+  text-decoration: underline;
+}
+.form_element_checkbox input {
   margin: 0;
   padding: 0;
-  color: #8A8A8A;
   position: absolute;
-  top: 0;
+  top: 5px;
   left: 0;
   height: 20px;
   width: 20px;
+  z-index: 1;
+  opacity: 0;
 }
-.form_element__checkbox span {
-  max-width: 350px;
+.form_element_checkbox span {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+  text-align: initial;
+  white-space: normal;
+  color: #8A8A8A;
+  padding: 0;
+  margin: 0 0 0 30px;
 }
-.form_element__checkbox a {
-  text-decoration: underline;
+.form_element_checkbox div.custom-checkbox {
+  position: absolute;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #454545;
 }
+.form_element_checkbox div.custom-checkbox.checked:after {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}
+
 .terms {
   margin-bottom: 30px;
 }

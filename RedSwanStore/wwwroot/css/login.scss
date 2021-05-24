@@ -191,28 +191,68 @@
     }
   }
 }
-
 .form_element_checkbox{
+  position: relative;
   align-self: flex-start;
-  margin: 10px 0 0;
-  color:#8A8A8A;
-  
-   // max-width: 350px;
-  span{
-    max-width: 350px;
-  }
+  margin-top: 10px;
+
   a{
     text-decoration: underline;
   }
   
-  
   input{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  span{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    //max-width: 320px;
+    max-width: 450px;
+    box-sizing: border-box;
+    //vertical-align: middle;
+
+    text-align: initial;
+    white-space: normal;
+    color:#8A8A8A;
+    padding: 0;
+    margin: 0 0 0 30px;
+  }
+  
+  div.custom-checkbox{
+    position: absolute;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    //border: 1px solid white;
+    background-color: #454545;
     
-    span{
-     
+    &.checked{
+      &:after{
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 5px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 1px 1px 0;
+        transform: rotate(45deg);
+        
+      }
     }
   }
 }
+
 
 .terms{
   margin-bottom: 30px;
@@ -260,6 +300,27 @@ div.alternative{
     line-height: 21px;
   }
 }
+
+p.form_element__checkpass{
+  display: none;
+}
+
+p.form_element__checkpass.active{
+  display: block;
+  text-align: left;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-size: 16px;
+  color: red;
+}
+
+/*input.form_element__checkpass{
+   &:active, &:focus{
+    border: 2px solid rgba(125, 0, 17, 0.55) ;
+  }
+  
+  
+}*/
 
 
 

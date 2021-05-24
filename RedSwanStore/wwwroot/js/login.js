@@ -24,7 +24,6 @@ function isValid(inputs) {
 }
 
 function passMatch(){
-    
     if (!pass_match) 
         return true;
     if(password.value !== pass_match.value && pass_match.value !== ''){
@@ -34,11 +33,19 @@ function passMatch(){
     else
         pass_match_warning.classList.remove('active');
     
-    
     return true;
-    
 }
 
+function checkboxClick(labels) {
+    for(let i = 0; i< labels.length; i++){
+        let label = labels[i];
+        label.onclick= function (){
+            let checkbox = label.querySelector('div');
+            checkbox.classList.toggle('checked');
+
+        }
+    }
+}
 
 form.addEventListener("input", function (event) {
     
@@ -57,4 +64,12 @@ form.onsubmit = function(event) {
     else
         console.log("Email:", email.value);
 };
+
+
+//clicks on custom checkboxes
+let labels = form.querySelectorAll('label.custom-checkbox');
+if (labels)
+    checkboxClick(labels);
+
+
 
