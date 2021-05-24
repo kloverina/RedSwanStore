@@ -1,1 +1,43 @@
-﻿
+﻿@using System.Globalization
+@using RedSwanStore.Data.Models
+@model IEnumerable<RedSwanStore.Data.Models.Game>
+
+<div>
+    <ol>
+        @{
+            foreach (Game game in Model)
+            {
+                <li>@game.Name - @game.Developer - @decimal.Round(game.GameInfo.Price, 2).ToString(CultureInfo.CurrentCulture):
+                    <ul>
+                        @{
+                            foreach (var filter in game.GameFilter.Genres)
+                            {
+                                <li>@filter.Name</li>
+                            }
+                        }
+                    </ul>
+                    <ul>
+                        @{
+                            
+                            var allScreenshots = game.GameMedia.Screenshots
+                                .Trim(' ', '\r', '\n')
+                                .Split(',', StringSplitOptions.RemoveEmptyEntries);
+                            
+                            
+                            var index = 1;
+                            
+                            foreach (var img in allScreenshots)
+                            {
+                                <li><img src="@img.Trim()" alt="@game.Name screenshot @index.ToString()" width="523" height="297"></li>
+                                index++;
+                            }
+                        }
+                    </ul>
+                    <div>
+                        @Html.Raw(game.GameInfo.DetailedDescription)
+                    </div>
+                </li>
+            }
+        }
+    </ol>
+</div>

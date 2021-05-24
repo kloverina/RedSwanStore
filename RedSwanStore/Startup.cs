@@ -40,6 +40,7 @@ namespace RedSwanStore
             services.AddTransient<IPriceCategoryRepo, PriceCategoryRepo>();
             services.AddTransient<IFeatureRepo, FeatureRepo>();
             services.AddTransient<IGenreRepo, GenreRepo>();
+            services.AddTransient<IGameRepo, GameRepo>();
             
             services.AddControllersWithViews();
         }
