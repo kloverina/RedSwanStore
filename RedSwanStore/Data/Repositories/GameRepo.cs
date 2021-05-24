@@ -20,7 +20,11 @@ namespace RedSwanStore.Data.Repositories
             this.dbContent = dbContent;
         }
 
-
+        
+        /// <summary>
+        /// Load all data related to specified game entity from the database.
+        /// </summary>
+        /// <param name="game">The entity to load the data for.</param>
         private void LoadDataFor(Game game)
         {
             dbContent.Entry(game).Reference(g => g.GameInfo).Load();
@@ -33,6 +37,10 @@ namespace RedSwanStore.Data.Repositories
         }
         
         
+        /// <summary>
+        /// Get all games from the database.
+        /// </summary>
+        /// <returns>The collection of game models.</returns>
         public IEnumerable<Game> GetAllGames()
         {
             IEnumerable<Game> result = dbContent.Games.ToList();
@@ -44,6 +52,11 @@ namespace RedSwanStore.Data.Repositories
         }
 
         
+        /// <summary>
+        /// Get the game with specified name from the database.
+        /// </summary>
+        /// <param name="name">The name of the game to get.</param>
+        /// <returns>The game model entity.</returns>
         public Game GetGameByName(string name)
         {
             Game result = dbContent.Games.FirstOrDefault(
@@ -56,6 +69,11 @@ namespace RedSwanStore.Data.Repositories
         }
 
         
+        /// <summary>
+        /// Get the game with specified url from the database.
+        /// </summary>
+        /// <param name="url">The url fo the game to get.</param>
+        /// <returns>The game model entity.</returns>
         public Game GetGameByUrl(string url)
         {
             Game result = dbContent.Games.FirstOrDefault(
@@ -68,6 +86,11 @@ namespace RedSwanStore.Data.Repositories
         }
 
         
+        /// <summary>
+        /// Get all games that support the specified OS from the database.
+        /// </summary>
+        /// <param name="osName">The OS the games must support.</param>
+        /// <returns>The collection of game models.</returns>
         public IEnumerable<Game> GetGamesByOs(string osName)
         {
             IEnumerable<Game> result = dbContent.Games
@@ -82,6 +105,10 @@ namespace RedSwanStore.Data.Repositories
         }
 
         
+        /// <summary>
+        /// Get all games that have discount from the database.
+        /// </summary>
+        /// <returns>The collection of game models.</returns>
         public IEnumerable<Game> GetGamesByDiscount()
         {
             IEnumerable<Game> result = dbContent.Games
@@ -96,6 +123,12 @@ namespace RedSwanStore.Data.Repositories
         }
 
         
+        /// <summary>
+        /// Get all games that match specified filter and specified price category from the database.
+        /// </summary>
+        /// <param name="filter">The filter the games must match.</param>
+        /// <param name="priceCategory">The price category the games must match.</param>
+        /// <returns>The collection of game models.</returns>
         public IEnumerable<Game> GetGamesByFilter(GameFilter filter, PriceCategory priceCategory)
         {
             IEnumerable<Game> result = GetAllGames();
@@ -106,6 +139,12 @@ namespace RedSwanStore.Data.Repositories
         }
         
 
+        /// <summary>
+        /// Get all games that match specified filter and specified price categories from the database.
+        /// </summary>
+        /// <param name="filter">The filter the games must match.</param>
+        /// <param name="priceCategories">The price categories the games must match.</param>
+        /// <returns>The collection of game models.</returns>
         public IEnumerable<Game> GetGamesByFilter(GameFilter filter, List<PriceCategory> priceCategories)
         {
             IEnumerable<Game> result = new List<Game>();
@@ -122,6 +161,11 @@ namespace RedSwanStore.Data.Repositories
         }
         
 
+        /// <summary>
+        /// Get all games whose title or developer contains specified substring.
+        /// </summary>
+        /// <param name="searchString">The substring to get games by.</param>
+        /// <returns>The collection of the game models.</returns>
         public IEnumerable<Game> SearchGames(string searchString)
         {
             IEnumerable<Game> result = (

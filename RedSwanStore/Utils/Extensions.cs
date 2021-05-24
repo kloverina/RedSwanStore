@@ -8,16 +8,34 @@ namespace RedSwanStore.Utils
 {
     public static class Extensions
     {
+        /// <summary>
+        /// Get the xml node with specified name from the collection of xml nodes. 
+        /// </summary>
+        /// <param name="lst"></param>
+        /// <param name="nodeName">The name of the xml node to get.</param>
+        /// <returns>The xml node having the same name as specified.</returns>
         public static XmlNode GetNode(this IEnumerable<XmlNode> lst, string nodeName)
         {
             return lst.First(n => n.Name == nodeName);
         }
         
+        /// <summary>
+        /// Get the inner text of the xml node with specified name.
+        /// </summary>
+        /// <param name="lst"></param>
+        /// <param name="nodeName">The name of the node to get the inner text of.</param>
+        /// <returns>The inner text of the xml node having the same name as specified as string.</returns>
         public static string GetNodeInnerText(this IEnumerable<XmlNode> lst, string nodeName)
         {
             return lst.GetNode(nodeName).InnerText;
         }
 
+        /// <summary>
+        /// Get the inner xml of the xml node with specified name.
+        /// </summary>
+        /// <param name="lst"></param>
+        /// <param name="nodeName">The name of the node to get the inner xml of.</param>
+        /// <returns>The inner xml of the xml node having the same name as specified as string.</returns>
         public static string GetNodeInnerXml(this IEnumerable<XmlNode> lst, string nodeName)
         {
             return lst.GetNode(nodeName).InnerXml;
