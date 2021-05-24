@@ -21,6 +21,8 @@ namespace RedSwanStore.Data.Models
         [Required] 
         public float Discount { get; set; }
         
+        public DateTime DiscountEndDate { get; set; }
+        
         [Required]
         public DateTime ReleaseDate { get; set; }
         

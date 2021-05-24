@@ -8,6 +8,7 @@
             <Cover type="field">https://i.ibb.co/Z8wLWRw/Cyberpunk-2077.png</Cover>
             <Price type="field">1999</Price>
             <Discount type="field">0</Discount>
+            <DiscountEndDate/>
             <ReleaseDate type="field">10/12/2020</ReleaseDate>
             <Rating type="field">76</Rating>
             <ShortDescription type="field"/>
@@ -99,6 +100,7 @@
             <Cover type="field">https://i.ibb.co/hddX2vN/hzd.png</Cover>
             <Price type="field">3100</Price>
             <Discount type="field">0</Discount>
+            <DiscountEndDate/>
             <ReleaseDate type="field">07/08/2020</ReleaseDate>
             <Rating type="field">89</Rating>
             <ShortDescription type="field">
@@ -197,6 +199,7 @@
             <Cover type="field">https://i.ibb.co/8g4WBWL/alien.png</Cover>
             <Price type="field">999</Price>
             <Discount type="field">0,75</Discount>
+            <DiscountEndDate>11/06/2021 18:00</DiscountEndDate>
             <ReleaseDate type="field">22/12/2020</ReleaseDate>
             <Rating type="field">81</Rating>
             <ShortDescription type="field">
@@ -275,6 +278,7 @@
             <Cover type="field">https://i.ibb.co/GsPmhzY/evan.png</Cover>
             <Price type="field">149</Price>
             <Discount type="field">0</Discount>
+            <DiscountEndDate/>
             <ReleaseDate type="field">01/12/2020</ReleaseDate>
             <Rating type="field">72</Rating>
             <ShortDescription type="field">

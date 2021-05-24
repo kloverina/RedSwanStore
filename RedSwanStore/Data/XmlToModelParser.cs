@@ -28,6 +28,12 @@ namespace RedSwanStore.Data
                 Discount = (float)Convert.ToDouble(
                     fieldsList.GetNodeInnerText(nameof(GameInfo.Discount)), CultureInfo.CurrentCulture
                 ),
+                DiscountEndDate = fieldsList.GetNodeInnerText(nameof(GameInfo.ReleaseDate)).Length == 0 ?
+                        DateTime.MinValue : 
+                        Convert.ToDateTime(
+                            fieldsList.GetNodeInnerText(nameof(GameInfo.ReleaseDate)),
+                            CultureInfo.CurrentCulture
+                        ),
                 ReleaseDate = Convert.ToDateTime(
                     fieldsList.GetNodeInnerText(nameof(GameInfo.ReleaseDate)), CultureInfo.CurrentCulture
                 ),
