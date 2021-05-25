@@ -273,6 +273,8 @@ namespace RedSwanStore.Data
                     UserUrl = fieldsList.GetNodeInnerText(nameof(User.UserUrl)),
                     Surname = fieldsList.GetNodeInnerText(nameof(User.Surname)),
                     Login = fieldsList.GetNodeInnerText(nameof(User.Login)),
+                    Email = fieldsList.GetNodeInnerText(nameof(User.Email)),
+                    GetNewsOnEmail = Convert.ToBoolean(fieldsList.GetNodeInnerText(nameof(User.GetNewsOnEmail))),
                     Password = fieldsList.GetNodeInnerText(nameof(User.Password)),
                     Photo = fieldsList.GetNodeInnerText(nameof(User.Photo)),
                     Balance = Convert.ToDecimal(

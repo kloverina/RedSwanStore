@@ -24,6 +24,13 @@ namespace RedSwanStore.Data.Models
         public string Login { get; set; }
         
         [Required]
+        [MinLength(5)]
+        public string Email { get; set; }
+        
+        [Required]
+        public bool GetNewsOnEmail { get; set; }
+        
+        [Required]
         [MinLength(8)]
         public string Password { get; set; }
         
