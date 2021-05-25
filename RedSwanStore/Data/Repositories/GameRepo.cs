@@ -41,9 +41,37 @@ namespace RedSwanStore.Data.Repositories
         /// Get all games from the database.
         /// </summary>
         /// <returns>The collection of game models.</returns>
-        public IEnumerable<Game> GetAllGames()
+        public IEnumerable<Game> GetAllGames(SortingTypes sortType = SortingTypes.Default)
         {
-            IEnumerable<Game> result = dbContent.Games.ToList();
+            IEnumerable<Game> result;
+
+            switch (sortType)
+            {
+                case SortingTypes.Default:
+                    result = dbContent.Games.ToList();
+                    break;
+                case SortingTypes.ReleaseDate:
+                    result = dbContent.Games
+                        .Include(g => g.GameInfo)
+                        .OrderByDescending(g => g.GameInfo.ReleaseDate);
+                    break;
+                case SortingTypes.Alphabetically:
+                    result = dbContent.Games
+                        .OrderBy(g => g.Name);
+                    break;
+                case SortingTypes.PriceDescending:
+                    result = dbContent.Games
+                        .Include(g => g.GameInfo)
+                        .OrderByDescending(g => g.GameInfo.Price);
+                    break;
+                case SortingTypes.PriceAscending:
+                    result = dbContent.Games
+                        .Include(g => g.GameInfo)
+                        .OrderBy(g => g.GameInfo.Price);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(sortType), sortType, null);
+            }
 
             foreach (Game game in result)
                 LoadDataFor(game);

@@ -3,6 +3,14 @@ using RedSwanStore.Data.Models;
 
 namespace RedSwanStore.Data.Interfaces
 {
+    public enum SortingTypes {
+        Default,
+        ReleaseDate,
+        Alphabetically,
+        PriceDescending,
+        PriceAscending
+    };
+    
     /// <summary>
     /// An interface to work with database Game table.
     /// </summary>
@@ -12,7 +20,7 @@ namespace RedSwanStore.Data.Interfaces
         /// Get all games from the table as collection.
         /// </summary>
         /// <returns>The collection of game models.</returns>
-        public IEnumerable<Game> GetAllGames();
+        public IEnumerable<Game> GetAllGames(SortingTypes sortType = SortingTypes.Default);
 
         /// <summary>
         /// Get specified game by its name.
