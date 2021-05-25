@@ -19,14 +19,14 @@ namespace RedSwanStore.Data.Interfaces
         /// </summary>
         /// <param name="name">The name of the game to get.</param>
         /// <returns>The game model.</returns>
-        public Game? GetGameByName(string name);
+        public Game GetGameByName(string name);
 
         /// <summary>
         /// Get specified game by its url.
         /// </summary>
         /// <param name="url">The url of the game to get.</param>
         /// <returns>The game model.</returns>
-        public Game? GetGameByUrl(string url);
+        public Game GetGameByUrl(string url);
 
         /// <summary>
         /// Get all games that match specified Os name.
