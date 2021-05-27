@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Users>
+    <User>
+        <Name>RedSwanStore</Name>
+        <UserUrl>admin</UserUrl>
+        <Surname>Admin</Surname>
+        <Login>admin</Login>
+        <Email>alienterrorblade@gmail.com</Email>
+        <GetNewsOnEmail>true</GetNewsOnEmail>
+        <Password>admin</Password>
+        <Photo>https://i.ibb.co/D8TMdPm/Admin-Photo.jpg</Photo>
+        <Balance>100000</Balance>
+        <Library/>
+    </User>
+</Users>

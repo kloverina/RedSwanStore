@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Filters>
+    <Features>
+        <Feature><Name>Одиночная</Name></Feature>
+        <Feature><Name>Многопользовательская</Name></Feature>
+        <Feature><Name>Кооперативная</Name></Feature>
+        <Feature><Name>Виртуальная реальность</Name></Feature>
+        <Feature><Name>Поддержка контроллеров</Name></Feature>
+    </Features>
+    
+    <Genres>
+        <Genre><Name>Приключение</Name></Genre>
+        <Genre><Name>Инди</Name></Genre>
+        <Genre><Name>Ролевая</Name></Genre>
+        <Genre><Name>Стратегия</Name></Genre>
+        <Genre><Name>Шутер</Name></Genre>
+        <Genre><Name>Симулятор</Name></Genre>
+        <Genre><Name>Головоломка</Name></Genre>
+        <Genre><Name>Хоррор</Name></Genre>
+        <Genre><Name>Экшн</Name></Genre>
+        <Genre><Name>Открытый мир</Name></Genre>
+        <Genre><Name>Казуальная</Name></Genre>
+    </Genres>
+    
+    <PriceCategories>
+        <PriceCategory>
+            <Name>Очень многа</Name>
+            <MinPrice>3000,01</MinPrice>
+            <MaxPrice>1000000000000</MaxPrice>
+        </PriceCategory>
+        <PriceCategory>
+            <Name>Тоже много но поменьше</Name>
+            <MinPrice>1000,01</MinPrice>
+            <MaxPrice>3000</MaxPrice>
+        </PriceCategory>
+        <PriceCategory>
+            <Name>Реально купить без продажи почки</Name>
+            <MinPrice>500,01</MinPrice>
+            <MaxPrice>1000</MaxPrice>
+        </PriceCategory>
+        <PriceCategory>
+            <Name>Ниже среднего</Name>
+            <MinPrice>150,01</MinPrice>
+            <MaxPrice>500</MaxPrice>
+        </PriceCategory>
+        <PriceCategory>
+            <Name>Цена для галочки</Name>
+            <MinPrice>0,01</MinPrice>
+            <MaxPrice>150</MaxPrice>
+        </PriceCategory>
+        <PriceCategory>
+            <Name>Бесплатно</Name>
+            <MinPrice>0,00</MinPrice>
+            <MaxPrice>0,00</MaxPrice>
+        </PriceCategory>
+    </PriceCategories>
+</Filters>

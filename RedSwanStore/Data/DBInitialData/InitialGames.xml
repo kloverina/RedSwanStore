@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Games>
+    <Game type="model">
+        <Name type="field">Cyperpunk 2077</Name>
+        <GameUrl type="field">cyberpunk-2077</GameUrl>
+        <Developer type="field">CD PROJECT RED</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/Z8wLWRw/Cyberpunk-2077.png</Cover>
+            <Price type="field">1999</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">10/12/2020</ReleaseDate>
+            <Rating type="field">76</Rating>
+            <ShortDescription type="field"/>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">Найт-Сити изменит вас навсегда</h2>
+                <div class="description__text">
+                    Cyberpunk 2077 — приключенческая ролевая игра, действие которой происходит в мегаполисе Найт-Сити, 
+                    где власть, роскошь и модификации тела ценятся выше всего. Вы играете за V, наёмника в поисках 
+                    уникального устройства, позволяющего обрести бессмертие. Вы сможете менять киберимпланты, навыки и стиль игры 
+                    своего персонажа, исследуя огромный открытый мир, где ваши поступки влияют на ход сюжета и всё, что вас окружает.
+                </div>
+                <div class="description__subtitle">Играйте за городского наёмника</div>
+                <div class="description__text">Станьте киберпанком — оснащённым имплантами наёмником — и сделайте себе имя на улицах Найт-Сити.</div>
+                <div class="description__subtitle">Живите в городе будущего</div>
+                <div class="description__text">Исследуйте огромный мир Найт-Сити, который выглядит ярче, сложнее и глубже всего, что вы видели раньше.</div>
+                <div class="description__subtitle">Добудьте имплант, дающий вечную жизнь</div>
+                <div class="description__text">Возьмитесь за самое опасное задание в своей жизни и найдите прототип импланта, позволяющего обрести бессмертие.</div>
+                <div class="description__text">Цифровые бонусы включают в себя:</div>
+                <ul class="description__list">
+                    <li class="description__list-item"><span>оригинальный саундтрек;</span></li>
+                    <li class="description__list-item"><span>арт-буклет с иллюстрациями к игре;</span></li>
+                    <li class="description__list-item"><span>цифровой комикс Cyberpunk 2077: Your Voice;</span></li>
+                    <li class="description__list-item"><span>справочник по вселенной игры Cyberpunk 2020;</span></li>
+                    <li class="description__list-item"><span>обои для рабочего стола и мобильного телефона.</span></li>
+                </ul>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A. © CD PROJEKT S.A. All rights reserved.
+                        All other copyrights and trademarks are the property of their respective owners.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://regulations.cdprojektred.com/en/privacy_policy</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core i5-3570K или AMD FX-8310</MinCpu>
+            <MaxCpu type="field">Intel Core i7-4790 или AMD Ryzen 3 3200G</MaxCpu>
+            <MinRamMB type="field">8192</MinRamMB>
+            <MaxRamMB type="field">12288</MaxRamMB>
+            <DiskSpaceMB type="field">71680</DiskSpaceMB>
+            <DirectX type="field">12</DirectX>
+            <MinGpu type="field">NVIDIA GeForce GTX 780 или AMD Radeon RX 470</MinGpu>
+            <MaxGpu type="field">NVIDIA GeForce GTX 1060 или AMD Radeon R9 Fury</MaxGpu>
+            <SupportedOses type="field">Windows 10</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field">
+                английский, французский, немецкий, итальянский, испанский (Испания), японский, польский, 
+                португальский (Бразилия), русский, китайский (упрощённый), корейский
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                испанский (Мексика), тайский, чешский, венгерский, китайский (традиционный), арабский, турецкий
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/fHZRFVr/cb1.png,
+                https://i.ibb.co/Zh1S1qf/cb2.png,
+                https://i.ibb.co/9q7L0NN/cb3.png,
+                https://i.ibb.co/h252PXX/cb4.png,
+                https://i.ibb.co/dQDPdCz/cb5.png,
+                https://i.ibb.co/2n3x0Bv/cb6.png
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=qIcTM8WXFjk,
+                https://www.youtube.com/watch?v=aSrFWinrkeQ,
+                https://www.youtube.com/watch?v=BO8lX3hDU30
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Ролевая</li>
+                <li>Шутер</li>
+                <li>Открытый мир</li>
+                <li>Экшн</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+                <li>Поддержка контроллеров</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Horizon Zero Dawn™ Complete Edition</Name>
+        <GameUrl type="field">horizon-zero-down-complete-edition</GameUrl>
+        <Developer type="field">Guerrilla | Sony Interactive Entertainment</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/hddX2vN/hzd.png</Cover>
+            <Price type="field">3100</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">07/08/2020</ReleaseDate>
+            <Rating type="field">89</Rating>
+            <ShortDescription type="field">
+                Отправьтесь вместе с Элой в легендарное путешествие, чтобы разгадать тайны мира будущего, которым правят 
+                смертоносные машины. Охотьтесь и сражайтесь, совершайте тактические манёвры и проводите разрушительные атаки,
+                исследуя чарующий открытый мир этого удостоенного многих наград ролевого экшена!
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">Мир больше не принадлежит людям</h2>
+                <div class="description__text">
+                    Отправьтесь вместе с Элой в легендарное путешествие, чтобы разгадать тайны мира, которым правят смертоносные машины.
+                </div>
+                <div class="description__text">
+                    Будучи изгоем, отвергнутым своим племенем, юная охотница сражается, чтобы выяснить своё прошлое, 
+                    узнать свою судьбу и остановить будущую катастрофу.
+                </div>
+                <div class="description_text">
+                    Исследуйте открытый мир, изобилующий дикой природой и полный опасностей. Сражайтесь с уникальными 
+                    машинами и враждебными племенами, совершая тактические манёвры и проводя разрушительные атаки.
+                </div>
+                <div class="description__text">
+                    Horizon Zero Dawn™ — это удостоенный многих наград ролевой экшен, а его издание Complete Edition для ПК
+                    включает большое расширение The Frozen Wilds с новыми землями, навыками, оружием и машинами.
+                </div>
+                <div class="description__title">Включает в себя:</div>
+                <ul class="description__list">
+                    <li class="description__list-item"><span>Horizon Zero Dawn;</span></li>
+                    <li class="description__list-item"><span>расширение The Frozen Wilds;</span></li>
+                    <li class="description__list-item"><span>костюм следопыта шторма племени Карха и мощный лук племени Карха;</span></li>
+                    <li class="description__list-item"><span>набор торговца племени Карха;</span></li>
+                    <li class="description__list-item"><span>костюм первопроходца Банук и бронебойный лук племени Банук;</span></li>
+                    <li class="description__list-item"><span>набор путешественницы племени Банук;</span></li>
+                    <li class="description__list-item"><span>набор хранительницы племени Нора.</span></li>
+                    <li class="description__list-item"><span>Цифровой артбук</span></li>
+                </ul>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ На игру распространяется действие лицензии https://www.playstation.com/en-us/legal/terms-of-use/op/
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://www.playstation.com/en-us/legal/terms-of-use/op-privacy-policy/</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core i5-2500K@3.3GHz/AMD FX 6300@3.5GHz</MinCpu>
+            <MaxCpu type="field">Intel Core i7-4770K@3.5GHz/Ryzen 5 1500X@3.5GHz</MaxCpu>
+            <MinRamMB type="field">8192</MinRamMB>
+            <MaxRamMB type="field">16384</MaxRamMB>
+            <DiskSpaceMB type="field">102400</DiskSpaceMB>
+            <DirectX type="field">12</DirectX>
+            <MinGpu type="field">Nvidia GeForce GTX 780 (3 GB)/AMD Radeon R9 290 (4GB)</MinGpu>
+            <MaxGpu type="field">Nvidia GeForce GTX 1060 (6 GB)/AMD Radeon RX 580 (8GB) </MaxGpu>
+            <SupportedOses type="field">Windows 10 64-bits</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field">
+                английский, итальянский, испанский (Испания), французский, немецкий, арабский, португальский,
+                польский, португальский (Бразилия), русский, испанский (Латинская Америка)
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                норвежский, китайский (упрощенный), шведский, китайский (традиционный), датский, финский, корейский,
+                японский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/PtQSGgc/hzd1.png,
+                https://i.ibb.co/hWNW0Tb/hzd2.png,
+                https://i.ibb.co/p4twFpG/hzd3.png,
+                https://i.ibb.co/fpv7sjc/hzd4.png,
+                https://i.ibb.co/WFSP7dX/hzd5.png,
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=R5pYpZPws1c,https://www.youtube.com/watch?v=u4-FCsiF5x4
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Экшн</li>
+                <li>Ролевая</li>
+                <li>Открытый мир</li>
+                <li>Приключение</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+                <li>Поддержка контроллеров</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Alien: Isolation</Name>
+        <GameUrl type="field">alien-isolation</GameUrl>
+        <Developer type="field">Creative Assembly | SEGA</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/8g4WBWL/alien.png</Cover>
+            <Price type="field">999</Price>
+            <Discount type="field">0,75</Discount>
+            <DiscountEndDate>11/06/2021 18:00</DiscountEndDate>
+            <ReleaseDate type="field">22/12/2020</ReleaseDate>
+            <Rating type="field">81</Rating>
+            <ShortDescription type="field">
+                Ощутите подлинный страх в мире Alien: Isolation — триллере с атмосферой ужаса и смертельной угрозы. Создано на базе CATHODE™.
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">Как вы будете выживать?</h2>
+                <div class="description__text">
+                    Покидая Землю, Эллен Рипли обещала дочери Аманде, что вернётся домой к её 11-летию. Но этого так и не случилось.
+                </div>
+                <div class="description__text">
+                    Пятнадцать лет спустя Аманде Рипли становится известно, что был найден бортовой самописец с корабля,
+                    на котором находилась её мать. Аманда попадает на борт космической станции «Севастополь», чтобы наконец раскрыть тайну 
+                    исчезновения своей матери, однако она даже и не подозревает, что её ждёт.
+                </div>
+                <div class="description_text">
+                    Отправляйтесь в леденящий кровь квест на выживание, пробираясь по лабиринтам станции «Севастополь».
+                    У вас нет ни подготовки, ни снаряжения, а чтобы выжить, придётся проявить смекалку и смелость.
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        © 2020 Fox. © SEGA. Developed by The Creative Assembly Limited.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://www.sega.co.uk/Privacy</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core 2 Duo E8500 с частотой 3,16 ГГц</MinCpu>
+            <MaxCpu type="field">Четырёхъядерный AMD Phenom II X4 955 с частотой 3,2 ГГц или четырёхъядерный Intel Core 2 Quad Q9650 с частотой 3,0 ГГц</MaxCpu>
+            <MinRamMB type="field">4096</MinRamMB>
+            <MaxRamMB type="field">8192</MaxRamMB>
+            <DiskSpaceMB type="field">35840</DiskSpaceMB>
+            <DirectX type="field">11</DirectX>
+            <MinGpu type="field">1 ГБ видеопамяти (AMD Radeon HD 5550 или NVIDIA GeForce GT 430)</MinGpu>
+            <MaxGpu type="field">2 ГБ видеопамяти (AMD Radeon R9 200 Series или NVIDIA GeForce GTX660)</MaxGpu>
+            <SupportedOses type="field">Windows 7 (64-разрядная)</SupportedOses>
+            <ExtraInfo>Требуется учетная запись Red Swan</ExtraInfo>
+            <SupportedVoiceLanguages type="field">
+                английский, итальянский, испанский (Испания), французский, немецкий, португальский,
+                португальский (Бразилия), русский
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                чешский, польский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/wdRZDJJ/alien1.png,
+                https://i.ibb.co/zNXWBpg/alien2.png,
+                https://i.ibb.co/SRTfj3K/alien3.png,
+                https://i.ibb.co/3hdSxFR/alien4.png
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=7h0cgmvIrZw
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Экшн</li>
+                <li>Хоррор</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+                <li>Виртуальная реальность</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Evan's Remains</Name>
+        <GameUrl type="field">evans-remains</GameUrl>
+        <Developer type="field">Maitan69 | Whitethorn Games</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/GsPmhzY/evan.png</Cover>
+            <Price type="field">149</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">01/12/2020</ReleaseDate>
+            <Rating type="field">72</Rating>
+            <ShortDescription type="field">
+                Спустя годы после исчезновения мальчика-гения Эвана от него приходит странное письмо. Эван хочет,
+                чтобы на его поиски отправили девушку по имени Дисис. Играя за Дисис, вам придётся решить череду
+                заковыристых загадок, раскрыть тайну и наконец-то вернуть Эвана домой.
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">Об этой игре</h2>
+                <div class="description__text">
+                    Evan's Remains — это приключенческая загадка, в которой вы ищите мальчика по имени Эван. 
+                    Игра сочетает в себе платформенные загадки на логику и подачу сюжета в стиле японских визуальных новелл.
+                </div>
+                <div class="description__text">
+                    Каждый раз, когда игрок решает две или три загадки, он узнаёт кусочек истории, а в игру вводятся 
+                    новые игровые механики. Сложность загадок состоит в том, что они заставляют игрока мыслить логически, 
+                    а не полагаться чисто на рефлексы. Со временем сложность возрастает, а загадки становятся всё хитрее, 
+                    сочетая в себе сразу несколько из уже известных игровых механик.
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        Whitethorn Digital &amp; Matías Schmied 2020
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://www.whitethorndigital.com/privacy</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core2 Quad Q8200 (4 * 2330) / AMD Athlon II X4 645 AM3 (4 * 3100)</MinCpu>
+            <MaxCpu type="field">Intel Core2 Quad Q9400 (4 * 2666) / AMD Phenom II X4 965 (4 * 3400)</MaxCpu>
+            <MinRamMB type="field">4096</MinRamMB>
+            <MaxRamMB type="field">8192</MaxRamMB>
+            <DiskSpaceMB type="field">500</DiskSpaceMB>
+            <DirectX type="field">10</DirectX>
+            <MinGpu type="field">Совместимая с DirectX 10 видеокарта, минимум 512 МБ видеопамяти</MinGpu>
+            <MaxGpu type="field">GeForce GTS 450 (1024 МБ) / Radeon HD</MaxGpu>
+            <SupportedOses type="field">Windows Vista/7/8/8.1/10 86- или 64-разрядная</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field">
+                английский
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                английский, французский, итальянский, немецкий, испанский (Латинская Америка), японский, 
+                португальский (Бразилия), китайский (упрощенный), русский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/nLRzL7J/evan1.png,
+                https://i.ibb.co/5MZcyZF/evan2.png,
+                https://i.ibb.co/VjVbnN1/evan3.png,
+                https://i.ibb.co/fSdvqnC/evan4.png,
+                https://i.ibb.co/PQBfQTC/evan5.png
+            </Screenshots>
+            <Trailers type="field"/>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Казуальная</li>
+                <li>Головоломка</li>
+                <li>Приключение</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+            </Features>
+        </GameFilter>
+    </Game>
+</Games>
