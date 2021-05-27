@@ -108,12 +108,19 @@ h4{
 
   &__browse {
     flex: 1 1 80%;
+    
 
   }
 
   &__filter {
     flex: 1 0 20%;
   }
+  
+  &__library{
+    //flex: 1 1 100%;
+    //background-color: #7d0011;
+  }
+  
 
   //сортировка
   .dropdown {
@@ -134,7 +141,8 @@ h4{
         border: 1px solid white;
       }
     }
-
+    
+    
     h4 {
       color: rgba(245, 245, 245, 0.6);
       padding: 0;
@@ -175,20 +183,31 @@ h4{
     visibility: hidden;
   }
 
+  //library
+  .section_dropdown.library{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    .dropdown{
+      //background-color: white;
+    }
+  }
+
 }
 
 //область под все карточки с играми
 .games {
-
   &__item {
     flex: 0 0;
-    margin: 0 0 50px;
+    margin: 0 20px 50px 0; 
+    
     font-family: 'Brutal', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #f5f5f5;
     line-height: 20px;
-
+    
   }
 
   display: flex;
@@ -197,13 +216,22 @@ h4{
   flex-flow: row wrap;
 }
 
+//карточки в библиотеке
+.games.library{
+  
+  
+  .games__item{
+    
+    
+  }
+  
+}
 //карточка игры
 .game-card {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: flex-start;
-  margin-right: 20px;
   width: 100%;
 
   //изображение игры

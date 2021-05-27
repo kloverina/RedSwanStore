@@ -520,7 +520,11 @@ h4 {
 .game-catalog .dropdown__submenu.hidden {
   visibility: hidden;
 }
-
+.game-catalog .section_dropdown.library {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 .games {
   display: flex;
   justify-content: flex-start;
@@ -529,7 +533,7 @@ h4 {
 }
 .games__item {
   flex: 0 0;
-  margin: 0 0 50px;
+  margin: 0 20px 50px 0;
   font-family: "Brutal", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -542,7 +546,6 @@ h4 {
   flex-direction: column;
   justify-content: stretch;
   align-items: flex-start;
-  margin-right: 20px;
   width: 100%;
 }
 .game-card__image {
