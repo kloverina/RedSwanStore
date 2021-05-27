@@ -20,6 +20,6 @@ namespace RedSwanStore.Data.Interfaces
         /// </summary>
         /// <param name="name">The name of the feature to get.</param>
         /// <returns>The feature model.</returns>
-        public Feature GetFeatureByName(string name);
+        public Feature? GetFeatureByName(string name);
     }
 }

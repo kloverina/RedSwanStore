@@ -85,13 +85,14 @@ namespace RedSwanStore.Data.Repositories
         /// </summary>
         /// <param name="name">The name of the game to get.</param>
         /// <returns>The game model entity.</returns>
-        public Game GetGameByName(string name)
+        public Game? GetGameByName(string name)
         {
-            Game result = dbContent.Games.FirstOrDefault(
+            Game? result = dbContent.Games.FirstOrDefault(
                 g => g.Name == name
             );
             
-            LoadDataFor(result);
+            if (result != null)
+                LoadDataFor(result);
 
             return result;
         }
@@ -102,13 +103,14 @@ namespace RedSwanStore.Data.Repositories
         /// </summary>
         /// <param name="url">The url fo the game to get.</param>
         /// <returns>The game model entity.</returns>
-        public Game GetGameByUrl(string url)
+        public Game? GetGameByUrl(string url)
         {
-            Game result = dbContent.Games.FirstOrDefault(
+            Game? result = dbContent.Games.FirstOrDefault(
                 g => g.GameUrl == url
             );
 
-            LoadDataFor(result);
+            if (result != null)
+                LoadDataFor(result);
             
             return result;
         }

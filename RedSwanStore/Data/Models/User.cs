@@ -39,6 +39,6 @@ namespace RedSwanStore.Data.Models
         [Column(TypeName = "money")]
         public decimal Balance { get; set; }
         
-        public UserLibrary Library { get; set; } // 'single to single' relation with Library
+        public UserLibrary? Library { get; set; } // 'single to single' relation with Library
     }
 }

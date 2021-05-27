@@ -19,14 +19,14 @@ namespace RedSwanStore.Data.Interfaces
         /// </summary>
         /// <param name="url">The url of the user to get.</param>
         /// <returns>The user model.</returns>
-        public User GetUserByUrl(string url);
+        public User? GetUserByUrl(string url);
 
         /// <summary>
         /// Get specified user from the database by their email.
         /// </summary>
         /// <param name="email">The email of the user to get.</param>
         /// <returns>The user model.</returns>
-        public User GetUserByEmail(string email);
+        public User? GetUserByEmail(string email);
 
         /// <summary>
         /// Change the user's name in the database to the specified one.

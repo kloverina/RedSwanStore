@@ -27,9 +27,9 @@ namespace RedSwanStore.Data.Repositories
             return result;
         }
 
-        public Feature GetFeatureByName(string name)
+        public Feature? GetFeatureByName(string name)
         {
-            Feature result = dbContent.Features.FirstOrDefault(
+            Feature? result = dbContent.Features.FirstOrDefault(
                 f => f.Name == name
             );
 

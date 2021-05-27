@@ -73,11 +73,11 @@ namespace RedSwanStore.Data
         }
 
         
-        private static List<PriceCategory> priceCategories;
-        private static List<Feature> features;
-        private static List<Genre> genres;
-        private static List<Game> games;
-        private static List<User> users;
+        private static List<PriceCategory>? priceCategories;
+        private static List<Feature>? features;
+        private static List<Genre>? genres;
+        private static List<Game>? games;
+        private static List<User>? users;
 
 
         /// <summary>

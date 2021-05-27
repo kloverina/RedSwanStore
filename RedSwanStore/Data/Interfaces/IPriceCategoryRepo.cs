@@ -19,6 +19,6 @@ namespace RedSwanStore.Data.Interfaces
         /// </summary>
         /// <param name="name">The name of the category to get.</param>
         /// <returns>The price category model.</returns>
-        PriceCategory GetCategoryByName(string name);
+        PriceCategory? GetCategoryByName(string name);
     }
 }

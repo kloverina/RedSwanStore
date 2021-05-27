@@ -27,9 +27,9 @@ namespace RedSwanStore.Data.Repositories
             return result;
         }
 
-        public PriceCategory GetCategoryByName(string name)
+        public PriceCategory? GetCategoryByName(string name)
         {
-            PriceCategory result = dbContent.PriceCategories.FirstOrDefault(
+            PriceCategory? result = dbContent.PriceCategories.FirstOrDefault(
                 pc => pc.Name == name
             );
 

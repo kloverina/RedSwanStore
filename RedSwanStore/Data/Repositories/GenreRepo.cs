@@ -27,9 +27,9 @@ namespace RedSwanStore.Data.Repositories
             return result;
         }
 
-        public Genre GetGenreByName(string name)
+        public Genre? GetGenreByName(string name)
         {
-            Genre result = dbContent.Genres.FirstOrDefault(
+            Genre? result = dbContent.Genres.FirstOrDefault(
                 g => g.Name == name
             );
 

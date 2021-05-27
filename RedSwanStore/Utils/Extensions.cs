@@ -48,11 +48,8 @@ namespace RedSwanStore.Utils
         /// <param name="game"></param>
         /// <param name="matchFilter">The filter to check.</param>
         /// <returns>True if this game has the same filter as the specified one.</returns>
-        public static bool IsMatchFilter(this Game game, GameFilter matchFilter)
+        public static bool IsMatchFilter(this Game game, GameFilter? matchFilter)
         {
-            if (game is null)
-                throw new ArgumentNullException(nameof(game));
-            
             if (matchFilter is null)
                 return true;
             
@@ -81,11 +78,8 @@ namespace RedSwanStore.Utils
         /// <param name="game"></param>
         /// <param name="category">The price category to check.</param>
         /// <returns>True if this game's price is in specified price category.</returns>
-        public static bool IsMatchPriceCategory(this Game game, PriceCategory category)
+        public static bool IsMatchPriceCategory(this Game game, PriceCategory? category)
         {
-            if (game is null)
-                throw new ArgumentNullException(nameof(game));
-            
             if (category is null)
                 return true;
             

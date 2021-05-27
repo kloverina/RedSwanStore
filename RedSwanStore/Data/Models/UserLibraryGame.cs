@@ -7,10 +7,10 @@ namespace RedSwanStore.Data.Models
     {
         public int Id { get; set; }
         
-        public UserLibrary UserLibrary { get; set; }
+        public UserLibrary? UserLibrary { get; set; }
         public int UserLibraryId { get; set; } // 'single to many' relation with UserLibrary
         
-        public Game Game { get; set; }
+        public Game? Game { get; set; }
         public int GameId { get; set; } // 'single to many' relation with Game
         
         [Required]

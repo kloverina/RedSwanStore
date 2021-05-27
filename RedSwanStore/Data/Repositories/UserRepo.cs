@@ -31,7 +31,7 @@ namespace RedSwanStore.Data.Repositories
                 dbContent.Users.Update(user);
                 dbContent.SaveChanges();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
@@ -49,24 +49,26 @@ namespace RedSwanStore.Data.Repositories
             return result;
         }
 
-        public User GetUserByUrl(string url)
+        public User? GetUserByUrl(string url)
         {
-            User result = dbContent.Users.FirstOrDefault(
+            User? result = dbContent.Users.FirstOrDefault(
                 u => u.UserUrl == url
             );
             
-            LoadDataFor(result);
+            if (result != null)
+                LoadDataFor(result);
 
             return result;
         }
 
-        public User GetUserByEmail(string email)
+        public User? GetUserByEmail(string email)
         {
-            User result = dbContent.Users.FirstOrDefault(
+            User? result = dbContent.Users.FirstOrDefault(
                 u => u.Email == email
             );
             
-            LoadDataFor(result);
+            if (result != null)
+                LoadDataFor(result);
 
             return result;
         }
@@ -249,7 +251,7 @@ namespace RedSwanStore.Data.Repositories
                 dbContent.Users.Add(user);
                 dbContent.SaveChanges();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
