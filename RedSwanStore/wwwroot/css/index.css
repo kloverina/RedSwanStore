@@ -402,7 +402,6 @@ body {
 
   .container {
     max-width: 680px;
-    margin-right: 40px;
   }
 
   .game-card__image {
@@ -466,7 +465,7 @@ h4 {
   min-height: 500px;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin: 30px auto 0;
 }
 .game-catalog__browse {
   flex: 1 1 80%;
@@ -525,7 +524,9 @@ h4 {
   flex-direction: row;
   justify-content: flex-start;
 }
+
 .games {
+  margin: 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -533,7 +534,7 @@ h4 {
 }
 .games__item {
   flex: 0 0;
-  margin: 0 20px 50px 0;
+  margin: 0 10px 50px 10px;
   font-family: "Brutal", sans-serif;
   font-weight: 400;
   font-size: 14px;
