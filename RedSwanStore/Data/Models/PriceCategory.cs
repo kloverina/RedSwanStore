@@ -12,6 +12,10 @@ namespace RedSwanStore.Data.Models
         public string Name { get; set; }
         
         [Required]
+        [StringLength(50, MinimumLength = 1)]
+        public string UrlId { get; set; }
+        
+        [Required]
         [Column(TypeName = "money")]
         public decimal MinPrice { get; set; }
         

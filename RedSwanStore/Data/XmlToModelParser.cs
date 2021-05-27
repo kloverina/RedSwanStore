@@ -179,7 +179,8 @@ namespace RedSwanStore.Data
                 from XmlNode featureNode in featuresRoot
                 select featureNode.ChildNodes.Cast<XmlNode>().ToList() into fieldsList
                 select new Feature {
-                    Name = fieldsList.GetNodeInnerText(nameof(Feature.Name))
+                    Name = fieldsList.GetNodeInnerText(nameof(Feature.Name)),
+                    UrlId = fieldsList.GetNodeInnerText(nameof(Feature.UrlId))
                 }
             ).ToList();
 
@@ -209,7 +210,8 @@ namespace RedSwanStore.Data
                 from XmlNode genreNode in genresRoot
                 select genreNode.ChildNodes.Cast<XmlNode>().ToList() into fieldsList
                 select new Genre {
-                    Name = fieldsList.GetNodeInnerText(nameof(Genre.Name))
+                    Name = fieldsList.GetNodeInnerText(nameof(Genre.Name)),
+                    UrlId = fieldsList.GetNodeInnerText(nameof(Genre.UrlId))
                 }
             ).ToList();
 
@@ -241,6 +243,7 @@ namespace RedSwanStore.Data
                 select priceCategoryNode.ChildNodes.Cast<XmlNode>().ToList() into fieldsList
                 select new PriceCategory {
                     Name = fieldsList.GetNodeInnerText(nameof(PriceCategory.Name)),
+                    UrlId = fieldsList.GetNodeInnerText(nameof(PriceCategory.UrlId)),
                     MinPrice = Convert.ToDecimal(
                         fieldsList.GetNodeInnerText(nameof(PriceCategory.MinPrice)),
                         CultureInfo.CurrentCulture
