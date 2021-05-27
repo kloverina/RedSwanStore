@@ -402,7 +402,6 @@ body {
 
   .container {
     max-width: 680px;
-    margin-right: 40px;
   }
 
   .game-card__image {
@@ -466,7 +465,7 @@ h4 {
   min-height: 500px;
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin: 30px auto 0;
 }
 .game-catalog__browse {
   flex: 1 1 80%;
@@ -479,6 +478,7 @@ h4 {
   width: max-content;
   position: relative;
   margin-bottom: 15px;
+  margin-right: 20px;
 }
 .game-catalog .dropdown .dropdown_button {
   padding: 0 15px 0 5px;
@@ -520,8 +520,14 @@ h4 {
 .game-catalog .dropdown__submenu.hidden {
   visibility: hidden;
 }
+.game-catalog .section_dropdown.library {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
 
 .games {
+  margin: 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -529,7 +535,7 @@ h4 {
 }
 .games__item {
   flex: 0 0;
-  margin: 0 0 50px;
+  margin: 0 10px 50px 10px;
   font-family: "Brutal", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -542,7 +548,6 @@ h4 {
   flex-direction: column;
   justify-content: stretch;
   align-items: flex-start;
-  margin-right: 20px;
   width: 100%;
 }
 .game-card__image {

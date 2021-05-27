@@ -33,13 +33,13 @@
 <div class="container">
   <div class="game-catalog">
     <section class="game-catalog__browse section">
-      <!--добавить дропдаун-->
+      
       <div class="section_dropdown">
         <div class="dropdown">
           <button class="dropdown_button" aria-expanded="false" aria-haspopup="true">
-            <h4>Сортировка:</h4><span class="dropdown_button__toggleLabel">Дата выхода и еще слово</span>
+            <h4>Сортировка:</h4><span class="dropdown_button__toggleLabel">Дата выхода</span>
           </button>
-             
+
           <div class="dropdown__submenu submenu hidden">
             @foreach (var item in sortingItems)
             {
@@ -48,15 +48,15 @@
           </div>
         </div>
       </div>
-      <!--тут будут сами игры (миксин?)-->
+      <!-- одна игра -->
       <div class="section__games games">
-        
+
         @foreach (var gamecard in gameCards)
         {
           <div class="games__item">
             <a class="game-card" href="#game-page">
               <div class="game-card__image">
-                <!-- должна принимать картинку<img> -->
+                <!-- картинка -->
               </div>
               <div class="game-card__title"> @gamecard.Title </div>
               <div class="game-card__dev"> @gamecard.Developer </div>
@@ -64,8 +64,8 @@
             </a>
           </div>
         }
-  
-        
+
+
       </div>
     </section>
     <aside class="game-catalog__filter filter">
