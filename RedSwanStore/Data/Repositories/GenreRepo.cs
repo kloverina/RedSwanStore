@@ -35,5 +35,14 @@ namespace RedSwanStore.Data.Repositories
 
             return result;
         }
+        
+        public Genre? GetGenreByUrlId(string urlId)
+        {
+            Genre? result = dbContent.Genres.FirstOrDefault(
+                g => g.UrlId == urlId
+            );
+
+            return result;
+        }
     }
 }

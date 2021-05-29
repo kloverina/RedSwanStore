@@ -35,5 +35,14 @@ namespace RedSwanStore.Data.Repositories
 
             return result;
         }
+
+        public Feature? GetFeatureByUrlId(string urlId)
+        {
+            Feature? result = dbContent.Features.FirstOrDefault(
+                f => f.UrlId == urlId
+            );
+
+            return result;
+        }
     }
 }

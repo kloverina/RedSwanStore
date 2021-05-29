@@ -35,5 +35,15 @@ namespace RedSwanStore.Data.Repositories
 
             return result;
         }
+        
+        
+        public PriceCategory? GetCategoryByUrlId(string urlId)
+        {
+            PriceCategory? result = dbContent.PriceCategories.FirstOrDefault(
+                pc => pc.UrlId == urlId
+            );
+
+            return result;
+        }
     }
 }

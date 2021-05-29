@@ -21,5 +21,12 @@ namespace RedSwanStore.Data.Interfaces
         /// <param name="name">The name of the genre to get.</param>
         /// <returns>The genre model.</returns>
         public Genre? GetGenreByName(string name);
+
+        /// <summary>
+        /// Get specified genre by its url id.
+        /// </summary>
+        /// <param name="urlId">The url id of the genre to get.</param>
+        /// <returns>The genre model.</returns>
+        public Genre? GetGenreByUrlId(string urlId);
     }
 }
