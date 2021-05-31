@@ -20,7 +20,7 @@ namespace RedSwanStore.Data.Interfaces
         /// Get all games from the table as collection.
         /// </summary>
         /// <returns>The collection of game models.</returns>
-        public IEnumerable<Game> GetAllGames(SortingTypes sortType = SortingTypes.Default);
+        public IEnumerable<Game> GetAllGames();
 
         /// <summary>
         /// Get specified game by its name.

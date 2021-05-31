@@ -1,34 +1,5 @@
-﻿
-
-@{ //stuff
-   var sortingItems = new List<string> {"Актуальность", "Дата выхода", "По алфавиту", "Цена: По возрастанию", "Цена: по убыванию"};
-   
-   var gameCards = new List<GameCard>
-   {
-     new GameCard {Title = "Название N", Developer = "DVD Project Green", Price = "2 999 ₽"},
-     new GameCard {Title = "Название N: Redux", Developer = "DVD Project Green", Price = "3 999 ₽"},
-     new GameCard {Title = "Скромное название", Developer = "Ноунейм", Price = "29 ₽"},
-     new GameCard {Title = "Крутое название", Developer = "СтУдиЯ", Price = "350 ₽"},
-     new GameCard {Title = "World Peace X", Developer = "Tartalia Inc", Price = "650 ₽"},
-     new GameCard {Title = "Бла Бла Бла", Developer = "Господин Никто", Price = "666 ₽"}
-   };
-
-  var filterGenre = new List<string>
-  {
-    "Приключение", "Инди", "Ролевая", "Стратегия", "Шутер", "Симулятор", "Головоломка", "Хоррор"
-  };
-
-  var filterPrice = new List<string>
-  {
-    "Очень многа", "Тоже много но поменьше", "Реально купить без продажи почки", "Ниже среднего",
-    "Цена для галочки", "Бесплатно"
-  };
-  var filterFeatures = new List<string>
-  {
-    "Одиночная", "Многопользовательская", "Кооперативная", "Виртуальная рельность", "Поддержка контроллеров"
-  };
-   
- }
+﻿@using RedSwanStore.Data.Interfaces
+@model HomeViewModel
 
 <div class="container">
   <div class="game-catalog">
@@ -37,61 +8,46 @@
       <div class="section_dropdown">
         <div class="dropdown">
           <button class="dropdown_button" aria-expanded="false" aria-haspopup="true">
-            <h4>Сортировка:</h4><span class="dropdown_button__toggleLabel">Дата выхода</span>
+            <h4>Сортировка:</h4><span class="dropdown_button__toggleLabel">Актуальность</span>
           </button>
 
           <div class="dropdown__submenu submenu hidden">
-            @foreach (var item in sortingItems)
+            @foreach ((var key, KeyValuePair<string, SortingTypes> value) in HomeViewModel.SortingItems)
             {
-              <button class="submenu__button"><span> @item </span></button>
+              <button class="submenu__button sort-button" data-type="sort" data-controller-arg="@key"><span> @value.Key </span></button>
             }
           </div>
         </div>
       </div>
       <!-- одна игра -->
-      <div class="section__games games">
-
-        @foreach (var gamecard in gameCards)
-        {
-          <div class="games__item">
-            <a class="game-card" href="#game-page">
-              <div class="game-card__image">
-                <!-- картинка -->
-              </div>
-              <div class="game-card__title"> @gamecard.Title </div>
-              <div class="game-card__dev"> @gamecard.Developer </div>
-              <div class="game-card__price"> @gamecard.Price </div>
-            </a>
-          </div>
-        }
-
-
+      <div class="section__games games" id="games-cards">
+        @await Html.PartialAsync("_GamesListPartial", Model.Games)
       </div>
     </section>
     <aside class="game-catalog__filter filter">
       <h4 class="check">Фильтр</h4>
       <ul class="filter__options options">
-        <li class="options__item"> <span> Жанр </span>
+        <li class="options__item options__genres"> <span> Жанр </span>
           <ul>
-            @foreach (var item in filterGenre)
+            @foreach (var item in Model.GenresFilters)
             {
-              <li> @item </li>
+              <li data-type="genre" data-controller-arg="@item.UrlId" data-checked="false"> @item.Name </li>
             }
           </ul>
         </li>
         <li class="options__item"> <span>Цена</span>
           <ul>
-            @foreach (var item in filterPrice)
+            @foreach (var item in Model.PriceFilters)
             {
-              <li> @item </li>
+              <li data-type="price" data-controller-arg="@item.UrlId" data-checked="false"> @item.Name </li>
             }
           </ul>
         </li>
         <li class="options__item"> <span>Особенности</span>
           <ul>
-            @foreach (var item in filterFeatures)
+            @foreach (var item in Model.FeaturesFilters)
             {
-              <li> @item </li>
+              <li data-type="feature" data-controller-arg="@item.UrlId" data-checked="false"> @item.Name </li>
             }
           </ul>
         </li>
@@ -99,4 +55,7 @@
     </aside>
   </div>
 </div>
+
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/libs/JQuery.Unobtrusive.Ajax/jquery.unobtrusive-ajax.js"></script>
 <script src="~/js/index.js"></script> 

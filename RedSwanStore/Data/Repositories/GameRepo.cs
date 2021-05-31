@@ -32,8 +32,11 @@ namespace RedSwanStore.Data.Repositories
             dbContent.Entry(game).Reference(g => g.GameMedia).Load();
             dbContent.Entry(game).Reference(g => g.GameFilter).Load();
                 
-            dbContent.Entry(game.GameFilter).Collection(gf => gf.Features).Load();
-            dbContent.Entry(game.GameFilter).Collection(gf => gf.Genres).Load();
+            dbContent.Entry(game).Reference(g => g.GameFilter).TargetEntry.Collection(gf => gf.Features).Load();
+            dbContent.Entry(game).Reference(g => g.GameFilter).TargetEntry.Collection(gf => gf.Genres).Load();
+            
+            // dbContent.Entry(game.GameFilter).Collection(gf => gf.Features).Load();
+            // dbContent.Entry(game.GameFilter).Collection(gf => gf.Genres).Load();
         }
         
         
@@ -41,37 +44,11 @@ namespace RedSwanStore.Data.Repositories
         /// Get all games from the database.
         /// </summary>
         /// <returns>The collection of game models.</returns>
-        public IEnumerable<Game> GetAllGames(SortingTypes sortType = SortingTypes.Default)
+        public IEnumerable<Game> GetAllGames()
         {
             IEnumerable<Game> result;
 
-            switch (sortType)
-            {
-                case SortingTypes.Default:
-                    result = dbContent.Games.ToList();
-                    break;
-                case SortingTypes.ReleaseDate:
-                    result = dbContent.Games
-                        .Include(g => g.GameInfo)
-                        .OrderByDescending(g => g.GameInfo.ReleaseDate);
-                    break;
-                case SortingTypes.Alphabetically:
-                    result = dbContent.Games
-                        .OrderBy(g => g.Name);
-                    break;
-                case SortingTypes.PriceDescending:
-                    result = dbContent.Games
-                        .Include(g => g.GameInfo)
-                        .OrderByDescending(g => g.GameInfo.Price);
-                    break;
-                case SortingTypes.PriceAscending:
-                    result = dbContent.Games
-                        .Include(g => g.GameInfo)
-                        .OrderBy(g => g.GameInfo.Price);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(sortType), sortType, null);
-            }
+            result = dbContent.Games.ToList();
 
             foreach (Game game in result)
                 LoadDataFor(game);
@@ -159,7 +136,7 @@ namespace RedSwanStore.Data.Repositories
         /// <param name="filter">The filter the games must match.</param>
         /// <param name="priceCategory">The price category the games must match.</param>
         /// <returns>The collection of game models.</returns>
-        public IEnumerable<Game> GetGamesByFilter(GameFilter filter, PriceCategory priceCategory)
+        public IEnumerable<Game> GetGamesByFilter(GameFilter? filter, PriceCategory? priceCategory)
         {
             IEnumerable<Game> result = GetAllGames();
 
@@ -175,7 +152,7 @@ namespace RedSwanStore.Data.Repositories
         /// <param name="filter">The filter the games must match.</param>
         /// <param name="priceCategories">The price categories the games must match.</param>
         /// <returns>The collection of game models.</returns>
-        public IEnumerable<Game> GetGamesByFilter(GameFilter filter, List<PriceCategory> priceCategories)
+        public IEnumerable<Game> GetGamesByFilter(GameFilter? filter, List<PriceCategory> priceCategories)
         {
             IEnumerable<Game> result = new List<Game>();
 

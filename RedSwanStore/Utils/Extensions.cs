@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Xml;
+using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
 
 namespace RedSwanStore.Utils
@@ -88,5 +90,66 @@ namespace RedSwanStore.Utils
             return gamePrice >= category.MinPrice && gamePrice <= category.MaxPrice;
         }
 
+
+        /// <summary>
+        /// Convert this decimal number to price (money) value for current culture
+        /// and with currency sign.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns>Price string.</returns>
+        public static string ConvertToPrice(this decimal num)
+        {
+            var stringed = decimal.Round(num, 2).ToString(CultureInfo.CurrentCulture);
+
+            if (stringed.EndsWith(",00"))
+                return $"{stringed.Substring(0, stringed.Length - 3)} ₽";
+            
+            return $"{stringed} ₽";
+        }
+
+        /// <summary>
+        /// Convert this float number to percents value for current culture.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns>Percents string.</returns>
+        public static string? ConvertToPercents(this float num)
+        {
+            if (num > 1)
+                return "100%";
+
+            if (num < 0)
+                return null;
+
+            return (num * 100).ToString(CultureInfo.CurrentCulture) + "%";
+        }
+
+
+        public static IEnumerable<Game> SortBy(this IEnumerable<Game> games, SortingTypes sortType)
+        {
+            IEnumerable<Game> result;
+            
+            switch (sortType)
+            {
+                case SortingTypes.Default:
+                    result = games;
+                    break;
+                case SortingTypes.ReleaseDate:
+                    result = games.OrderByDescending(g => g.GameInfo.ReleaseDate);
+                    break;
+                case SortingTypes.Alphabetically:
+                    result = games.OrderBy(g => g.Name);
+                    break;
+                case SortingTypes.PriceDescending:
+                    result = games.OrderByDescending(g => g.GameInfo.Price);
+                    break;
+                case SortingTypes.PriceAscending:
+                    result = games.OrderBy(g => g.GameInfo.Price);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(sortType), sortType, null);
+            }
+
+            return result;
+        }
     }
 }

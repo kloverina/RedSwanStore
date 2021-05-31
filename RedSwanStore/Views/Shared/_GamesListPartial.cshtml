@@ -1,0 +1,16 @@
+﻿@model IEnumerable<GameCard>
+
+@foreach (var gamecard in Model)
+{
+  <div class="games__item">
+    <a class="game-card" href="#game-page">
+      <div class="game-card__image">
+        <!-- картинка <img src="@gamecard.CoverUrl" alt="@gamecard.Title">  -->
+      </div>
+      <div class="game-card__title"> @gamecard.Title </div>
+      <div class="game-card__dev"> @gamecard.Developer </div>
+      <!-- добавить отображение скидки через gamecard.Discount (может быть null, если скидки нет) -->
+      <div class="game-card__price"> @gamecard.Price </div>
+    </a>
+  </div>
+}
