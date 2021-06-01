@@ -245,12 +245,21 @@ h4{
   //заголовок игры
   &__title {
     flex: 1 0 10%;
+    max-width: $image_width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
     
   }
 
   &__dev {
     color: rgba(245, 245, 245, 0.6);
     flex: 1 0 10%;
+    max-width: $image_width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__price {
