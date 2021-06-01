@@ -39,10 +39,19 @@ function passMatch(){
 function checkboxClick(labels) {
     for(let i = 0; i< labels.length; i++){
         let label = labels[i];
+        
+            
+        
         label.onclick= function (){
-            let checkbox = label.querySelector('div');
-            checkbox.classList.toggle('checked');
-
+            let checkbox = label.querySelector("input");
+            let custom_checkbox = label.querySelector('div');
+            if (checkbox.checked) 
+                
+                custom_checkbox.classList.add('checked');
+            else
+                custom_checkbox.classList.remove('checked');
+            
+            
         }
     }
 }
