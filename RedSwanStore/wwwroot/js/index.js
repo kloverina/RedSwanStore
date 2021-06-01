@@ -139,10 +139,21 @@ class ControllerArgs {
 let controllerArgs = new ControllerArgs(
     (html) => {
         let gamesCardsBlock = $('#games-cards');
+       
         gamesCardsBlock.empty();
         gamesCardsBlock.append(html);
-
-        //TODO: Show something if received HTML is empty (nothing found with chosen filters).
+        let game_card = document.querySelector(".game-card");
+        let message = document.querySelector(".section_empty");
+        
+       
+        if (!game_card)
+            message.classList.remove("hidden");
+        
+        else
+            message.classList.add("hidden");
+        
+            
+        
     }
 );
 
