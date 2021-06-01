@@ -570,9 +570,33 @@ h4 {
   font-size: 16px;
 }
 
+.section_empty {
+  flex: 1 1 100%;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.section_empty.hidden {
+  display: none;
+}
+
+.empty__title {
+  margin-bottom: 20px;
+}
+.empty__title span {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+.empty__description span {
+  font-size: 16px;
+  line-height: 25px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .filter {
   margin-left: 10px;
-  font-size: 14px;
 }
 .filter .filter__options {
   list-style: none;
@@ -588,33 +612,6 @@ h4 {
 .filter .filter__options :hover {
   color: white;
 }
-
-.filter .filter__options .options__item li {
-  padding: 10px 30px 10px 15px;
-  line-height: 20px;
-}
-
-.filter .filter__options .options__item li:not(:last-child) {
-  margin-bottom: 4px;
-}
-
-.filter .filter__options .filter__item_checked {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  border-radius: 3px;
-  position: relative;
-}
-
-.filter .filter__options .filter__item_checked:after {
-  content: '✓';
-  position: absolute;
-  display: block;
-  width: 10px;
-  height: 8px;
-  top: calc(50% - 8px);
-  right: 10px;
-}
-
 .filter h4 {
   padding: 0;
   margin: 5px 0 20px;

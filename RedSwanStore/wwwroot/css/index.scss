@@ -254,6 +254,36 @@ h4{
   }
 }
 
+//no-game-found messsage
+.section_empty{
+  
+  flex: 1 1 100%;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.section_empty.hidden{
+  display: none;
+}
+  .empty__title{
+    margin-bottom: 20px;
+    span {
+      font-size: 50px;
+      font-weight: 400;
+      line-height: 50px;
+    }
+  }
+  
+  .empty__description{
+    span{
+      font-size: 16px;
+      line-height: 25px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+  
+
+
 .filter {
   margin-left: 10px;
 

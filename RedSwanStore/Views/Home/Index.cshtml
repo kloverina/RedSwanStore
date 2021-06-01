@@ -19,11 +19,31 @@
           </div>
         </div>
       </div>
-      <!-- одна игра -->
+      
+      <!-- game card  -->
       <div class="section__games games" id="games-cards">
         @await Html.PartialAsync("_GamesListPartial", Model.Games)
       </div>
+      
+      <!-- no-game-was-found message -->
+      
+      <div class="section_empty empty hidden">
+        
+        <div class="empty__title">
+          <span>
+            Нет результатов
+          </span>
+        </div>
+
+        <div class="empty__description">
+          <span>
+            К сожалению, по Вашему запросу ничего не найдено :(
+          </span>
+        </div>
+
+      </div>
     </section>
+    
     <aside class="game-catalog__filter filter">
       <h4 class="check">Фильтр</h4>
       <ul class="filter__options options">
