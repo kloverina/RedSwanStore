@@ -110,6 +110,6 @@ namespace RedSwanStore.Data.Interfaces
         /// <param name="email">The user's password.</param>
         /// <param name="getNewsOnEmail">Will the user get news on their email?</param>
         /// <returns>True - if user was successfully added to the database.</returns>
-        public bool AddUser(string name, string surname, string login, string email, string password, bool getNewsOnEmail);
+        public string AddUser(string name, string surname, string login, string email, string password, bool getNewsOnEmail);
     }
 }

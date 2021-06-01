@@ -21,7 +21,9 @@ namespace RedSwanStore.Data.Repositories
         private void LoadDataFor(User user)
         {
             dbContent.Entry(user).Reference(u => u.Library).Load();
-            dbContent.Entry(user.Library).Collection(ul => ul.UserLibraryGames).Load();
+            
+            if (user.Library != null)
+                dbContent.Entry(user).Reference(u=> u.Library).TargetEntry.Collection(ul => ul.UserLibraryGames).Load();
         }
 
         private bool TryUpdate(User user)
@@ -189,45 +191,15 @@ namespace RedSwanStore.Data.Repositories
             return TryUpdate(user);
         }
 
-        private bool IsValidLength(string str, int minLength = 0, int maxLength = int.MaxValue)
-        {
-            return str.Length >= minLength && str.Length <= maxLength;
-        }
+ 
         
-        public bool AddUser(string name, string surname, string login, string email, string password, bool getNewsOnEmail)
+        public string AddUser(string name, string surname, string login, string email, string password, bool getNewsOnEmail)
         {
-            if (!IsValidLength(name, 2, 50))
-                return false;
-            
-            foreach (var sym in name)
-            {
-                if (!char.IsLetter(sym))
-                    return false;
-            }
+            UserValidationResult validationResult = new UserValidationResult();
+            validationResult.ValidateUser(name, surname, login, email, password);
 
-            if (!IsValidLength(surname, 2, 50))
-                return false;
-            
-            foreach (var sym in surname)
-            {
-                if (!char.IsLetter(sym))
-                    return false;
-            }
-
-            if (!IsValidLength(login, 2, 20))
-                return false;
-
-            if (!IsValidLength(email, 5))
-                return false;
-
-            if (!IsValidLength(password, 8))
-                return false;
-            
-            foreach (var sym in password)
-            {
-                if (!char.IsLetterOrDigit(sym) && sym != ' ')
-                    return false;
-            }
+            if (!validationResult.IsValid())
+                return $"{{\"success\":false,\"result\":{validationResult.AsJson()}}}";
 
             var lastUserId = dbContent.Users.Max(u => u.Id);
 
@@ -243,7 +215,8 @@ namespace RedSwanStore.Data.Repositories
                 Email = email,
                 GetNewsOnEmail = getNewsOnEmail,
                 Photo = picture,
-                UserUrl = url
+                UserUrl = url,
+                Balance = 0
             };
 
             try
@@ -253,10 +226,10 @@ namespace RedSwanStore.Data.Repositories
             }
             catch (Exception)
             {
-                return false;
+                return $"{{\"success\":false,\"result\":{validationResult.AsJson()}}}";
             }
 
-            return true;
+            return $"{{\"success\":true,\"result\":{validationResult.AsJson()}}}";
         }
     }
 }

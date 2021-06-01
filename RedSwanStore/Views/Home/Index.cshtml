@@ -37,7 +37,7 @@
         </li>
         <li class="options__item"> <span>Цена</span>
           <ul>
-            @foreach (var item in Model.PriceFilters)
+            @foreach (var item in Model.PriceFilters.OrderByDescending(pc => pc.MinPrice))
             {
               <li data-type="price" data-controller-arg="@item.UrlId" data-checked="false"> @item.Name </li>
             }

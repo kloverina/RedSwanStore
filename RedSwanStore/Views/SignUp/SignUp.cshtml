@@ -11,11 +11,11 @@
         </div>
         
         <!-- Добавить дейсвие при отправке формы -->
-        <form class="login-element form" action="" method="post">
+        <form class="login-element form" method="post" data-ajax="true" data-ajax-method="post" data-ajax-url="@Url.Action("RegisterUser")" data-ajax-complete="onReceiveAnswer">
             
             <div class="form_element form_element_sign-in">
                 <input class="form-element__name" id="name" name="name" placeholder="*Имя"
-                       type="text" autocomplete="given-name" inputmode="text" aria-label="*Имя" required >
+                       type="text" autocomplete="given-name" inputmode="text" aria-label="*Имя" required>
             </div>
 
 
@@ -50,7 +50,7 @@
             
             <div class="form_element_checkbox form_element_sign-in">
                 <label class="custom-checkbox" for="newsletter">
-                    <input class="form_element__checkbox" id="newsletter" name="newsletter" type="checkbox">
+                    <input class="form_element__checkbox" id="newsletter" name="getNewsOnEmail" type="checkbox">
                     <div class="custom-checkbox"> </div>
                     <span>
                         Я хочу получать обзоры, новости и специальные предложения.
@@ -80,7 +80,7 @@
 
         <div class="login-element login-element__sign-in alternative">
             <p> Уже есть учетная запись?
-                <a asp-area="" asp-controller="Login" asp-action="Login"  id="to-login">
+                <a asp-controller="Login" asp-action="Login"  id="to-login">
                     Войти
                 </a>
             </p>
@@ -89,6 +89,8 @@
     </div>
 </div>
 
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/libs/JQuery.Unobtrusive.Ajax/jquery.unobtrusive-ajax.js"></script>
 <script src="js/login.js"> </script>
 
 
