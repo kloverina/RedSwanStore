@@ -226,20 +226,26 @@ h4{
 
   //изображение игры
   &__image {
-
-    background-color: gray;
-    border-radius: 10px;
+    
     flex: 7 0 70%;
-    //min-height: 240px;
-    //min-width: 180px;
+    
     align-self: flex-start;
     margin-bottom: 20px;
+    img{
+      background-color: black;
+      width: $image_width;
+      height: $image_height;
+      border-radius: 5px;
+      object-fit: cover;
+      
+    }
 
   }
 
   //заголовок игры
   &__title {
     flex: 1 0 10%;
+    
   }
 
   &__dev {

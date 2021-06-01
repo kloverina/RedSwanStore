@@ -551,11 +551,16 @@ h4 {
   width: 100%;
 }
 .game-card__image {
-  background-color: gray;
-  border-radius: 10px;
   flex: 7 0 70%;
   align-self: flex-start;
   margin-bottom: 20px;
+}
+.game-card__image img {
+  background-color: black;
+  width: 180px;
+  height: 240px;
+  border-radius: 5px;
+  object-fit: cover;
 }
 .game-card__title {
   flex: 1 0 10%;

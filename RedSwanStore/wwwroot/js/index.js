@@ -151,9 +151,6 @@ let controllerArgs = new ControllerArgs(
         
         else
             message.classList.add("hidden");
-        
-            
-        
     }
 );
 
