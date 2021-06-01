@@ -588,19 +588,23 @@ h4 {
 .filter .filter__options :hover {
   color: white;
 }
+
 .filter .filter__options .options__item li {
   padding: 10px 30px 10px 15px;
   line-height: 20px;
 }
+
 .filter .filter__options .options__item li:not(:last-child) {
   margin-bottom: 4px;
 }
+
 .filter .filter__options .filter__item_checked {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   border-radius: 3px;
   position: relative;
 }
+
 .filter .filter__options .filter__item_checked:after {
   content: '✓';
   position: absolute;
@@ -610,6 +614,7 @@ h4 {
   top: calc(50% - 8px);
   right: 10px;
 }
+
 .filter h4 {
   padding: 0;
   margin: 5px 0 20px;
