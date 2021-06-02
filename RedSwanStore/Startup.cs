@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -42,6 +43,10 @@ namespace RedSwanStore
             services.AddTransient<IGenreRepo, GenreRepo>();
             services.AddTransient<IGameRepo, GameRepo>();
             services.AddTransient<IUserRepo, UserRepo>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
+                options.LoginPath = new PathString("/login");
+            });
             
             services.AddControllersWithViews();
         }
@@ -57,9 +62,10 @@ namespace RedSwanStore
             app.UseStaticFiles();
 
             app.UseRouting();
-            
-            app.UseAuthorization();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+            
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
 
             using (IServiceScope scope = app.ApplicationServices.CreateScope())

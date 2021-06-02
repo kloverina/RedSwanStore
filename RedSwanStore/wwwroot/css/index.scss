@@ -63,11 +63,6 @@ $image_width: 180px;
   .container {
     max-width: 1240px;
   }
-  .game-card__image {
-
-    min-height: $image_height * 1.25;
-    min-width: $image_width * 1.25;
-  }
 }
 
 
@@ -314,6 +309,34 @@ h4{
       padding: 10px 0;
       border-top: solid 1px #909090;
       
+    }
+    
+    .options__item {
+      li {
+        padding: 10px 30px 10px 15px;
+        line-height: 20px;
+      }
+      
+      li:not(:last-child) {
+        margin-bottom: 4px;
+      }
+    }
+    
+    .filter__item_checked {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .filter__item_checked:after {
+      content: '✓';
+      position: absolute;
+      display: block;
+      width: 10px;
+      height: 8px;
+      top: calc(50% - 8px);
+      right: 10px;
     }
 
     :hover {

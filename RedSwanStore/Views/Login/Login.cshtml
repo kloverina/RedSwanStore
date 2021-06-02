@@ -13,7 +13,7 @@
         </div>
         
         <!-- Добавить дейсвие при отправке формы -->
-        <form class="login-element form"  action="" method="post">
+        <form class="login-element form"  method="post" data-ajax="true" data-ajax-method="post" data-ajax-url="@Url.Action("Login")" data-ajax-complete="onLogin">
            
             
             <div class="form_element">
@@ -57,4 +57,6 @@
     </div>
 </div>
 
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/libs/JQuery.Unobtrusive.Ajax/jquery.unobtrusive-ajax.js"></script>
 <script src="~/js/login.js"></script> 
