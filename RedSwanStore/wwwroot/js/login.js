@@ -126,7 +126,7 @@ onLogin = function (xhr) {
     //TODO: Add display of 'incorrect email' or 'incorrect password' messages
     
     // received data is json so I parsed it and made detailed description here especially for you!
-    // validation instance looks like if you do the next thing:
+    // login result instance looks like if you do the next thing:
     // let loginResult = {
     //      isCorrectEmail: <bool>,
     //      isCorrectPassword: <bool>,
@@ -144,3 +144,25 @@ onLogin = function (xhr) {
         window.location.replace(loginResult.redirectLink);
 }
 
+
+onRecovery = function (xhr) {
+    //TODO: Add display of 'incorrect email' message
+
+    // received data is json so I parsed it and made detailed description here especially for you!
+    // recovery result instance looks like if you do the next thing:
+    // let recoveryResult = {
+    //      isCorrectEmail: <bool>,
+    //      errorMessage: <string>
+    //      redirectLink: <string>
+    // }
+    let recoveryResult = JSON.parse(xhr.responseText);
+
+    if (!recoveryResult.isCorrectEmail) {
+        console.log("Аккаунта с указанной электронной почтой не существует!");
+    }
+    else if (recoveryResult.errorMessage !== "") { // this is debug-only (not needed to be seen by user)
+        console.log(recoveryResult.errorMessage);
+    }
+    else
+        window.location.replace(recoveryResult.redirectLink);
+}
