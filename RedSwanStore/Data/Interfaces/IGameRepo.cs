@@ -37,6 +37,13 @@ namespace RedSwanStore.Data.Interfaces
         public Game? GetGameByUrl(string url);
 
         /// <summary>
+        /// Get the game with specified id from the database.
+        /// </summary>
+        /// <param name="id">The id of the game to get.</param>
+        /// <returns>The game model entity.</returns>
+        public Game? GetGameById(int id);
+
+        /// <summary>
         /// Get all games that match specified Os name.
         /// </summary>
         /// <param name="osName">The name of the Os the games must match.</param>

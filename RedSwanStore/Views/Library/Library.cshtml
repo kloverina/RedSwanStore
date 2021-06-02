@@ -1,25 +1,5 @@
-
-@{ //stuff
-   var sortingItems = new List<string> {"Недавние", "По алфавиту"};
-   
-   var gameCards = new List<GameCard>
-   {
-     new GameCard {Title = "Название N", Developer = "DVD Project Green", Price = "2 999 ₽"},
-     new GameCard {Title = "Название N: Redux", Developer = "DVD Project Green", Price = "3 999 ₽"},
-     new GameCard {Title = "Скромное название", Developer = "Ноунейм", Price = "29 ₽"},
-     new GameCard {Title = "Крутое название", Developer = "СтУдиЯ", Price = "350 ₽"},
-     new GameCard {Title = "World Peace X", Developer = "Tartalia Inc", Price = "650 ₽"},
-     new GameCard {Title = "Бла Бла Бла", Developer = "Господин Никто", Price = "666 ₽"}
-   };
-
-  var filterOptions = new List<string>
-  {
-    "Все", "Избранные"
-  };
-
-   
-}
-
+@using RedSwanStore.Controllers
+@model LibraryViewModel
 
 <div class="container">
   <div class="game-catalog">
@@ -33,9 +13,9 @@
           </button>
 
           <div class="dropdown__submenu submenu hidden">
-            @foreach (var item in sortingItems)
+            @foreach (KeyValuePair<string, KeyValuePair<string, LibrarySorts>> item in LibraryViewModel.SortingItems)
             {
-              <button class="submenu__button"><span> @item </span></button>
+              <button class="submenu__button library-sort-btn" data-controller-arg="@item.Key"><span> @item.Value.Key </span></button>
             }
           </div>
         </div>
@@ -45,10 +25,10 @@
             <h4>Фильтр:</h4><span class="dropdown_button__toggleLabel">Все</span>
           </button>
 
-          <div class="dropdown__submenu submenu hidden">
-            @foreach (var item in filterOptions)
+          <div class="dropdown__submenu submenu hidden" id="games-cards">
+            @foreach (KeyValuePair<string, KeyValuePair<string, LibraryFilters>> item in LibraryViewModel.FilterOptions)
             {
-              <button class="submenu__button"><span> @item </span></button>
+              <button class="submenu__button library-filter-btn" data-controller-arg="@item.Key"><span> @item.Value.Key </span></button>
             }
           </div>
         </div>
@@ -57,17 +37,7 @@
       
       
       <div class="section__games games library">
-        @foreach (var gamecard in gameCards)
-        {
-          <div class="games__item">
-            <a class="game-card" href="#game-page">
-              <div class="game-card__image"> </div>
-              <div class="game-card__title"> @gamecard.Title </div>
-              <div class="game-card__dev"> @gamecard.Developer </div>
-              <div class="game-card__price"> @gamecard.Price </div>
-            </a>
-          </div>
-        }
+        @await Html.PartialAsync("_LibraryGamesListPartial", Model.GameCards)
       </div>
       
     </section>
@@ -75,4 +45,7 @@
   
 </div>
 
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/libs/JQuery.Unobtrusive.Ajax/jquery.unobtrusive-ajax.js"></script>
 <script src="~/js/index.js"></script> 
+<script src="~/js/library.js"></script>

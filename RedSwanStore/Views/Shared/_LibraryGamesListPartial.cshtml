@@ -1,0 +1,16 @@
+﻿@model IEnumerable<LibraryGameCard>
+
+@foreach (var gamecard in Model)
+{
+    <div class="games__item">
+        <a class="game-card" href="#game-page">
+            <div class="game-card__image">
+                <img src="@gamecard.CoverUrl" alt="@gamecard.Title">  
+            </div>
+            <div class="game-card__title"> @gamecard.Title  </div>
+            <div class="game-card__dev"> @gamecard.HoursPlayed.ToString() ч.</div>
+            <div class="game-card__price"> @(gamecard.LastPlayed == DateTime.MinValue ? "" : gamecard.LastPlayed.ToShortDateString()) </div>
+        </a>
+    </div>
+}
+

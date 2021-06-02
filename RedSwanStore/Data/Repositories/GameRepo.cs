@@ -92,6 +92,22 @@ namespace RedSwanStore.Data.Repositories
             return result;
         }
 
+        /// <summary>
+        /// Get the game with specified id from the database.
+        /// </summary>
+        /// <param name="id">The id of the game to get.</param>
+        /// <returns>The game model entity.</returns>
+        public Game? GetGameById(int id)
+        {
+            Game? result = dbContent.Games.FirstOrDefault(
+                g => g.Id == id
+            );
+            
+            if (result != null)
+                LoadDataFor(result);
+
+            return result;
+        }
         
         /// <summary>
         /// Get all games that support the specified OS from the database.

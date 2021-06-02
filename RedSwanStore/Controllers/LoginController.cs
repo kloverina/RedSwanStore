@@ -42,8 +42,7 @@ namespace RedSwanStore.Controllers
             result.IsCorrectPassword = true;
             
             Authenticate(email);
-
-            result.RedirectLink = $"{Url.Action("Index", "Home")}";
+            result.RedirectLink = $"{Url.Action("Library", "Library", new {url = user.UserUrl})}";
             return Json(result);
         }
 
