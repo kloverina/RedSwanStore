@@ -422,16 +422,10 @@ p.form_element__checkpass.active {
   width: 100%;
   min-height: 500px;
   padding: 0;
-  margin: 30px auto 0;
+  margin: 120px auto 0;
 }
-.profile__personal_info {
-  padding: 40px;
-}
-.profile__personal_info > div {
-  margin: 20px 0 50px;
-}
-.profile__personal_info > div :not(p) {
-  margin: 0 10px;
+.profile .personal_info {
+  margin-bottom: 80px;
 }
 .profile .form.account_forms {
   width: 100%;
@@ -488,7 +482,23 @@ p.form_element__checkpass.active {
   margin: 0 !important;
   width: 100%;
 }
-.personal_info__account {
+.account {
+  padding: 0;
+  margin: 0;
+}
+.account p {
+  margin: 5px 10px;
+  width: 100%;
+  flex: 1 0 100%;
+}
+.account div {
+  flex: 1 1 45%;
+}
+.account div.account_forms__submit {
+  flex: 1 2 100%;
+}
+
+.form__personal_info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -496,15 +506,15 @@ p.form_element__checkpass.active {
   padding: 0;
   margin: 0;
 }
-.personal_info__account p {
+.form__personal_info p {
   margin: 5px 10px;
   width: 100%;
   flex: 1 0 100%;
 }
-.personal_info__account div {
+.form__personal_info div {
   flex: 1 1 45%;
 }
-.personal_info__account div.account_forms__submit {
+.form__personal_info div.account_forms__submit {
   flex: 1 2 100%;
 }
 
