@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="profile">
+        
+        
+            <div class="personal_info">
+                <p class="title main-title">
+                    Настойки профиля
+                </p>
+                <p class="description">
+                    Управляйте данными учетной записи, включая ваше имя, контактные данные и прочую информацию.
+                </p>
+            </div>
+            <form class="form account_forms" method="post">
+                <div class="profile__photo photo">
+                    <p class="title"> Аватар </p>
+                    <p class="description">
+                        Выберите изображения аватара.
+                    </p>
+                    <div class="photo-container photo">
+                        <div class="photo__username_photo">
+                            <img src="img/example.png" alt="Example" width="184px" height="184px">
+                        </div>
+                        <div class="photo__upload">
+                            <button type="submit" class="photo__upload button">
+                                <span class="button-label"> Загрузите свой аватар </span>
+                            </button> 
+                            <p class="description">
+                                Загрузите файл со своего устройсва. Нужно квадратное изображение хотя бы 
+                                184 на 184 пикселя.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="personal_info__account account_forms">
+                    <p class="title"> Данные учетной записи </p>
+                    
+                    <div class="form_element account_forms__username">
+                        <label>
+                            <p class="form_desc description">
+                                Отображаемое имя
+                            </p>
+                            <input class="form_element__username" id="account_username" name="login" type="text"
+                                   placeholder="Отображаемое имя" value="Example_login">
+                        </label>
+                    </div>
+                    
+                
+                    <div class="form_element account_forms__email">
+                        <label>
+                            <p class="form_desc description">
+                                Адрес электронной почты
+                            </p>
+                            <input class="form_element__username" id="account_email" name="username" type="email"
+                                   placeholder="Адрес электронной почты" value="example@mail.com">
+                        </label>
+                    </div>
+                    
+                </div>
+                
+                <div class="form_element account_forms__reset">
+                    <button class="form_element__button button" id="save_changes" type="reset" readonly>
+                        <span class="button-label"> Отмена </span>
+                    </button>
+                </div>
+                    
+
+                <div class="form_element account_forms__submit">
+                    <button class="form_element__button button" id="save_changes" type="submit" readonly>
+                        <span class="button-label"> Сохранить изменения </span>
+                    </button>
+                </div>
+
+                
+                
+                
+            </form>
+            
+
+       
+    </div>
+</div>

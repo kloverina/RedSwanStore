@@ -64,8 +64,8 @@ header{
           color: inherit;
           text-decoration: none;
         }
-
-        &:not(.store-icon):hover::after, :not(.store-icon):active::after{
+        //, :not(.store-icon):active::after
+        &:not(.store-icon):hover::after{
           display: inline-block;
           width: 100%;
           height: 5px;

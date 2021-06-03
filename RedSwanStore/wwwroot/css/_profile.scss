@@ -1,0 +1,127 @@
+
+.personal_info{
+  
+  &__title{
+    
+  }
+  margin-bottom: 40px;
+}
+
+.profile{
+  width: 100%;
+  min-height: 500px;
+  padding: 0;
+  margin: 30px auto 0;
+  
+  
+  &__personal_info{
+    padding: 40px;
+    >div{
+      
+      
+      margin: 20px 0 50px;
+      :not(p){
+        margin: 0 10px;
+        //background-color: #2B2B2B;
+      }
+    }
+  }
+  
+  .form.account_forms {
+    width: 100%;
+    display: block;
+
+    > div {
+      //background-color: #2B2B2B;
+      margin: 20px 0 50px;
+
+      :not(p) {
+        margin: 0 10px;
+        //background-color: #2B2B2B;
+      }
+    }
+  }
+  
+  
+  .title{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
+    
+    &:not(.main-title):after{
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      position: relative;
+      top: -10px;
+      background-color: #ffffff;
+      content: "";
+      z-index: 10;
+      //margin-top: 30px;
+    }
+  }
+  
+  .description{
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    //margin-top: 0;
+  }
+}
+
+.photo-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+  .photo__username_photo{
+    flex: 1 1 65%;
+  }
+  
+  .photo__upload{
+    //background-color: darkkhaki;
+    flex: 1 1 23%;
+    padding: 0 20px;
+    button{
+      background-color: #7d0011;
+      border-radius: 5px;
+      padding: 5px 0;
+      margin: 0 !important;
+      width: 100%;
+    }
+    p{
+      //background-color: #7d0011;
+    }
+  }
+}
+
+.personal_info__account {
+  //background-color: #7d0011;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  p{
+    margin: 5px 10px;
+    width: 100%;
+    flex: 1 0 100%;
+  }
+  
+  div{
+    flex: 1 1 45%;
+  }
+  div.account_forms__submit{
+    flex: 1 2 100%;
+    //margin: 50px;
+    //width: 100%;
+  }
+}
+  
+  
