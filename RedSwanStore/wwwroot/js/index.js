@@ -1,4 +1,4 @@
-
+let game_catalog = document.querySelector('.game-catalog');
 
 //фильтр
 let options = document.querySelectorAll('.options__item');
@@ -17,7 +17,7 @@ for (let i = 0; i < options.length; i++) {
 
 
 //дропдаун сортировки
-let dropdowns = document.querySelectorAll('.dropdown');
+let dropdowns = game_catalog.querySelectorAll('.dropdown');
 
 dropdowns.forEach(function (dropdown) {
     let sorting_button = dropdown.querySelector('.dropdown_button');

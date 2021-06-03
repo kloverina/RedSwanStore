@@ -102,13 +102,15 @@ h4{
   margin: 30px auto 0;
 
   &__browse {
-    flex: 1 1 80%;
-    
-
+    flex: 5 1 85%;
+    //background-color:goldenrod;
+    //padding-right: 10px;
   }
 
   &__filter {
-    flex: 1 0 20%;
+    //background-color: #7d0011;
+    flex: 1 5 15%;
+    margin-left: 10px;
   }
   
   &__library{
@@ -149,7 +151,6 @@ h4{
     }
 
     .dropdown_button__toggleLabel {
-
       font-size: 14px;
     }
 
@@ -168,7 +169,6 @@ h4{
 
       .submenu__button {
         :hover {
-          //border-bottom: 1px solid white;
           color: white;
         }
       }
@@ -225,7 +225,7 @@ h4{
     flex: 7 0 70%;
     
     align-self: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     img{
       background-color: black;
       width: $image_width;
@@ -295,8 +295,7 @@ h4{
 
 
 .filter {
-  margin-left: 10px;
-
+ 
   .filter__options {
     list-style: none;
     padding: 0;
@@ -313,7 +312,7 @@ h4{
     
     .options__item {
       li {
-        padding: 10px 30px 10px 15px;
+        padding: 10px 5px 10px 15px;
         line-height: 20px;
       }
       

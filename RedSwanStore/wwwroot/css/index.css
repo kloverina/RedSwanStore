@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Brutal";
   src: url("../fonts/Brutal/BrutalType.eot");
@@ -23,7 +24,6 @@ header {
   font-weight: 400;
   line-height: 18px;
   font-size: 16px;
-  overflow: hidden;
   z-index: 100;
   top: 0;
   position: fixed;
@@ -93,20 +93,41 @@ header nav .rightNav {
   height: 100%;
 }
 header nav .rightNav .sign-in {
-  padding: 0 30px 0 0;
+  flex: 0 1 20%;
+  background-color: #7d0011;
+  min-width: 100px;
+  padding: 0 20px;
 }
 header nav .rightNav a {
   color: inherit;
 }
-header nav .rightNav div:hover {
+header nav .rightNav a:hover {
   color: white;
 }
-
+header .dropdown {
+  position: relative;
+  width: 100%;
+}
+header .dropdown__submenu {
+  background-color: darkcyan;
+  position: absolute;
+  z-index: 1000;
+  top: 30px;
+  left: 0;
+  padding: 20px 15px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+}
+header .dropdown__submenu button:not(:last-of-type) {
+  margin-bottom: 10px;
+}
 .download {
+  min-width: 215px;
   vertical-align: middle;
 }
 .download a {
-  padding: 20px 10px;
+  padding: 20px 10px 10px 10px;
   background-color: rgba(125, 0, 17, 0.75);
 }
 .download :hover {
@@ -463,10 +484,11 @@ h4 {
   margin: 30px auto 0;
 }
 .game-catalog__browse {
-  flex: 1 1 80%;
+  flex: 5 1 85%;
 }
 .game-catalog__filter {
-  flex: 1 0 20%;
+  flex: 1 5 15%;
+  margin-left: 10px;
 }
 .game-catalog .dropdown {
   min-width: 150px;
@@ -548,7 +570,7 @@ h4 {
 .game-card__image {
   flex: 7 0 70%;
   align-self: flex-start;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .game-card__image img {
   background-color: black;
@@ -603,9 +625,6 @@ h4 {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.filter {
-  margin-left: 10px;
-}
 .filter .filter__options {
   list-style: none;
   padding: 0;
@@ -618,7 +637,7 @@ h4 {
   border-top: solid 1px #909090;
 }
 .filter .filter__options .options__item li {
-  padding: 10px 30px 10px 15px;
+  padding: 10px 5px 10px 15px;
   line-height: 20px;
 }
 .filter .filter__options .options__item li:not(:last-child) {
@@ -631,7 +650,7 @@ h4 {
   position: relative;
 }
 .filter .filter__options .filter__item_checked:after {
-  content: '✓';
+  content: "✓";
   position: absolute;
   display: block;
   width: 10px;
