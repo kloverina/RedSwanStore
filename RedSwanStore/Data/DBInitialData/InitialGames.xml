@@ -5,7 +5,7 @@
         <GameUrl type="field">cyberpunk-2077</GameUrl>
         <Developer type="field">CD PROJECT RED</Developer>
         <GameInfo type="model">
-            <Cover type="field">https://i.ibb.co/Z8wLWRw/Cyberpunk-2077.png</Cover>
+            <Cover type="field">https://i.ibb.co/cxH9V6y/cyberpunk-cover.png</Cover>
             <Price type="field">1999</Price>
             <Discount type="field">0</Discount>
             <DiscountEndDate/>
@@ -345,6 +345,772 @@
             </Genres>
             <Features type="model-list">
                 <li>Одиночная</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Among Us</Name>
+        <GameUrl type="field">among-us</GameUrl>
+        <Developer type="field">Innersloth</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/PtN1vDX/amogus-cover.jpg</Cover>
+            <Price type="field">0</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">05/06/2020</ReleaseDate>
+            <Rating type="field">90</Rating>
+            <ShortDescription type="field">
+                Играйте с 4–10 игроками онлайн или по локальной сети Wi-Fi и готовьте свой космический корабль к вылету.
+                Однако будьте осторожны: один или несколько случайных игроков команды являются самозванцами, 
+                которые стремятся всех убить!
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">Among Us</h2>
+                <div class="description__text">
+                    Жизнь члена экипажа: выполните все задания на корабле для победы, но остерегайтесь самозванцев! 
+                    Сообщайте о трупах и созывайте экстренные совещания, чтобы проголосовать против самозванцев. 
+                    Надеемся, вы сделали правильный выбор!
+                </div>
+                <div class="description__text">
+                    Играйте в качестве самозванца: сейте хаос, прячьтесь и подставляйте невинных свидетелей! 
+                    Чтобы победить, нужно убить всех членов команды. Думаете, вы мастер саботажа?
+                </div>
+                <div class="description__text">
+                    Кастомизация персонажа: выберите, за кого вы хотите играть! Добавьте больше самозванцев, задач, 
+                    уменьшите видимость и многое другое. Выбирайте любимый цвет, одежду и шляпу по своему стилю.
+                </div>
+                <div class="description__text">
+                    Кросс-платформенная игра: играйте с друзьями на ПК, Android и iOS!
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        (c) 2015-2020, Innersloth LLC. All rights reserved. Innersloth, the Innersloth logo, Among Us, 
+                        the Among Us logo and the crewmate character are trademarks of Innersloth LLC.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">http://www.innersloth.com/privacy.php</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Поддержка набора инструкций SSE2</MinCpu>
+            <MaxCpu type="field">Поддержка набора инструкций SSE2</MaxCpu>
+            <MinRamMB type="field">1024</MinRamMB>
+            <MaxRamMB type="field">1024</MaxRamMB>
+            <DiskSpaceMB type="field">250</DiskSpaceMB>
+            <DirectX type="field">10</DirectX>
+            <MinGpu type="field">Совместимая с DirectX 10 видеокарта, минимум 256 МБ видеопамяти</MinGpu>
+            <MaxGpu type="field">Совместимая с DirectX 10 видеокарта, минимум 256 МБ видеопамяти</MaxGpu>
+            <SupportedOses type="field">Windows 7 SP1 и выше</SupportedOses>
+            <ExtraInfo>Требуется учетная запись Red Swan Store</ExtraInfo>
+            <SupportedVoiceLanguages type="field">
+                английский
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                португальский (Бразилия), испанский (Латинская Америка), испанский (Испания), корейский, русский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/yPN2xSh/amogus1.png,
+                https://i.ibb.co/YdfMfpm/amogus2.png,
+                https://i.ibb.co/TwnhYg7/amogus3.png,
+                https://i.ibb.co/fQNRj0Q/amogus4.png,
+                https://i.ibb.co/3Fk8p2K/amogus5.png
+            </Screenshots>
+            <Trailers type="field">https://www.youtube.com/watch?v=NSJ4cESNQfE</Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Казуальная</li>
+                <li>Головоломка</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Многопользовательская</li>
+                <li>Кооперативная</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Faster Than Light</Name>
+        <GameUrl type="field">ftl</GameUrl>
+        <Developer type="field">Subset Games</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/Q7VpXdP/ftl-cover.png</Cover>
+            <Price type="field">249</Price>
+            <Discount type="field">0,75</Discount>
+            <DiscountEndDate>17/06/2021 18:00</DiscountEndDate>
+            <ReleaseDate type="field">14/09/2014</ReleaseDate>
+            <Rating type="field">83</Rating>
+            <ShortDescription type="field">
+                В этом roguelike-симуляторе космического корабля вы сможете управлять собственным кораблем с экипажем 
+                и отправиться в полное ярких триумфов и горьких поражений путешествие по галактике, созданной случайным образом.
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">FTL: Faster Than Light</h2>
+                <div class="description__subtitle">Сложный стратегический игровой процесс</div>
+                <div class="description__text">
+                    Отдавайте экипажу приказы, управляйте системой распределения энергии на корабле и направляйте орудия во время сражений.
+                </div>
+                <div class="description__subtitle">Играйте в удобном для себя темпе</div>
+                <div class="description__text">
+                    Приостановите игру посреди сражения, чтобы оценить свою стратегию и отдать приказы.
+                </div>
+                <div class="description__subtitle">Уникальные формы жизни и технологии</div>
+                <div class="description__text">
+                    Модернизируйте свой корабль и открывайте новые корабли с помощью шести разных инопланетных рас.
+                </div>
+                <div class="description__subtitle">Станьте капитаном, которым всегда хотели быть</div>
+                <div class="description__text">
+                    Вам придется принимать непростые решения в сотнях текстовых столкновений.
+                </div>
+                <div class="description__subtitle">Случайно создаваемые галактики</div>
+                <div class="description__text">
+                    В каждом прохождении вас будут ждать разные враги, события и последствия принятых решений.
+                    Каждое прохождение будет существенно отличаться от остальных.
+                </div>
+                <div class="description__subtitle">Второго шанса не будет!</div>
+                <div class="description__text">
+                    Окончательная смерть означает, что возврата нет. Постоянная угроза поражения придает волнительную значимость каждому действию.
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        © Subset Games, LLC, 2018
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">http://subsetgames.com/faq.html#privacypolicy</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">1,7 ГГц</MinCpu>
+            <MaxCpu type="field">1,7 ГГц</MaxCpu>
+            <MinRamMB type="field">1024</MinRamMB>
+            <MaxRamMB type="field">1024</MaxRamMB>
+            <DiskSpaceMB type="field">200</DiskSpaceMB>
+            <DirectX type="field">9</DirectX>
+            <MinGpu type="field">Минимальное разрешение 1280x720</MinGpu>
+            <MaxGpu type="field">Минимальное разрешение 1920x1080</MaxGpu>
+            <SupportedOses type="field">Windows 7 или более поздняя версия, Mac OS X 10.6+ или более поздняя версия</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field"/>
+            <SupportedTextLanguages type="field">
+                английский, китайский (упрощенный) французский, немецкий, итальянский, японский, польский, 
+                португальский (Бразилия), русский, испанский (Испания)
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/1b6h5bx/ftl1.jpg,
+                https://i.ibb.co/PMh9qbj/ftl2.jpg,
+                https://i.ibb.co/1TbjVnw/ftl3.jpg,
+                https://i.ibb.co/z82d61b/ftl4.jpg,
+                https://i.ibb.co/z8W9dZk/ftl5.jpg
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=lQ4FRcu_bjs,
+                https://www.youtube.com/watch?v=wWTy4kiNXeY
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Стратегия</li>
+                <li>Инди</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">The Long Dark</Name>
+        <GameUrl type="field">long-dark</GameUrl>
+        <Developer type="field">Hinterland Studio Inc.</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/B6xQj24/longdark.png</Cover>
+            <Price type="field">649</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">22/03/2016</ReleaseDate>
+            <Rating type="field">78</Rating>
+            <ShortDescription type="field">
+                Вдумчивый игровой процесс, сосредоточенный на выживании и исследовании, где игрокам предстоит принимать
+                самостоятельные решения и заботиться о себе, путешествуя по ледяной пустоши, пережившей геомагнитную катастрофу.
+                Здесь только вы, вечный мороз и полный набор опасностей, которые приготовила для вас мать-природа.
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">Добро пожаловать в мир бесшумного апокалипсиса</h2>
+                <div class="description__text">
+                    Яркие огни озаряют ночное небо. За тонкими стенами вашей деревянной хижины бушует вьюга.
+                    Где-то вдали воет волк. Взглянув на скудные запасы в своём рюкзаке, вы с тоской вспоминаете жизнь,
+                    какой она была до того, как мир остался без электричества. Сколько вы ещё продержитесь?
+                </div>
+                <div class="description__text">
+                    Перед вами THE LONG DARK — игра, предлагающая совершенно новый взгляд на выживание и исследование, 
+                    которую журнал Wired назвал «вершиной своего жанра».
+                </div>
+                <div class="description__text">
+                    The Long Dark предлагает игрокам вдумчивый игровой процесс, сосредоточенный на выживании и 
+                    исследовании, где им предстоит принимать самостоятельные решения и заботиться о себе, путешествуя по
+                    ледяной пустоши, пережившей геомагнитную катастрофу. Здесь нет никаких зомби — только вы, вечный мороз 
+                    и полный набор опасностей, которые приготовила для вас мать-природа.
+                </div>
+                <div class="description__subtitle">WINTERMUTE</div>
+                <div class="description__text">
+                    WINTERMUTE, эпизодический сюжетный режим The Long Dark, содержит два из пяти эпизодов, 
+                    образующих первый сезон. В обновлении Redux, вышедшем в декабре 2018 года, оба эпизода были полностью
+                    переработаны — изменилась структура заданий, были добавлены новые сюжетные элементы, диалоги, анимации и так далее.
+                </div>
+                <div class="description__subtitle">ЭПИЗОД 1: «Не уходи смиренно»</div>
+                <div class="description__text">
+                    Бывалый лётчик Уилл Маккензи (персонаж игрока) и доктор Астрид Гринвуд, оказываются разделены, 
+                    когда из-за таинственной вспышки света их самолёт потерпел крушение в лесах северной части Канады.
+                    Пытаясь выжить и разыскать Астрид, Маккензи попадает в городок Милтон, где постепенно начинает 
+                    осознавать истинный масштаб этого бесшумного апокалипсиса.
+                </div>
+                <div class="description__subtitle">ЭПИЗОД 2: «Световая фуга»</div>
+                <div class="description__text">
+                    Маккензи в поисках Астрид уходит вглубь заснеженных диких земель. 
+                    Быть может, таинственный охотник, сможет ему помочь. Но можно ли ему доверять?
+                </div>
+                <div class="description__subtitle">ЭПИЗОД 3: «Элегия распутья»</div>
+                <div class="description__text">
+                    После событий в Милтоне таинственная незнакомка спасает доктора Астрид Гринвуд (персонаж игрока) от 
+                    верной смерти. Астрид придётся бросить вызов беспощадным метелям и пустить в ход все свои врачебные 
+                    навыки, чтобы помочь тем, кого она встретит на пути. Но удастся ли ей найти Маккензи и приблизиться 
+                    к разгадке тайны, которая ведёт их обоих к Неотступным Мельницам?
+                </div>
+                <div class="description__text">
+                    Прохождение первых двух эпизодов WINTERMUTE займёт около 15 часов. 
+                    Эпизоды с третьего по пятый включены в стоимость игры и будут бесплатно открываться по мере их выхода.
+                </div>
+                <div class="description__text">
+                    Персонажей озвучили Дженнифер Хейл, Марк Мир, Дэвид Хейтер и Элиас Туфексис (третий эпизод).
+                    Музыку написал Крис Веласко.
+                </div>
+                <div class="description__subtitle">РЕЖИМ ВЫЖИВАНИЯ</div>
+                <div class="description__text">
+                    Выживание — ваша единственная цель, а смерть — единственное, что может поставить точку в вашем пути. В каждой игре вы пишите новую историю.
+                </div>
+                <div class="description__text">
+                    Четыре различных режима сложности позволяют выбрать подходящий вам уровень испытаний — от режима 
+                    «Пилигрим», предназначенного для спокойного и вдумчивого прохождения, до режима «Незваный гость», 
+                    где даже самым опытным игрокам придётся попотеть, чтобы продержаться хотя бы неделю. Если же ни один
+                    из них вам не подойдёт, используйте настройки пользовательского режима, чтобы создать собственный режим выживания.
+                </div>
+                <div class="description__subtitle">ИСПЫТАНИЯ</div>
+                <div class="description__text">
+                    Несколько отдельных режимов испытаний предлагают определённые задания, выполнение которых занимает 
+                    от одного до трёх часов. Например, «Белая мгла», где вам нужно будет как можно быстрее собрать 
+                    достаточно припасов, чтобы пережить ужасную метель. Или «Жертва», где вам придётся убегать от 
+                    кровожадного медведя. Проходя испытания, вы совершаете подвиги, которые дают долгосрочные улучшения 
+                    в режиме выживания. На момент запуска игры доступно пять испытаний, но по мере выхода обновлений их 
+                    число будет увеличиваться.
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        THE LONG DARK ©2012-2021 Hinterland Studio Inc. 
+                        "THE LONG DARK", "Hinterland" and the fox logo are registered trademarks
+                        or trademarks of Hinterland Studio Inc. All rights reserved.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://hinterlandgames.com/privacy-policy</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Двухъядерный процессор Intel i5 с частотой от 2 ГГц</MinCpu>
+            <MaxCpu type="field">Intel i7 с частотой 2,6 ГГц или лучше</MaxCpu>
+            <MinRamMB type="field">4096</MinRamMB>
+            <MaxRamMB type="field">8192</MaxRamMB>
+            <DiskSpaceMB type="field">8192</DiskSpaceMB>
+            <DirectX type="field">11</DirectX>
+            <MinGpu type="field">Intel серии 4xxx с 512 МБ видеопамяти или лучше</MinGpu>
+            <MaxGpu type="field">nVidia GTX 1060 или лучше</MaxGpu>
+            <SupportedOses type="field">Windows 7/8/10, OSX 10.9.3</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field">английский</SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                английский, китайский (упрощённый), китайский (традиционный), голландский, французский, русский, 
+                испанский (Испания), португальский (Бразилия), португальский, испанский (Латинская Америка), корейский,
+                японский, итальянский, немецкий, датский, шведский, украинский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/cTwvQB7/longdark1.png,
+                https://i.ibb.co/hW0nTZ5/longdark2.png,
+                https://i.ibb.co/K0fkL14/longdark3.png,
+                https://i.ibb.co/ZcKrcWc/longdark4.png
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=PAKw7yokYFg,
+                https://www.youtube.com/watch?v=WJ-1O_w2KTg
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Выживание</li>
+                <li>Приключение</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+                <li>Поддержка контроллеров</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">The Escapists 2</Name>
+        <GameUrl type="field">escapists-2</GameUrl>
+        <Developer type="field">Team 17 &amp; Mouldy Toof Studios | Team17 Digital Ltd</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/0XHN8PG/escape-cover.png</Cover>
+            <Price type="field">739</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">22/08/2017</ReleaseDate>
+            <Rating type="field">75</Rating>
+            <ShortDescription type="field">
+                Рискните всем, чтобы сбежать из самых строгих тюрем мира. Исследуйте самые большие тюрьмы! 
+                Вам придётся жить по законам тюрьмы, появляться на перекличках, работать и соблюдать строгий распорядок
+                дня — и в то же время претворять свои мечты о свободе в жизнь!
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">The Escapists 2</h2>
+                <div class="description__text">
+                    Рискните всем, чтобы сбежать из самых строгих тюрем мира. 
+                    Исследуйте самые большие тюрьмы! Вам придётся жить по законам тюрьмы, появляться на перекличках, 
+                    работать и соблюдать строгий распорядок дня — и в то же время претворять свои мечты о свободе в жизнь!
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        The Escapists 2 разработана Mouldy Toof Studios и Team17 Digital Ltd. © 2019 г. 
+                        Издатель: Team17 Digital Ltd. Все прочие товарные знаки, авторские права и логотипы являются 
+                        собственностью соответствующих владельцев.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://www.team17.com/privacy-policy/</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core Duo E6600 с частотой 2,4 ГГц</MinCpu>
+            <MaxCpu type="field">i5-2500k с частотой 3,3 ГГц, AMD FX 6300 с частотой 3,5 ГГц</MaxCpu>
+            <MinRamMB type="field">2048</MinRamMB>
+            <MaxRamMB type="field">4096</MaxRamMB>
+            <DiskSpaceMB type="field">4096</DiskSpaceMB>
+            <DirectX type="field">11</DirectX>
+            <MinGpu type="field">Intel 4400, GeForce GT 8800, AMD Radeon HD 4650</MinGpu>
+            <MaxGpu type="field">GeForce GTX 750, AMD R7 370</MaxGpu>
+            <SupportedOses type="field">Windows 7/8.1/10 (32 и 64 -разрядные версии)</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field"/>
+            <SupportedTextLanguages type="field">
+                английский, французский, немецкий, испанский, русский, китайский (упрощённый), итальянский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/MC6JG70/escape1.png,
+                https://i.ibb.co/4Kd0HcW/escape2.png,
+                https://i.ibb.co/gWd8dJ8/escape3.png,
+                https://i.ibb.co/KVfwz7V/escape4.png
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=NMTwhVPqr2k
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Симулятор</li>
+                <li>Стратегия</li>
+                <li>Инди</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Falcon Edge</Name>
+        <GameUrl type="field">falcon-edge</GameUrl>
+        <Developer type="field">Outerloop Games</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/CBS1hHT/falcon-cover.png</Cover>
+            <Price type="field">449</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">06/09/2017</ReleaseDate>
+            <Rating type="field">69</Rating>
+            <ShortDescription type="field"/>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">РАСТИТЕ СОКОЛА, СРАЖАЙТЕСЬ С ЗАХВАТЧИКАМИ.</h2>
+                <div class="description__text">
+                    Подружитесь с юным соколом и отправьтесь в приключение. Falcon Age — это одиночный приключенческий 
+                    экшен с видом от первого лица. Вы возьмете на себя роль Ары, которая сражается с армией роботов-захватчиков, 
+                    чтобы восстановить культурное наследие своего народа — забытое искусство соколиной охоты.
+                    Игра начинается на погибающей колонизированной планете. Культура местного населения уничтожена,
+                    ресурсы истощены, а саму планету механические оккупанты превратили в пустыню. Ара несправедливо
+                    угодила в тюрьму за мелкое нарушение. Ожидая своей участи в одиночной камере, она заводит дружбу 
+                    с юным соколом. Вместе они совершают побег и отправляются в путешествие, чтобы помочь силам сопротивления
+                    освободить планету и прогнать захватчиков.
+                </div>
+                <div class="description__title">Особенности:</div>
+                <ul class="description__list">
+                    <li class="description__list-item">
+                        <span>Верните себе свободу: Восстаньте против роботов-захватчиков и восстановите культурное наследие своего народа.</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>Подружитесь с верной птицей: Дайте своему соколу имя, ухаживайте за ним, кормите, обучайте и наряжайте его.</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>костюм следопыта шторма племени Карха и мощный лук племени Карха;</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>Отправьтесь с соколом на охоту: Вокруг множество разных диких животных, на которых можно охотиться ради ценных ресурсов.</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>Готовьте пищу для сокола: Выращивайте, добывайте и готовьте пищу, чтобы кормить, улучшать, лечить и усиливать своего сокола.</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>
+                            Украсьте своего сокола: Создайте своему соколу неповторимый образ с помощью различных шапочек и шарфов. 
+                            Также можно давать ему функциональное снаряжение, например эхолокатор и броню. 
+                        </span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>Сражайтесь с роботами-захватчиками: Дайте отпор дронам и роботам с помощью верной оглушающей дубинки и своего сокола.</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>Освободите свою планету: Отвоюйте множество поселений у колонизаторов и восстановите общество.</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>Мирный режим: Проходите сюжет, сражаясь лишь по собственному желанию.</span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>
+                            Отдельная кнопка для взаимодействия с соколом: Давайте и забирайте предметы, делайте приветствие
+                            ладонью или кулаком и успокаивайте своего сокола.
+                        </span>
+                    </li>
+                    <li class="description__list-item">
+                        <span>Игра поддерживает виртуальную реальность на ПК для полного погружения.</span>
+                    </li>
+                </ul>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        © Outerloop Games, 2019
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://outerloopgames.com/privacy</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core i5 с частотой 3,5 ГГц или шестиядерный AMD FX</MinCpu>
+            <MaxCpu type="field">Intel Core i5 с частотой 3,5 ГГц или шестиядерный AMD FX</MaxCpu>
+            <MinRamMB type="field">2048</MinRamMB>
+            <MaxRamMB type="field">4096</MaxRamMB>
+            <DiskSpaceMB type="field">5120</DiskSpaceMB>
+            <DirectX type="field">11</DirectX>
+            <MinGpu type="field">Nvidia GeForce GTX 970 или AMD R9 290X (4 ГБ видеопамяти)</MinGpu>
+            <MaxGpu type="field">Nvidia GeForce GTX 970 или AMD R9 290X (4 ГБ видеопамяти)</MaxGpu>
+            <SupportedOses type="field">Windows 10 (64-разрядная)</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field">
+                английский
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                английский, испанский, немецкий, французский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/ZWy9XxB/falcon1.jpg,
+                https://i.ibb.co/5Gz98JN/falcon2.png,
+                https://i.ibb.co/5BHF3St/falcon3.jpg,
+                https://i.ibb.co/K056y82/falcon4.jpg,
+                https://i.ibb.co/gw5jmPn/falcon5.jpg
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=MgfkBrA2_xA
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Экшн</li>
+                <li>Приключение</li>
+                <li>Инди</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+                <li>Виртуальная реальность</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">World of Warships</Name>
+        <GameUrl type="field">world-of-warships</GameUrl>
+        <Developer type="field">Wargaming</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/mhhq082/warships-cover.png</Cover>
+            <Price type="field">0</Price>
+            <Discount type="field">0</Discount>
+            <DiscountEndDate/>
+            <ReleaseDate type="field">18/09/2015</ReleaseDate>
+            <Rating type="field">79</Rating>
+            <ShortDescription type="field">
+                Ощутите дух масштабных бесплатных морских сражений, командуя одним из 350 исторических кораблей.
+                World of Warships — это уникальное сочетание стратегии и боёв в реальном времени.
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">World of Warships</h2>
+                <div class="description__subtitle">ИГРАЙТЕ БЕСПЛАТНО</div>
+                <div class="description__text">
+                    World of Warships — уникальный бесплатный MMO-экшен, в котором все игроки имеют равный доступ к возможностям игры.
+                </div>
+                <div class="description__subtitle">ИСТОРИЧЕСКИЕ КОРАБЛИ</div>
+                <div class="description__text">
+                    Свыше 350 исторических кораблей времён Первой и Второй мировых войн. Среди них Missouri, Bismarck и
+                    Yamato — в World of Warships вы можете командовать каждым из них.
+                </div>
+                <div class="description__subtitle">МАСШТАБНЫЕ МОРСКИЕ СРАЖЕНИЯ</div>
+                <div class="description__text">
+                    Вас ждёт новый взгляд на морские баталии! Сокрушайте врагов мощными орудиями линкоров, совершайте
+                    скрытные манёвры на эсминцах, расстреливайте противников на крейсерах или отправляйте в воздух эскадрильи авианосцев.
+                    Планируйте и атакуйте!
+                </div>
+                <div class="description__subtitle">ИГРАЙТЕ В ОДИНОЧКУ ИЛИ С ДРУЗЬЯМИ</div>
+                <div class="description__text">
+                    Сражайтесь со случайными игроками, соберите команду, чтобы принять участие в захватывающем сценарном
+                    бою, или проверьте свои навыки в ранговых боях.
+                </div>
+                <div class="description__subtitle">УЛУЧШАЙТЕ И ИЗМЕНЯЙТЕ ВНЕШНИЙ ВИД КОРАБЛЕЙ</div>
+                <div class="description__text">
+                    Вам доступен широкий выбор возможностей для придания индивидуальности своим кораблям: модули,
+                    модернизации, камуфляжи, флаги и многое другое.
+                </div>
+                <div class="description__subtitle">ЗАРУЧИТЕСЬ ПОДДЕРЖКОЙ КОМАНДИРОВ</div>
+                <div class="description__text">
+                    Исторические командиры Уильям Хэлси, Николай Кузнецов, Ямамото Исороку и многие другие помогут вам
+                    совладать с грозными кораблями. Используйте их навыки, чтобы улучшить показатели своих любимых кораблей.
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        © 2012-2021 Wargaming.net. All rights reserved. "World of Warships", "Wargaming.net" and
+                        "Wargaming" and their respective logos are trademarks or registered trademarks of Wargaming.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://legal.eu.wargaming.net/en/privacy-policy/</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core 2 Duo с частотой 2,66 ГГц, Core i3 с частотой 2,5 ГГц, AMD Athlon II X2 с частотой 2,7 ГГц</MinCpu>
+            <MaxCpu type="field">Не ниже Intel Core i5 с частотой 3,4 ГГц, AMD FX 6350 с частотой 3,9 ГГц</MaxCpu>
+            <MinRamMB type="field">4096</MinRamMB>
+            <MaxRamMB type="field">6144</MaxRamMB>
+            <DiskSpaceMB type="field">66560</DiskSpaceMB>
+            <DirectX type="field">11</DirectX>
+            <MinGpu type="field">Nvidia GeForce GT 440/630, AMD Radeon HD 7660</MinGpu>
+            <MaxGpu type="field">Не ниже Nvidia GeForce GTX 660, AMD Radeon R9 270x</MaxGpu>
+            <SupportedOses type="field">Windows 7 SP1 (64-разрядная) / Windows 10</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field">
+                английский, русский, итальянский, испанский (Испания), французский, немецкий, голландский, японский,
+                китайский (упрощённый), китайский (традиционный), корейский, польский, португальский (Бразилия),
+                испанский (Латинская Америка)
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                английский, китайский (упрощённый), чешский, голландский, немецкий, французский, японский, итальянский,
+                корейский, польский, португальский (Бразилия), русский, испанский (Испания), испанский (Латинская Америка),
+                тайский, турецкий, украинский, китайский (традиционный)
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/XC5MsgL/warships1.jpg,
+                https://i.ibb.co/SBtgTNK/warships2.jpg,
+                https://i.ibb.co/YQRKgBK/warships3.jpg,
+                https://i.ibb.co/CJh8Qqs/warships4.jpg,
+                https://i.ibb.co/fGYd3Lq/warships5.jpg
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=RQK6hH5-nwU,
+                https://www.youtube.com/watch?v=ZXchnjkOnWM
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Экшн</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Многопользовательская</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Soma</Name>
+        <GameUrl type="field">soma</GameUrl>
+        <Developer type="field">Frictional Games</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/rbrxscr/soma-cover.png</Cover>
+            <Price type="field">649</Price>
+            <Discount type="field">0,8</Discount>
+            <DiscountEndDate>17/06/2021 18:00</DiscountEndDate>
+            <ReleaseDate type="field">22/09/2015</ReleaseDate>
+            <Rating type="field">79</Rating>
+            <ShortDescription type="field">
+                SOMA — это научно-фантастический ужастик от студии Frictional Games, создателей игры «Amnesia: Призрак прошлого».
+                Вас ждет пугающая история, ставящая непростые вопросы: что такое сознание, личность и что значит быть человеком?
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">SOMA</h2>
+                <div class="description__text">
+                    Радио молчит, еда на исходе, а роботы возомнили себя людьми. Путешествуя по подводной станции «Пафос II»,
+                    которая долгое время была полностью отрезана от внешнего мира, вам предстоит принимать непростые решения.
+                    Осталось ли что-то, за что еще стоит бороться?
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        © Frictional Games, 2016 – 2019 гг.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://frictionalgames.com/site/privacypolicy</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Core i3 / AMD A6 (частота 2,4 ГГц)ц</MinCpu>
+            <MaxCpu type="field">Core i5 / AMD FX (частота 2,4 ГГц)</MaxCpu>
+            <MinRamMB type="field">4096</MinRamMB>
+            <MaxRamMB type="field">8192</MaxRamMB>
+            <DiskSpaceMB type="field">25600</DiskSpaceMB>
+            <DirectX type="field">10</DirectX>
+            <MinGpu type="field">NVIDIA GeForce GTX 260 / AMD Radeon HD 5750. OpenGL 3.3</MinGpu>
+            <MaxGpu type="field">NVIDIA GeForce GTX 480 / AMD Radeon HD 5970. OpenGL 3.3</MaxGpu>
+            <SupportedOses type="field">Windows Vista/7/10 или MAC OS 10.9 (64-разрядная) и выше</SupportedOses>
+            <ExtraInfo/>
+            <SupportedVoiceLanguages type="field">
+                английский
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                французский, нидерландский, итальянский, португальский (Бразилия), испанский (Испания), русский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/0t4mzr8/soma1.png,
+                https://i.ibb.co/xjWyjH7/soma2.png,
+                https://i.ibb.co/5nyHbFw/soma3.png,
+                https://i.ibb.co/kmfm4Ck/soma4.png,
+                https://i.ibb.co/TWxtDgm/soma5.png,
+                https://i.ibb.co/RDJ6sv9/soma6.png
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=jgvrH1Iz5bM,
+                https://www.youtube.com/watch?v=SlZfznVWiBQ
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Хоррор</li>
+                <li>Выживание</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Одиночная</li>
+            </Features>
+        </GameFilter>
+    </Game>
+    <Game type="model">
+        <Name type="field">Rainbow Six Siege</Name>
+        <GameUrl type="field">rainbow-six-siege</GameUrl>
+        <Developer type="field">Ubisoft</Developer>
+        <GameInfo type="model">
+            <Cover type="field">https://i.ibb.co/t342RNX/rainbowsix-cover.png</Cover>
+            <Price type="field">829</Price>
+            <Discount type="field">0,6</Discount>
+            <DiscountEndDate>27/06/2021 18:00</DiscountEndDate>
+            <ReleaseDate type="field">01/12/2015</ReleaseDate>
+            <Rating type="field">76</Rating>
+            <ShortDescription type="field">
+                Игроков ждут напряжённые бои на коротких дистанциях и открытом пространстве,
+                где стратегия и командное взаимодействие играют важнейшую роль.
+            </ShortDescription>
+            <DetailedDescription type="field" data="html">
+                <h2 class="description__title">Tom Clancy's Rainbow Six Осада</h2>
+                <div class="description__text">
+                    Участвуйте в захватывающих PVP-боях 5х5. В Tom Clancy's Rainbow Six® Осада у вас появятся
+                    безграничные возможности разработки стратегии, с помощью которой вы приведете свою команду к победе.
+                </div>
+                <div class="description__text">
+                    "Осада" постоянно развивается. В каждом сезоне мы выпускаем новый контент, включая оперативников с
+                    уникальными возможностями, события, оружие и карты.
+                </div>
+            </DetailedDescription>
+            <LegalInfo type="field" data="html">
+                <div class="legal-info__data">
+                    <span class="legal-info__main-info">
+                        © 2015 Ubisoft Entertainment. All Rights Reserved.
+                    </span>
+                </div>
+                <div class="legal-info__data"><a class="legal-info__link">https://legal.ubi.com/privacypolicy/</a></div>
+            </LegalInfo>
+        </GameInfo>
+        <GameSystemRequirement type="model">
+            <MinCpu type="field">Intel Core i3 560 с частотой 3,3 ГГц | AMD Phenom II X4 945 с частотой 3 ГГц</MinCpu>
+            <MaxCpu type="field">Intel Core i5-2500K с частотой 3,3 ГГц | AMD FX-8120 с частотой 3,1 ГГц</MaxCpu>
+            <MinRamMB type="field">6144</MinRamMB>
+            <MaxRamMB type="field">8192</MaxRamMB>
+            <DiskSpaceMB type="field">62464</DiskSpaceMB>
+            <DirectX type="field">11</DirectX>
+            <MinGpu type="field">NVIDIA GeForce GTX 460 | AMD Radeon HD 5870 (с поддержкой DirectX 11 и видеопамятью объёмом 1 ГБ)</MinGpu>
+            <MaxGpu type="field">NVIDIA GeForce GTX 670 (или GTX 760 / GTX 960) | AMD Radeon HD 7970 (или R9 280x с 2 ГБ видеопамяти / R9 380 / Fury X)</MaxGpu>
+            <SupportedOses type="field">Windows 7 | Windows 8.1 | Windows 10 | Только 64-разрядные версии</SupportedOses>
+            <ExtraInfo>
+                Необходимо широкополосное интернет-соединение и звуковая карта с поддержкой DirectX® 9.0c и последней версией драйверов
+            </ExtraInfo>
+            <SupportedVoiceLanguages type="field">
+                английский, французский, итальянский, немецкий, испанский (Испания), португальский, русский, японский
+            </SupportedVoiceLanguages>
+            <SupportedTextLanguages type="field">
+                польский, арабский, чешский, голландский, турецкий, японский
+            </SupportedTextLanguages>
+        </GameSystemRequirement>
+        <GameMedia type="model">
+            <Screenshots type="field">
+                https://i.ibb.co/ryXgrG4/rainbowsix.png,
+                https://i.ibb.co/YcGGfBG/rainbowsix1.png,
+                https://i.ibb.co/1vXkjMS/rainbowsix2.png,
+                https://i.ibb.co/0yHYKg8/rainbowsix3.png,
+                https://i.ibb.co/mRgwqNZ/rainbowsix4.png,
+                https://i.ibb.co/xhbbK6W/rainbowsix5.png,
+                https://i.ibb.co/M6Q51HW/rainbowsix6.png,
+                https://i.ibb.co/gPpcFNr/rainbowsix7.png
+            </Screenshots>
+            <Trailers type="field">
+                https://www.youtube.com/watch?v=6wlvYh0h63k,
+                https://www.youtube.com/watch?v=v1S9YqDu29M,
+                https://www.youtube.com/watch?v=T0pPLrJOG4w,
+                https://www.youtube.com/watch?v=_ZyVcjDyI8Q
+            </Trailers>
+        </GameMedia>
+        <GameFilter type="model">
+            <Genres type="model-list">
+                <li>Экшн</li>
+                <li>Шутер</li>
+                <li>Стратегия</li>
+            </Genres>
+            <Features type="model-list">
+                <li>Многопользовательская</li>
+                <li>Кооперативная</li>
             </Features>
         </GameFilter>
     </Game>

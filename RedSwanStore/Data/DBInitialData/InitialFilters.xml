@@ -68,6 +68,10 @@
             <Name>Казуальная</Name>
             <UrlId>casual</UrlId>
         </Genre>
+        <Genre>
+            <Name>Выживание</Name>
+            <UrlId>survival</UrlId>
+        </Genre>
     </Genres>
     
     <PriceCategories>
