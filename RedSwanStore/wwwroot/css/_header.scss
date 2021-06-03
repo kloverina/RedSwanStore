@@ -1,5 +1,7 @@
+$header_bc: #222222;
+
 header{
-  background-color: #222222;
+  background-color: $header_bc;
   max-height: 120px;
   height: 50px;
   color: #E6E6E6;
@@ -9,7 +11,7 @@ header{
   font-weight: 400;
   line-height: 18px;
   font-size: 16px;
-  overflow: hidden;
+  //overflow: hidden;
   z-index: 100;
   top: 0;
   position: fixed;
@@ -28,6 +30,7 @@ header{
     flex-wrap: nowrap;
     padding: 20px 0 0;
     justify-content: space-between;
+    //text-transform: uppercase;
     .menu {
       margin: 0 0 0 10px;
       padding: 0;
@@ -62,13 +65,12 @@ header{
           text-decoration: none;
         }
 
-        :not(.store-icon):hover::after, :not(.store-icon):active::after{
+        &:not(.store-icon):hover::after, :not(.store-icon):active::after{
           display: inline-block;
           width: 100%;
           height: 5px;
           position: relative;
           top: -3px;
-          //background-color: #961809;
           background-color: #7d0011;
           content: "";
           z-index: 10;
@@ -90,21 +92,63 @@ header{
       flex: 0 1 40%;
       height: 100%;
       .sign-in{
-        padding: 0 30px 0 0;
-
+        flex: 0 1 20%;
+        min-width: 120px;
+        text-align: center;
+        
       }
       a{
         color: inherit;
       }
-      div:hover{
+      a:hover{
         color: white;
       }
     }
   }
+  .dropdown{
+    
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: 0 20px;
+    
+    &__submenu{
+      background-color: $header_bc;
+      min-width: 120px;
+      width: 100%;
+      position: relative;
+      z-index: 1000;
+      top: 12px;
+      left: -20px;
+      padding: 15px 20px;
+      margin-right: 20px;
+      text-align: center;
+      display: none;
+      
+      button:not(:last-of-type){
+        margin-bottom: 10px;
+      }
+      span{
+        width: 100%;
+        padding-left: 15px;
+        text-align: center;
+      }
+     
+    }
+    
+    &:hover{
+      .dropdown__submenu{
+        display: block;
+      }
+    }
+  }
+
+ 
 }
 .download {
+  min-width: 215px;
   a {
-    padding: 20px 10px;
+    padding: 20px 10px 10px 10px;
     background-color: rgba(125, 0, 17, 0.75);
   }
 

@@ -103,19 +103,15 @@ h4{
 
   &__browse {
     flex: 5 1 85%;
-    //background-color:goldenrod;
-    //padding-right: 10px;
   }
 
   &__filter {
-    //background-color: #7d0011;
     flex: 1 5 15%;
     margin-left: 10px;
   }
   
   &__library{
-    //flex: 1 1 100%;
-    //background-color: #7d0011;
+    
   }
   
 
@@ -312,7 +308,7 @@ h4{
     
     .options__item {
       li {
-        padding: 10px 5px 10px 15px;
+        padding: 7px 5px 7px 10px;
         line-height: 20px;
       }
       
