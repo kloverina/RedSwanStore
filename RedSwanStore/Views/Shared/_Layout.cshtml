@@ -22,7 +22,9 @@
             <li><a asp-area="" asp-controller="Home" asp-action="Index">Магазин</a></li>
             <li><a href="#search">Поиск</a></li>
             
-            <li> <a asp-area="" asp-controller="Library" asp-action="Library"> Костыль </a> </li>
+            <li> <a asp-area="" asp-controller="Library" asp-action="Library"> Костыль #1 </a> </li>
+            
+            <li> <a asp-area="" asp-controller="Profile" asp-action="Profile"> Костыль #2 </a> </li>
         </ul>
         <div class="rightNav">
             <div class="rightNav__item sign-in dropdown">
@@ -31,7 +33,7 @@
                     <span class="dropdown_button__toggleLabel">Bход</span>
                 </a> 
                 
-                <div class="dropdown__submenu submenu hidden">
+                <div class="dropdown__submenu submenu">
                     
                     <button class="submenu__button sort-button" data-type="sort" data-controller-arg="key">
                         <a asp-area="" asp-controller="Library" asp-action="Library"> 

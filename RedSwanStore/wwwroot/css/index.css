@@ -133,6 +133,9 @@ header .dropdown__submenu span {
 header .dropdown:hover .dropdown__submenu {
   display: block;
 }
+header .dropdown__submenu.hidden {
+  display: none !important;
+}
 
 .download {
   min-width: 215px;
