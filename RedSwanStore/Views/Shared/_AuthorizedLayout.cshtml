@@ -31,7 +31,7 @@
                 
                 
                 <span class="dropdown_button__toggleLabel">
-                    <a class="header-user-info" asp-area="" asp-controller="" asp-action="">
+                    <a class="header-user-info" href="/profile/user?@ViewData["userUrl"]">
                         <img class="header-user-info__photo" src="@ViewData["userPhoto"]" alt="photo" width="45" height="45">
                         <span class="header-user-info__login">@ViewData["userLogin"]</span>
                     </a>

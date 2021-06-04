@@ -1,3 +1,13 @@
+@model User
+
+@{
+  var layout = ViewData["layout"] as string;
+  
+  if (layout != null){
+    Layout = layout;
+  }
+}
+
 <div class="container">
     <div class="profile">
         
@@ -9,7 +19,7 @@
                 Управляйте данными учетной записи, включая ваше имя, контактные данные и прочую информацию.
             </p>
         </div>
-        <form class="form account_forms" method="post">
+        <form class="form account_forms" method="post" data-ajax="true" data-ajax-method="post" data-ajax-url="@Url.Action("SaveChanges")" data-ajax-complete="onSaveChanges">
             <div class="profile__photo photo">
                 <p class="title"> Аватар </p>
                 <p class="description">
@@ -18,12 +28,10 @@
                 
                 <div class="photo-container photo">
                     <div class="photo__username_photo">
-                        <img src="img/example.png" alt="Example" width="184px" height="184px">
+                        <img src="@Model.Photo" alt="Example" width="184px" height="184px">
                     </div>
                     <div class="photo__upload">
-                        <button type="submit" class="photo__upload button">
-                            <span class="button-label"> Загрузите свой аватар </span>
-                        </button> 
+                        <input type="file" accept="image/jpeg,image/png" class="photo__upload input">
                         <p class="description">
                             Загрузите файл со своего устройсва. Нужно квадратное изображение хотя бы 
                             184 на 184 пикселя.
@@ -40,7 +48,7 @@
                             Отображаемое имя
                         </p>
                         <input class="form_element__username" id="account_username" name="login" type="text"
-                               placeholder="Отображаемое имя" value="Example_login">
+                               placeholder="Отображаемое имя" value="@Model.Login">
                     </div>
                 
                 
@@ -48,11 +56,10 @@
                         <p class="form_desc description">
                             Личная ссылка
                         </p>
-                        <input class="form_element__url" id="account_url" name="username_url" type="text"
-                               value="Tartaglia">
+                        <input class="form_element__url" id="account_url" name="url" type="text"
+                               value="@Model.UserUrl">
                         <span>
-                            Ваш профиль будет находиться по адресу: https://RedSwanStore/id/
-                            <span class="account_url">Tartaglia</span>
+                            Ваш профиль будет находиться по адресу: https://redswanstore/profile/user?@Model.UserUrl
                         </span>
                   
                     </div>
@@ -74,7 +81,7 @@
                                 Имя
                             </p>
                             <input class="form_element__username" id="name" name="name" type="text"
-                                   placeholder="Имя" autocomplete="name" value="Аякс">
+                                   placeholder="Имя" autocomplete="name" value="@Model.Name">
                         </label>
                     </div>
                                 
@@ -85,7 +92,7 @@
                                 Фамилия
                             </p>
                             <input class="form_element__username" id="surname" name="surname" type="text"
-                                   placeholder="Фамилия" value="У Аякса нет, а у тебя должна быть">
+                                   placeholder="Фамилия" value="@Model.Surname">
                         </label>
                     </div>
                 </div>
@@ -103,7 +110,7 @@
                             <p class="form_desc description">
                                 Текущий пароль
                             </p>
-                            <input class="form_element__password" id="old_pass" name="password" type="password"
+                            <input class="form_element__password" id="old_pass" name="oldPassword" type="password"
                                    placeholder="Текущий пароль" value="">
                         </label>
                     </div>
@@ -113,8 +120,8 @@
                             <p class="form_desc description">
                                 Новый пароль
                             </p>
-                            <input class="form_element__new-pass" id="account_new-pass" name="new_pass" type="password"
-                                    placeholder="Новый пароль">
+                            <input class="form_element__new-pass" id="account_new-pass" name="newPassword" type="password"
+                                   placeholder="Новый пароль" value="">
                         </label>
                     </div>
                 
@@ -123,8 +130,8 @@
                             <p class="form_desc description">
                                 Подтвердите новый пароль
                             </p>
-                            <input class="form_element__new-pass" id="account_new-pass" name="new_pass" type="password"
-                                    placeholder="Подтвердите пароль">
+                            <input class="form_element__new-pass" id="account_new-pass-repeat" name="new_pass" type="password"
+                                   placeholder="Подтвердите пароль" value="">
                         </label>
                     </div>
                 </div>
@@ -160,3 +167,7 @@
    
     </div>
 </div>
+
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/libs/JQuery.Unobtrusive.Ajax/jquery.unobtrusive-ajax.js"></script>
+<script src="~/js/profile.js"></script>
