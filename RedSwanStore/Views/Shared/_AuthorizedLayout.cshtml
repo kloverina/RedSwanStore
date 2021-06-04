@@ -21,10 +21,8 @@
             
             <li><a asp-area="" asp-controller="Home" asp-action="Index">Магазин</a></li>
             <li><a href="#search">Поиск</a></li>
-            
-            <li> <a asp-area="" asp-controller="Library" asp-action="Library"> Костыль #1 </a> </li>
-            
-            <li> <a asp-area="" asp-controller="" asp-action=""> Костыль #2 </a> </li>
+
+            <li> <a asp-area="" asp-controller="" asp-action=""> Костыль </a> </li>
         </ul>
         <div class="rightNav">
             <div class="rightNav__item sign-in dropdown">
@@ -32,12 +30,17 @@
                 
                 <span class="dropdown_button__toggleLabel">
                     <a class="header-user-info" asp-area="" asp-controller="" asp-action="">
-                        <img class="header-user-info__photo" src="@ViewData["userPhoto"]" alt="photo" width="45" height="45">
+                        <img class="header-user-info__photo" src="@ViewData["userPhoto"]" alt="photo" width="25" height="25">
                         <span class="header-user-info__login">@ViewData["userLogin"]</span>
                     </a>
                 </span>
 
                 <div class="dropdown__submenu submenu">
+                    <button class="submenu__button">
+                        <span class="balance"> Баланс: 
+                            <span class="user_balance"> 999.99 </span> ₽
+                        </span>
+                    </button>
                     
                     <button class="submenu__button">
                         <a href="library/user?@ViewData["userUrl"]"> 
