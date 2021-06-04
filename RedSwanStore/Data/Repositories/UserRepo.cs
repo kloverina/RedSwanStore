@@ -172,6 +172,9 @@ namespace RedSwanStore.Data.Repositories
 
             bool isUnique = dbContent.Users.FirstOrDefault(u => u.UserUrl == url) is null;
 
+            if (isUnique)
+                user.UserUrl = url;
+
             return isUnique && TryUpdate(user);
         }
 
