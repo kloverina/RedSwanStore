@@ -3,7 +3,7 @@ $header_bc: #222222;
 header{
   background-color: $header_bc;
   max-height: 120px;
-  height: 50px;
+  height: 55px;
   color: #E6E6E6;
   padding: 0;
   margin: 0 auto;
@@ -48,11 +48,11 @@ header{
           margin: 20px;
         }
         div.store-icon{
-          height: 40px ;
-          width: 40px;
+          height: 45px ;
+          width: 45px;
           position: relative;
           top: -33px;
-          margin: 0 10px 0 10px;
+          margin: 0 20px 0 10px;
           padding: 0;
 
           background: url(../favicon.ico) no-repeat 0 0;
@@ -70,7 +70,7 @@ header{
           width: 100%;
           height: 5px;
           position: relative;
-          top: -3px;
+          top: 2px;
           background-color: #7d0011;
           content: "";
           z-index: 10;
@@ -151,7 +151,7 @@ header{
 .download {
   min-width: 215px;
   a {
-    padding: 20px 10px 10px 10px;
+    padding: 20px 15px 15px 15px;
     background-color: rgba(125, 0, 17, 0.75);
   }
 
