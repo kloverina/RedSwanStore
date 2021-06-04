@@ -39,8 +39,8 @@ namespace RedSwanStore.Controllers
             
             libraryViewModel = new LibraryViewModel();
         }
-
-        [Route("")]
+        
+        [Route("user")]
         [HttpGet]
         public IActionResult Library()
         {

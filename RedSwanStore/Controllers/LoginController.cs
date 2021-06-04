@@ -20,13 +20,14 @@ namespace RedSwanStore.Controllers
         
         [Route("")]
         [HttpGet]
-        public ViewResult Login()
+        public ViewResult Login(string returnUrl)
         {
+            ViewBag.returnUrl = returnUrl;
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string password)
+        public IActionResult Login(string email, string password, string returnUrl)
         {
             var result = new LoginResult();
             User? user = usersTable.GetUserByEmail(email);
@@ -42,7 +43,7 @@ namespace RedSwanStore.Controllers
             result.IsCorrectPassword = true;
             
             Authenticate(email);
-            result.RedirectLink = $"{Url.Action("Library", "Library", new {url = user.UserUrl})}";
+            result.RedirectLink = string.IsNullOrEmpty(returnUrl) ? $"library/user?{user.UserUrl}": $"{returnUrl}";
             return Json(result);
         }
 
