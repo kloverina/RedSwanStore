@@ -40,3 +40,9 @@
     
     window.location.reload(true);
 }
+
+
+
+document.querySelector('button[type=reset]').addEventListener('click', function (e) {
+   window.location.reload(true); 
+});
