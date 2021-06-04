@@ -665,17 +665,33 @@ h1.title {
   padding-left: 10px;
   list-style-type: disc;
 }
+.game_section .system-req h2 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
 .game_section .system-req .table {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-radius: 4px;
+  flex-wrap: wrap;
   background: #262626;
   padding: 25px 50px;
+  margin-bottom: 60px;
+}
+.game_section .system-req .table span {
+  font-size: 14px;
+  line-height: 20px;
+  flex: 1 1 100%;
+}
+.game_section .system-req .table span:first-of-type {
+  color: rgba(245, 245, 245, 0.6);
 }
 .game_section .system-req .table .column {
-  flex: 1 1 50%;
+  flex: 1 1 45%;
   margin: 10px;
+  box-sizing: border-box;
 }
 .game_section .system-req .table .column div:first-of-type {
   margin: 40px 0 20px;
@@ -686,13 +702,24 @@ h1.title {
   justify-content: stretch;
   margin: 20px 0;
 }
-.game_section .system-req .table .column div span {
-  font-size: 14px;
-  line-height: 20px;
+.game_section .system-req .table .language {
   flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  margin: 20px 10px 40px;
 }
-.game_section .system-req .table .column div span:first-of-type {
-  color: rgba(245, 245, 245, 0.6);
+.game_section .system-req .table .legal-info {
+  flex: 1 1 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+.game_section .system-req .table .legal-info span {
+  letter-spacing: 0.2px;
+  padding: 0 30px;
 }
 
 body {
