@@ -207,17 +207,17 @@ header .dropdown__submenu.hidden {
   margin: 10px auto;
   width: 90px;
   height: 120px;
-  background: url(../img/3.png) no-repeat 0 0;
+  background: url(../img/login-icons.png) no-repeat 0 0;
   background-size: cover;
 }
 
 .login-element__forget-pass.logo {
-  background: url(../img/3.png) no-repeat -90px 0;
+  background: url(../img/login-icons.png) no-repeat -90px 0;
   background-size: cover;
 }
 
 .login-element__sign-up.logo {
-  background: url(../img/3.png) no-repeat -180px 0;
+  background: url(../img/login-icons.png) no-repeat -180px 0;
   background-size: cover;
 }
 
@@ -415,34 +415,39 @@ p.form_element__checkpass.active {
 
 
 }*/
-.personal_info {
-  margin-bottom: 40px;
-}
 .profile {
   width: 100%;
   min-height: 500px;
-  padding: 0;
+  padding: 0 10px;
   margin: 120px auto 0;
 }
 .profile .personal_info {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .profile .form.account_forms {
   width: 100%;
-  display: block;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
 }
 .profile .form.account_forms > div {
-  margin: 20px 0 50px;
+  margin-bottom: 20px;
+  /*:not(p) {
+    margin: 0 10px;
+  }*/
 }
-.profile .form.account_forms > div :not(p) {
-  margin: 0 10px;
+.profile .form.account_forms > div > div {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .profile .title {
   text-transform: uppercase;
   font-size: 24px;
   font-weight: 400;
   padding: 0;
-  margin: 0;
+  margin: 0 0 15px;
   line-height: 24px;
 }
 .profile .title:not(.main-title):after {
@@ -467,13 +472,17 @@ p.form_element__checkpass.active {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 .photo-container .photo__username_photo {
   flex: 1 1 65%;
 }
+.photo-container .photo__username_photo img {
+  border-radius: 2px;
+}
 .photo-container .photo__upload {
   flex: 1 1 23%;
-  padding: 0 20px;
 }
 .photo-container .photo__upload button {
   background-color: #7d0011;
@@ -483,19 +492,20 @@ p.form_element__checkpass.active {
   width: 100%;
 }
 .account {
+  box-sizing: border-box;
   padding: 0;
-  margin: 0;
-}
-.account p {
-  margin: 5px 10px;
-  width: 100%;
-  flex: 1 0 100%;
+  margin: 0 20px;
 }
 .account div {
-  flex: 1 1 45%;
+  width: 100%;
+  box-sizing: border-box;
 }
-.account div.account_forms__submit {
-  flex: 1 2 100%;
+.account span.account_url {
+  margin: 0 !important;
+  padding: 0;
+}
+.account input {
+  width: 100%;
 }
 
 .form__personal_info {
@@ -513,6 +523,7 @@ p.form_element__checkpass.active {
 }
 .form__personal_info div {
   flex: 1 1 45%;
+  margin: 0 10px;
 }
 .form__personal_info div.account_forms__submit {
   flex: 1 2 100%;
