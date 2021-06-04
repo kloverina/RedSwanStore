@@ -3,7 +3,7 @@
 @foreach (var gamecard in Model)
 {
   <div class="games__item">
-    <a class="game-card" href="#game-page">
+    <a class="game-card" asp-area="" asp-controller="Game" asp-action="Game">
       <div class="game-card__image">
         <img src="@gamecard.CoverUrl" alt="@gamecard.Title">  
       </div>

@@ -1,0 +1,149 @@
+h1.title{
+  font-size: 30px;
+  line-height: 35px;
+  font-family: inherit;
+}
+.game{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+  &_info{
+    flex: 3 1 70%;
+    padding: 30px 10px;
+    background-color: goldenrod;
+  }
+  
+  &_buy{
+    flex: 1 1 30%;
+    padding: 20px 40px;
+    background-color: #484848;
+  }
+}
+
+.game_section{
+  //background-color: #2B2B2B;
+  //border: 1px solid goldenrod;
+  padding: 0 10px ;
+  .video_player{
+    background-color: darkgreen;
+    min-width: 300px;
+    min-height: 200px;
+    margin: 20px;
+  }
+  
+  .short-desc{
+    margin: 40px 0;
+    line-height: 25px;
+    text-align: justify;
+  }
+  
+  .game-info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    
+    &__column{
+      flex: 1 1 33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      border-left: 1px solid rgba(255,255,255,0.1);
+      padding: 0 20px;
+      
+      span:first-of-type{
+        color: rgba(245,245,245,0.6);
+      }
+      
+      span{
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 20px;
+      }
+    }
+  }
+  
+  .description{
+    width: 100%;
+    
+    &__title{
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      
+    }
+    
+    &__text{
+      margin-bottom: 25px;
+      color: rgba(245,245,245,0.6);
+      width: 100%;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    
+    &__subtitle{
+      font-weight: 500;
+      color: rgba(245,245,245,0.8);
+      font-size: 15px;
+      line-height: 20px;
+      text-transform: uppercase;
+      
+    }
+    
+    &__list{
+      color: rgba(245,245,245,0.6);
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 25px;
+      margin-left: 6px;
+      padding-left: 10px;
+      list-style-type: disc;
+      
+    }
+  }
+  
+  .system-req{
+    
+    .table{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-radius: 4px;
+      background: rgb(38, 38, 38);
+      padding: 25px 50px;
+      
+      .column{
+        flex: 1 1 50%;
+        margin: 10px;
+        //border: 1px solid black;
+        
+        div:first-of-type{
+          margin: 40px 0 20px;
+        }
+        
+        div{
+          display: flex;
+          flex-direction: column;
+          justify-content: stretch;
+          margin: 20px 0;
+          span{
+            font-size: 14px;
+            line-height: 20px;
+            flex: 1 1 100%;
+          }
+          
+          span:first-of-type{
+            color: rgba(245,245,245,0.6);
+          }
+        }
+      }
+      
+    }
+  }
+  
+  
+}
