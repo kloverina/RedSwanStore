@@ -1,0 +1,170 @@
+
+
+.profile{
+  width: 100%;
+  min-height: 500px;
+  padding: 0 10px;
+  margin: 120px auto 0;
+  //background-color: #7d0011;
+  
+  .personal_info{
+    margin-bottom: 40px;
+    
+  }
+  
+  .form.account_forms {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    
+
+    >div {
+      //background-color: goldenrod;
+      margin-bottom: 20px;
+      >div {
+        //background-color: goldenrod;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        //margin: 20px 10px;
+      }
+
+      /*:not(p) {
+        margin: 0 10px;
+      }*/
+    }
+    
+  }
+  
+  
+  .title{
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0 0 15px;
+    line-height: 24px;
+    
+    &:not(.main-title):after{
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      position: relative;
+      top: -10px;
+      background-color: #ffffff;
+      content: "";
+      z-index: 10;
+    }
+  }
+  
+  .description{
+    line-height: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: justify;
+    //margin-top: 0;
+  }
+}
+
+.photo-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 20px;
+  .photo__username_photo{
+    flex: 1 1 65%;
+    img{
+      border-radius: 2px;
+    }
+  }
+  
+  .photo__upload{
+    //background-color: darkkhaki;
+    flex: 1 1 23%;
+    //padding: 0 20px;
+    button{
+      background-color: #7d0011;
+      border-radius: 5px;
+      padding: 5px 0;
+      margin: 0 !important;
+      width: 100%;
+    }
+    p{
+      //background-color: #7d0011;
+    }
+  }
+}
+
+//данные учетной записи
+.account {
+  box-sizing: border-box;
+  //display: flex;
+  //flex-direction: column;
+  //justify-content: center;
+  padding: 0;
+  margin: 0 20px;
+ 
+  
+  div{
+    width: 100%;
+    box-sizing: border-box;
+    //margin-right: 30px;
+    //background-color: goldenrod;
+  }
+  
+  span.account_url{
+    margin: 0 !important;
+    padding: 0;
+  }
+ 
+  input{
+    width: 100%;
+    //margin: 0 10px;
+    
+  }
+ 
+}
+
+.form__personal_info {
+  //background-color: #7d0011;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 20px;
+  p{
+    margin: 5px 10px;
+    width: 100%;
+    flex: 1 0 100%;
+  }
+
+  div{
+    flex: 1 1 45%;
+    &:first-of-type {
+      margin-right: 10px;
+    }
+    &:last-of-type{
+      margin-left: 10px;
+    }
+  }
+  div.account_forms__submit{
+    flex: 1 2 100%;
+  }
+}
+
+.form__buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  div{
+    flex: 1 1 50%;
+    margin: 0 20px;
+  }
+}
+  
+  
