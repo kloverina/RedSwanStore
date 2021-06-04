@@ -87,6 +87,7 @@ header nav .menu li :hover {
 header nav .rightNav {
   display: flex;
   justify-content: flex-end;
+  max-width: 500px;
   margin: 0;
   padding: 0;
   flex: 1 1 30%;
@@ -122,6 +123,7 @@ header .dropdown .header-user-info__photo {
   border-radius: 50%;
   position: absolute;
   left: 10px;
+  top: -12px;
 }
 header .dropdown .header-user-info__login {
   margin-left: 60px;

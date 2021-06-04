@@ -1,5 +1,16 @@
+@using System.Globalization
+@model Game
+
+@{
+  var layout = ViewData["layout"] as string;
+  
+  if (layout != null){
+    Layout = layout;
+  }
+}
+
 <div class="container">
-    <h1 class="title"> Cyberpunk 2077 </h1>
+    <h1 class="title"> @Model.Name </h1>
     <div class="game">
         <section class="game_section">
             <div class="video_player">
@@ -8,8 +19,7 @@
             </div>
             
             <div class="short-desc">
-                Вам предстоит пройти путь к славе, сыграв за легендарного викинга. 
-                Нападайте на врагов, развивайте селение и усиливайте влияние.
+                @Model.GameInfo.ShortDescription
                 
             </div>
             
@@ -20,7 +30,7 @@
                     </span>
                     
                     <span class="column_developer_name">
-                        CD PROJEKT RED
+                        @Model.Developer
                     </span>
                 </div>
                 
@@ -30,10 +40,12 @@
                     </span>
                                     
                     <span class="column_genre_name">
-                        Action,
-                        RPG,
-                        Open World,
-                        Adventure
+                        @{
+                            for (var i = 0; i < Model.GameFilter.Genres.Count; i++)
+                            {
+                                @Model.GameFilter.Genres[i].Name@(i == Model.GameFilter.Genres.Count - 1 ? "" : ", ")
+                            }
+                        }
                     </span>
                 </div>
                 
@@ -43,7 +55,7 @@
                     </span>
                                     
                     <span class="column_date_date">
-                        10 дек. 2020 г.
+                        @Model.GameInfo.ReleaseDate.Date.ToShortDateString()
                     </span>
                 </div>
                 
@@ -53,7 +65,7 @@
                     </span>
                                                     
                     <span class="column_rate">
-                        76
+                        @Model.GameInfo.Rating.ToString()
                     </span>
                 </div>
                 
@@ -61,30 +73,7 @@
             </div>
             
             <div class="description">
-                <h2 class="description__title">Найт-Сити изменит вас навсегда</h2>
-               
-                <div class="description__text">
-                    Cyberpunk 2077 — приключенческая ролевая игра, действие которой происходит в мегаполисе Найт-Сити, 
-                    где власть, роскошь и модификации тела ценятся выше всего. Вы играете за V, наёмника в поисках 
-                    уникального устройства, позволяющего обрести бессмертие. Вы сможете менять киберимпланты, навыки и стиль игры 
-                    своего персонажа, исследуя огромный открытый мир, где ваши поступки влияют на ход сюжета и всё, что вас окружает.
-                </div>
-                
-                <div class="description__subtitle">Играйте за городского наёмника</div>
-                <div class="description__text">Станьте киберпанком — оснащённым имплантами наёмником — и сделайте себе имя на улицах Найт-Сити.</div>
-                <div class="description__subtitle">Живите в городе будущего</div>
-                <div class="description__text">Исследуйте огромный мир Найт-Сити, который выглядит ярче, сложнее и глубже всего, что вы видели раньше.</div>
-                <div class="description__subtitle">Добудьте имплант, дающий вечную жизнь</div>
-                <div class="description__text">Возьмитесь за самое опасное задание в своей жизни и найдите прототип импланта, позволяющего обрести бессмертие.</div>
-                <div class="description__text">Цифровые бонусы включают в себя:</div>
-            
-                <ul class="description__list">
-                    <li class="description__list-item"><span>оригинальный саундтрек;</span></li>
-                    <li class="description__list-item"><span>арт-буклет с иллюстрациями к игре;</span></li>
-                    <li class="description__list-item"><span>цифровой комикс Cyberpunk 2077: Your Voice;</span></li>
-                    <li class="description__list-item"><span>справочник по вселенной игры Cyberpunk 2020;</span></li>
-                    <li class="description__list-item"><span>обои для рабочего стола и мобильного телефона.</span></li>
-                </ul>
+                @Html.Raw(Model.GameInfo.DetailedDescription)
                 
             </div>
             
@@ -104,7 +93,7 @@
                             </span>
                             
                             <span>
-                                Windows 7
+                                @Model.GameSystemRequirements.SupportedOses
                             </span>
                         </div>
                         
@@ -114,7 +103,7 @@
                             </span>
                                                     
                             <span>
-                                Intel Core i5-3570K или AMD FX-8310
+                                @Model.GameSystemRequirements.MinCpu
                             </span>
                         </div>
                         
@@ -124,7 +113,7 @@
                             </span>
                                                     
                             <span>
-                                8 ГБ ОЗУ
+                                @Model.GameSystemRequirements.MinRamMB.ToString() МБ.
                             </span>
                         </div>
                         
@@ -134,7 +123,7 @@
                             </span>
                                                     
                             <span>
-                                NVIDIA GeForce GTX 780 или AMD Radeon RX 470
+                                @Model.GameSystemRequirements.MinGpu
                             </span>
                         </div>
                         
@@ -144,7 +133,7 @@
                             </span>
                                                                             
                             <span>
-                                70 ГБ (рекомендуется SSD)
+                                @Model.GameSystemRequirements.DiskSpaceMB.ToString() МБ.
                             </span>
                         </div>
                     </div>
@@ -163,7 +152,7 @@
                             </span>
                                                 
                             <span>
-                                Windows 7
+                                @Model.GameSystemRequirements.SupportedOses
                             </span>
                         </div>
                                             
@@ -173,7 +162,7 @@
                             </span>
                                                                         
                             <span>
-                                Intel Core i5-3570K или AMD FX-8310
+                                @Model.GameSystemRequirements.MaxCpu
                             </span>
                         </div>
                                             
@@ -183,7 +172,7 @@
                             </span>
                                                                         
                             <span>
-                                8 ГБ ОЗУ
+                                @Model.GameSystemRequirements.MaxRamMB.ToString() МБ.
                             </span>
                         </div>
                                             
@@ -193,7 +182,7 @@
                             </span>
                                                                         
                             <span>
-                                NVIDIA GeForce GTX 780 или AMD Radeon RX 470
+                                @Model.GameSystemRequirements.MaxGpu
                             </span>
                         </div>
                                             
@@ -203,7 +192,7 @@
                             </span>
                                                                                                 
                             <span>
-                                70 ГБ (рекомендуется SSD)
+                                @Model.GameSystemRequirements.DiskSpaceMB.ToString() МБ.
                             </span>
                         </div>
                     </div>

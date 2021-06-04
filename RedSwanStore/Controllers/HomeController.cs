@@ -35,7 +35,8 @@ namespace RedSwanStore.Controllers
                 Developer = g.Developer,
                 CoverUrl = g.GameInfo.Cover,
                 Discount = g.GameInfo.Discount.ConvertToPercents(),
-                Price = g.GameInfo.Price == 0 ? "Бесплатно" : (g.GameInfo.Price * (decimal) (1 - g.GameInfo.Discount)).ConvertToPrice()
+                Price = g.GameInfo.Price == 0 ? "Бесплатно" : (g.GameInfo.Price * (decimal) (1 - g.GameInfo.Discount)).ConvertToPrice(),
+                Id = g.GameUrl
             });
 
             return gameCards;
