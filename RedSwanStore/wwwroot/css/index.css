@@ -93,7 +93,7 @@ header nav .rightNav {
   height: 100%;
 }
 header nav .rightNav .sign-in {
-  flex: 0 1 20%;
+  flex: 0 1 40%;
   min-width: 120px;
   text-align: center;
 }
@@ -115,7 +115,7 @@ header .dropdown__submenu {
   width: 100%;
   position: relative;
   z-index: 1000;
-  top: 12px;
+  top: 16px;
   left: -20px;
   padding: 15px 20px;
   margin-right: 20px;
@@ -135,6 +135,24 @@ header .dropdown:hover .dropdown__submenu {
 }
 header .dropdown__submenu.hidden {
   display: none !important;
+}
+.header-user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 200px;
+  position: relative;
+}
+.header-user-info__photo {
+  width: 45px;
+  height: 45px;
+  border: 2px solid #7d0011;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -14px;
+}
+.header-user-info__login {
+  margin-left: 60px;
 }
 
 .download {

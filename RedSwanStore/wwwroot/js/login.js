@@ -1,6 +1,6 @@
 ﻿
 let form = document.querySelector('.form');
-let inputs = form.querySelectorAll('input')
+let inputs = form.querySelectorAll('input:not([type=hidden])')
 let email = form.querySelector('.form-element__email'); //delete me later
 let password = form.querySelector('.form_element__password'); //and me too
 let pass_match = form.querySelector('input.form_element__checkpass');

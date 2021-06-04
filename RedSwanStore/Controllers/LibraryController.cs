@@ -60,6 +60,11 @@ namespace RedSwanStore.Controllers
             else
                 libraryViewModel.GameCards = new List<LibraryGameCard>();
             
+            ViewData["userLogin"] = currentUser.Login;
+            ViewData["userUrl"] = currentUser.UserUrl;
+            ViewData["userPhoto"] = currentUser.Photo;
+            ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+
             return View(libraryViewModel);
         }
 

@@ -1,22 +1,25 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
 using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
 using RedSwanStore.Data.ViewModels;
 using RedSwanStore.Utils;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
 
 namespace RedSwanStore.Controllers
 {
-    [Route("")]
-    [Route("store")]
-    [Route("home")]
+    [Microsoft.AspNetCore.Mvc.Route("")]
+    [Microsoft.AspNetCore.Mvc.Route("store")]
+    [Microsoft.AspNetCore.Mvc.Route("home")]
     public class HomeController : Controller
     {
         private readonly IGameRepo gamesTable;
         private readonly IFeatureRepo featuresTable;
         private readonly IGenreRepo genresTable;
         private readonly IPriceCategoryRepo priceCategoriesTable;
+        private readonly IUserRepo usersTable;
 
         private HomeViewModel homeViewModel;
 
@@ -39,12 +42,13 @@ namespace RedSwanStore.Controllers
         }
 
 
-        public HomeController(IGameRepo gameR, IFeatureRepo featureR, IGenreRepo genreR, IPriceCategoryRepo categoryR)
+        public HomeController(IGameRepo gameR, IFeatureRepo featureR, IGenreRepo genreR, IPriceCategoryRepo categoryR, IUserRepo userR)
         {
             gamesTable = gameR;
             featuresTable = featureR;
             genresTable = genreR;
             priceCategoriesTable = categoryR;
+            usersTable = userR;
                 
             homeViewModel = new HomeViewModel {
                 FeaturesFilters = featuresTable.GetAllFeatures(),
@@ -54,18 +58,28 @@ namespace RedSwanStore.Controllers
         }
         
         
-        [Route("")]
+        [Microsoft.AspNetCore.Mvc.Route("")]
         public IActionResult Index()
         {
             homeViewModel.Games = CreateGameCards(gamesTable.GetAllGames());
+            
+            if (User.Identity.IsAuthenticated)
+            {
+                User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+                
+                
+                ViewData["userLogin"] = user.Login;
+                ViewData["userUrl"] = user.UserUrl;
+                ViewData["userPhoto"] = user.Photo;
+                ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+            }
             
             return View(homeViewModel);
         }
 
 
-        
-        [Route("sort-and-filter")]
-        [HttpPost]
+        [Microsoft.AspNetCore.Mvc.Route("sort-and-filter")]
+        [Microsoft.AspNetCore.Mvc.HttpPost]
         public IActionResult SortAndFilter(string[] genresIds, string[] featuresIds, string[] pricesIds, string[] sortsIds )
         {
             // construct all filters by data received from page

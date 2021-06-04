@@ -1,6 +1,14 @@
 ﻿@using RedSwanStore.Data.Interfaces
 @model HomeViewModel
 
+@{
+  var layout = ViewData["layout"] as string;
+  
+  if (layout != null){
+    Layout = layout;
+  }
+}
+
 <div class="container">
   <div class="game-catalog">
     <section class="game-catalog__browse section">

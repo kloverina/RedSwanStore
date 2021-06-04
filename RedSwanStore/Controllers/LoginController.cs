@@ -23,9 +23,30 @@ namespace RedSwanStore.Controllers
         public ViewResult Login(string returnUrl)
         {
             ViewBag.returnUrl = returnUrl;
+            
+            if (User.Identity.IsAuthenticated)
+            {
+                User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+                
+                ViewData["userLogin"] = user.Login;
+                ViewData["userUrl"] = user.UserUrl;
+                ViewData["userPhoto"] = user.Photo;
+                ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+            }
+            
             return View();
         }
 
+
+        [HttpGet]
+        [Route("logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Login");
+        }
+
+        
         [HttpPost]
         public IActionResult Login(string email, string password, string returnUrl)
         {

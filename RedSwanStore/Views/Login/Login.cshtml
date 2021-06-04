@@ -1,4 +1,12 @@
-﻿<div class="container login-card">
+﻿@{
+  var layout = ViewData["layout"] as string;
+  
+  if (layout != null){
+    Layout = layout;
+  }
+}
+
+<div class="container login-card">
     <div class="login-card"></div>
     <!-- Все поле для регистрации-->
     <div class="login">

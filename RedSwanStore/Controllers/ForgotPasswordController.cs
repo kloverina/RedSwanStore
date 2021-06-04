@@ -22,6 +22,17 @@ namespace RedSwanStore.Controllers
         [HttpGet]
         public IActionResult ForgotPassword()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+                
+                
+                ViewData["userLogin"] = user.Login;
+                ViewData["userUrl"] = user.UserUrl;
+                ViewData["userPhoto"] = user.Photo;
+                ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+            }
+            
             return View();
         }
 
