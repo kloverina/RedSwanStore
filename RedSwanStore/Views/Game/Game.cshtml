@@ -203,16 +203,14 @@
                             Поддерживаемые языки
                         </span>
                         <span>
-                            [ОЗВУЧИВАНИЕ]: английский, французский, немецкий, итальянский, испанский, японский, польский, португальский (Бразилия), русский, китайский (упрощённый), корейский
-                            [ТОЛЬКО ТЕКСТ]: испанский (Мексика), тайский, чешский, венгерский, китайский (традиционный), арабский, турецкий
+                            [ОЗВУЧИВАНИЕ]: @Model.GameSystemRequirements.SupportedTextLanguages
+                            <br>
+                            [ТОЛЬКО ТЕКСТ]: @Model.GameSystemRequirements.SupportedVoiceLanguages
                         </span>
                     </div>
                     
                     <div class="table_column legal-info">
-                        <span>
-                            CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A. 
-                            © CD PROJEKT S.A. All rights reserved. All other copyrights and trademarks are the property of their respective owners.
-                        </span>
+                        @Html.Raw(Model.GameInfo.LegalInfo)
                     </div>
                     
                 </div>

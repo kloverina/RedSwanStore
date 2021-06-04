@@ -29,13 +29,13 @@ namespace RedSwanStore.Data.Models
         [Required]
         public byte Rating { get; set; }
         
-        [StringLength(500)]
+        [StringLength(1000)]
         public string ShortDescription { get; set; }
         
         [StringLength(10000)]
         public string DetailedDescription { get; set; }
         
-        [StringLength(500)]
+        [StringLength(1000)]
         public string LegalInfo { get; set; }
     }
 }
