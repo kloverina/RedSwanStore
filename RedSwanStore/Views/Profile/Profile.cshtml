@@ -15,6 +15,7 @@
                 <p class="description">
                     Выберите изображения аватара.
                 </p>
+                
                 <div class="photo-container photo">
                     <div class="photo__username_photo">
                         <img src="img/example.png" alt="Example" width="184px" height="184px">
@@ -31,22 +32,19 @@
                 </div>
             </div>
             
-            <div class="account account_forms">
+            <div class="account_forms">
                 <p class="title"> Данные учетной записи </p>
-                
-                <div class="form_element account_forms__username">
-                    <label>
+                <div class="account account-container">
+                    <div class="form_element account_forms__username">
                         <p class="form_desc description">
                             Отображаемое имя
                         </p>
                         <input class="form_element__username" id="account_username" name="login" type="text"
                                placeholder="Отображаемое имя" value="Example_login">
-                    </label>
-                </div>
+                    </div>
                 
-            
-                <div class="form_element account_forms__email">
-                    <label>
+                
+                    <div class="form_element account_forms__email">
                         <p class="form_desc description">
                             Личная ссылка
                         </p>
@@ -56,65 +54,79 @@
                             Ваш профиль будет находиться по адресу: https://RedSwanStore/id/
                             <span class="account_url">Tartaglia</span>
                         </span>
-                    </label>
-                </div>
-            </div>
-            
-            <div class="form__personal_info account_forms">
-                <p class="title"> Личные данные </p>
-                                
-                <div class="form_element account_forms__name">
-                    <label>
-                        <p class="form_desc description">
-                            Имя
-                        </p>
-                        <input class="form_element__username" id="name" name="name" type="text"
-                               placeholder="Имя" autocomplete="name" value="Аякс">
-                    </label>
-                </div>
-                                
-                            
-                <div class="form_element account_forms__surname">
-                    <label>
-                        <p class="form_desc description">
-                            Фамилия
-                        </p>
-                        <input class="form_element__username" id="surname" name="surname" type="text"
-                               placeholder="Фамилия" value="У Аякса нет, а у тебя должна быть">
-                    </label>
-                </div>
-            </div>
-            
-            <div class="account account_forms">
-                <p class="title"> Сменить пароль </p>
-                                
-                <div class="form_element account_forms__password">
-                    <label>
-                        <p class="form_desc description">
-                            Текущий пароль
-                        </p>
-                        <input class="form_element__password" id="old_pass" name="password" type="password"
-                               placeholder="Текущий пароль" value="">
-                    </label>
-                </div>
-                                
-                            
-                <div class="form_element account_forms__new-pass">
-                    <label>
-                        <p class="form_desc description">
-                            Новый пароль
-                        </p>
-                        <input class="form_element__new-pass" id="account_new-pass" name="new_pass" type="password">
-                    </label>
+                  
+                    </div>
                 </div>
                 
-                <div class="form_element account_forms__new-pass">
-                    <label>
-                        <p class="form_desc description">
-                            Подтвердите новый пароль
-                        </p>
-                        <input class="form_element__new-pass" id="account_new-pass" name="new_pass" type="password">
-                    </label>
+            </div>
+            
+            
+            
+            <div class=" account_forms">
+                <p class="title"> Личные данные </p>
+                <p class="description">
+                    Эти личные данные конфиденциальны и не показываются другим пользователям.
+                </p>
+                <div class="form__personal_info account-container">
+                    <div class="form_element account_forms__name">
+                        <label>
+                            <p class="form_desc description">
+                                Имя
+                            </p>
+                            <input class="form_element__username" id="name" name="name" type="text"
+                                   placeholder="Имя" autocomplete="name" value="Аякс">
+                        </label>
+                    </div>
+                                
+                            
+                    <div class="form_element account_forms__surname">
+                        <label>
+                            <p class="form_desc description">
+                                Фамилия
+                            </p>
+                            <input class="form_element__username" id="surname" name="surname" type="text"
+                                   placeholder="Фамилия" value="У Аякса нет, а у тебя должна быть">
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="account_forms">
+                <p class="title"> Сменить пароль </p>
+                <p class="description">
+                    В целях безопасности мы рекомендуем выбрать пароль, который ещё не использовался Вами в других учётных записях.
+                </p>
+                <div class="account account-container">
+                    <div class="form_element account_forms__password">
+                        <label>
+                            <p class="form_desc description">
+                                Текущий пароль
+                            </p>
+                            <input class="form_element__password" id="old_pass" name="password" type="password"
+                                   placeholder="Текущий пароль" value="">
+                        </label>
+                    </div>
+                    
+                    <div class="form_element account_forms__new-pass">
+                        <label>
+                            <p class="form_desc description">
+                                Новый пароль
+                            </p>
+                            <input class="form_element__new-pass" id="account_new-pass" name="new_pass" type="password"
+                                    placeholder="Новый пароль">
+                        </label>
+                    </div>
+                
+                    <div class="form_element account_forms__new-pass">
+                        <label>
+                            <p class="form_desc description">
+                                Подтвердите новый пароль
+                            </p>
+                            <input class="form_element__new-pass" id="account_new-pass" name="new_pass" type="password"
+                                    placeholder="Подтвердите пароль">
+                        </label>
+                    </div>
                 </div>
                 
             </div>
@@ -124,22 +136,22 @@
             
             
             <div class="buttons-container">
-                <div class="form_element account_forms__reset">
-                    <button class="form_element__button button" id="save_changes" type="reset" readonly>
-                        <span class="button-label"> Отмена </span>
-                    </button>
+                <div class="form__buttons account-container">
+                    <div class="form_element account_forms__reset">
+                        <button class="form_element__button button" id="reset_changes" type="reset" readonly>
+                            <span class="button-label"> Отмена </span>
+                        </button>
+                    </div>
+
+
+                    <div class="form_element account_forms__submit">
+                        <button class="form_element__button button active" id="save_changes" type="submit" readonly>
+                            <span class="button-label"> Сохранить изменения </span>
+                        </button>
+                    </div>
                 </div>
                 
-
-                <div class="form_element account_forms__submit">
-                    <button class="form_element__button button active" id="save_changes" type="submit" readonly>
-                        <span class="button-label"> Сохранить изменения </span>
-                    </button>
-                </div>
             </div>
-            
-
-            
             
             
         </form>
