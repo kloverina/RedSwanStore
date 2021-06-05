@@ -1,24 +1,22 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
 
 namespace RedSwanStore.Controllers
 {
-    [Route("game")]
-    public class GameController : Controller
+    [Route("error")]
+    public class ErrorPageController : Controller
     {
         private readonly IUserRepo usersTable;
-        private readonly IGameRepo gamesTable;
 
-        public GameController(IUserRepo userR, IGameRepo gameR)
+        public ErrorPageController(IUserRepo userR)
         {
             usersTable = userR;
-            gamesTable = gameR;
         }
         
-        [Route("")]
+        [Route("game-not-found")]
         [HttpGet]
-        public IActionResult Game(string gameId)
+        public IActionResult GameNotFound(string gameId)
         {
             if (User.Identity.IsAuthenticated)
             {
@@ -30,12 +28,9 @@ namespace RedSwanStore.Controllers
                 ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
             }
 
-            Game? game = gamesTable.GetGameByUrl(gameId);
+            ViewBag.GameId = gameId;
 
-            if (game == null)
-                return RedirectToAction("GameNotFound", "ErrorPage", new {GameId = gameId});
-            
-            return View(game);
+            return View("GameNotFound");
         }
     }
 }

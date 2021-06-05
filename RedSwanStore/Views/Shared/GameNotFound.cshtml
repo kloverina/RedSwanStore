@@ -1,0 +1,32 @@
+﻿@{
+    var layout = ViewData["layout"] as string;
+  
+    if (layout != null){
+        Layout = layout;
+    }
+}
+<style>
+    .error-page.game-not-found .game-not-found__game-id {
+        font-style: italic;
+        color: #DF0011;
+    }
+</style>
+<div class="container">
+    <div class="game-not-found error-page">
+        <div class="section_empty empty">
+          
+          <div class="empty__title">
+            <span>
+              Запрашиваемая игра не найдена.
+            </span>
+          </div>
+  
+          <div class="empty__description">
+            <span>
+                К сожалению, игра <span class="game-not-found__game-id">@ViewBag.GameId</span> по Вашему запросу не найдена :(
+            </span>
+          </div>
+  
+        </div>
+    </div>
+</div>
