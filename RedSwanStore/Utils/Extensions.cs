@@ -124,6 +124,13 @@ namespace RedSwanStore.Utils
         }
 
 
+        /// <summary>
+        /// Sort the collection of games by specified sort type.
+        /// </summary>
+        /// <param name="games"></param>
+        /// <param name="sortType">The sort type.</param>
+        /// <returns>The sorted collection of games.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">if sortType is not of SortingTypes.</exception>
         public static IEnumerable<Game> SortBy(this IEnumerable<Game> games, SortingTypes sortType)
         {
             IEnumerable<Game> result;
@@ -150,6 +157,50 @@ namespace RedSwanStore.Utils
             }
 
             return result;
+        }
+
+
+        /// <summary>
+        /// Split the links string to list deleting all whitespaces and control symbols
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="separator">The symbol to separate the links by.</param>
+        /// <returns>The list of separated links.</returns>
+        public static List<string> SplitLinksToList(this string str, char separator = ',')
+        {
+            string[] split = str.Split(',');
+            
+            var result = new List<string?>(split.Length);
+
+            for (var i = 0; i < split.Length; i++)
+            {
+                result[i] = split[i].Where(sym => 
+                    !char.IsWhiteSpace(sym) && !char.IsControl(sym) && !char.IsSeparator(sym)
+                ) as string;
+            }
+            
+            return result.All(s => s == null) ? new List<string>() : new List<string>(result!);
+        }
+        
+        
+        /// <summary>
+        /// Converts the given amount of megabytes to gigabytes if amount is greater than 1024.
+        /// </summary>
+        /// <param name="type">The type of the unit of the returned value.</param>
+        /// <param name="megabytes">The amount of megabytes to convert.</param>
+        public static uint ConvertToNormalizedSize(this uint megabytes, out string type)
+        {
+            const int CONVERSION_VALUE = 1024;
+
+            if (megabytes < CONVERSION_VALUE)
+            {
+                type = "МБ";
+                return megabytes;
+                
+            }
+            
+            type = "ГБ";
+            return megabytes / CONVERSION_VALUE;
         }
     }
 }
