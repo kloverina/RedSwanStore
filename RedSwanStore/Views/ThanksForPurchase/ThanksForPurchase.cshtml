@@ -1,0 +1,28 @@
+﻿@{
+    var layout = ViewData["layout"] as string;
+  
+    if (layout != null){
+        Layout = layout;
+    }
+}
+
+<div class="container">
+    <div class="game-not-found error-page">
+        <div class="section_empty empty">
+          
+            <div class="empty__title">
+                <span>
+                    Спасибо за покупку!
+                </span>
+            </div>
+  
+            <div class="empty__description">
+                <span>
+                    Благодарим Вас за покупку в магазине Red Swan. Информация о покупке была отправлена на Вашу электронную почту.<br>
+                    Купленная игра была добавлена в Вашу <a href="/library/user?@ViewData["userUrl"]">библиотеку</a>, приятной игры :)
+                </span>
+            </div>
+  
+        </div>
+    </div>
+</div>

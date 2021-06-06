@@ -24,5 +24,6 @@ namespace RedSwanStore.Data
         public DbSet<User> Users { get; set; }
         public DbSet<UserLibrary> UserLibraries { get; set; }
         public DbSet<UserLibraryGame> UserLibraryGames { get; set; }
+        public DbSet<CartModel> Cart { get; set; }
     }
 }

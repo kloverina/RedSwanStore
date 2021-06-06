@@ -30,7 +30,7 @@ let sendDataToServerByAjax = function (onSuccessCallback) {
         error: (message) => {
             alert(message.toString());
         },
-        success: (html) => onSuccessCallback(html)
+        success: (html) => onSuccess(html)
     });
 }
 

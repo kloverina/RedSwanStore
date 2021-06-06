@@ -1,0 +1,255 @@
+﻿.container {
+    position: relative;
+}
+
+.game-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+.game-popup-window {
+    position: fixed;
+    z-index: 10;
+    
+    background: #262626;
+    
+    border: 2px solid #909090;
+    border-radius: 5px;
+    
+    padding: 10px 10px 10px 10px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    
+    max-width: 730px;
+    max-height: 640px;
+}
+
+.game-popup.hidden {
+    display: none;
+}
+
+.game-popup-window__main {
+    display: flex;
+    flex-direction: row;
+}
+
+.game-popup-window__game-info {
+    display: flex;
+    flex-direction: column;
+    
+    margin-left: 10px;
+    margin-top: 10px;
+    
+    padding: 0 10px 10px 20px;
+    
+    border-left: 1px solid #5b5d5e;
+    
+    width: 250px;
+}
+
+.game-popup-window__image {
+    margin-bottom: 5px;
+}
+
+.game-popup-window__game-info img {
+    width: 100%;
+    height: 300px;
+    image-rendering: high-quality;
+}
+
+.game-popup-window__game-description {
+    padding: 0 10px;
+}
+
+.game-popup-window__game-title {
+    line-height: 20px;
+    font-weight: bold;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.game-popup-window__game-dev {
+    font-size: 14px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.game-popup-window__game-rating {
+    margin-top: 5px;
+}
+
+.game-popup-window__game-release-date {
+    margin-top: 5px;
+}
+
+.game-popup-window__game-description .form_element {
+    margin-top: 20px;
+}
+
+
+.buy-using-wallet {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    margin-right: 30px;
+    padding: 10px;
+}
+
+.buy-using-wallet__main {
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-using-wallet__price-block {
+    font-size: 18px;
+    line-height: 25px;
+    
+    padding-bottom: 20px;
+    
+    border-bottom: 1px solid #5b5d5e;
+}
+
+.buy-using-wallet__actual-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    margin-bottom: 10px;
+}
+
+.buy-using-wallet__discount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buy-using-wallet__discount span {
+    color: #BE5858;
+    font-style: italic;
+}
+
+.buy-using-wallet__result-block {
+    font-size: 18px;
+    line-height: 25px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #5b5d5e;
+}
+
+.buy-using-wallet__result-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+    
+    font-weight: 600;
+}
+
+.buy-using-wallet__money-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buy-using-wallet .form_element {
+    vertical-align: bottom;
+}
+
+.game-popup-window h2.title {
+    font-size: 26px;
+    
+    margin-top: 0;
+    margin-bottom: 15px;
+    
+    text-align: center;
+}
+
+.game-popup-window__main h2.title {
+    font-size: 20px;
+    text-align: start;
+}
+
+.game {
+    position: relative;
+}
+
+.add-funds {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-right: 30px;
+    padding: 10px;
+}
+
+.add-funds__main {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-funds .cvc {
+    width: 75px;
+    align-self: start;
+}
+
+.add-funds label {
+    font-size: 12px;
+    padding-left: 2px;
+}
+
+.add-funds .form_element input {
+    margin-top: 3px;
+}
+
+.add-funds .form_element {
+    margin-top: 15px;
+}
+
+.add-funds .expiration-date {
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+}
+
+.add-funds .expiration-date__wrapper {
+    margin-top: 15px;
+    align-self: start;
+}
+
+.add-funds .expiration-date__wrapper .form_element {
+    margin-top: 0;
+}
+
+.add-funds .expiration-date__wrapper .expiration-date input {
+    margin-top: 0;
+}
+
+.add-funds .expiration-date__wrapper .expiration-date .expiration-month {
+    width: 75px;
+    margin-right: 10px;
+}
+
+.add-funds .expiration-date__wrapper .expiration-date .expiration-year {
+    width: 75px;
+    margin-left: 10px;
+}
+
+.add-funds__not-enough-money {
+    font-size: 12px;
+    line-height: 15px;
+    color: red;
+}
