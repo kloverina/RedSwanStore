@@ -10,10 +10,12 @@ namespace RedSwanStore.Controllers
     public class ThanksForPurchaseController : Controller
     {
         private readonly IUserRepo usersTable;
+        private readonly ICartRepo cartTable;
 
-        public ThanksForPurchaseController(IUserRepo userR)
+        public ThanksForPurchaseController(IUserRepo userR, ICartRepo cartR)
         {
             usersTable = userR;
+            cartTable = cartR;
         }
         
         [Route("")]
@@ -21,6 +23,8 @@ namespace RedSwanStore.Controllers
         public IActionResult ThanksForPurchase()
         {
             User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            
+            cartTable.DeleteItem(user.Email);
                 
             ViewData["userLogin"] = user.Login;
             ViewData["userUrl"] = user.UserUrl;
