@@ -2,6 +2,7 @@ $header_bc: #222222;
 
 header{
   background-color: $header_bc;
+  //background-color: #7d0011;
   max-height: 120px;
   height: 55px;
   color: #E6E6E6;
@@ -15,6 +16,7 @@ header{
   top: 0;
   position: fixed;
   width: 100%;
+  
 
 
   .container{
@@ -29,6 +31,7 @@ header{
     display: flex;
     flex-wrap: nowrap;
     padding: 20px 0 0;
+    max-height: 50px;
     justify-content: space-between;
   
     .menu {
@@ -41,13 +44,17 @@ header{
       justify-content: flex-start;
       align-items: baseline;
       li {
+        //overflow: hidden;
+        
         .logo{
           display: inline-block;
           width: 80px;
           height: 60px;
           margin: 20px;
+          
         }
         div.store-icon{
+          //overflow: hidden;
           height: 45px ;
           width: 45px;
           position: relative;
@@ -81,6 +88,11 @@ header{
 
 
       }
+      
+      li.store-icon{
+        //overflow: hidden;
+        display: inline-block;
+      }
 
     }
 
@@ -89,6 +101,7 @@ header{
       justify-content: flex-end;
       margin: 0;
       padding: 0;
+      max-width: 500px;
       flex: 1 1 30%;
       height: 100%;
       
@@ -171,6 +184,9 @@ header{
       
       span:hover:not(.balance):not(.user_balance){
         color: white;
+      }
+      span.balance{
+        padding: 0;
       }
      
     }
