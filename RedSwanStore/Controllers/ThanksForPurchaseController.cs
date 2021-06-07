@@ -27,10 +27,7 @@ namespace RedSwanStore.Controllers
             
             cartTable.DeleteItem(user.Email);
                 
-            ViewData["userLogin"] = user.Login;
-            ViewData["userUrl"] = user.UserUrl;
-            ViewData["userPhoto"] = user.Photo;
-            ViewData["userBalance"] = user.Balance.ConvertToPrice();
+            ViewBag.User = user;
             ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
 
             return View();

@@ -219,7 +219,8 @@ namespace RedSwanStore.Data.Repositories
                 GetNewsOnEmail = getNewsOnEmail,
                 Photo = picture,
                 UserUrl = url,
-                Balance = 0
+                Balance = 0,
+                IsAdmin = false
             };
 
             try

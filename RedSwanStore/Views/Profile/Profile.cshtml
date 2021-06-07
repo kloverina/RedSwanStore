@@ -12,9 +12,18 @@
     <div class="profile">
         
         <div class="personal_info">
-            <p class="title main-title">
-                Настойки профиля
-            </p>
+            @if (Model.IsAdmin)
+            {
+                <p class="title main-title">
+                    Настойки профиля<span style="color: gold">&nbsp;&nbsp;[Admin]</span>
+                </p>
+            }
+            else
+            {
+                <p class="title main-title">
+                    Настойки профиля
+                </p>
+            }
             <p class="description">
                 Управляйте данными учетной записи, включая ваше имя, контактные данные и прочую информацию.
             </p>
