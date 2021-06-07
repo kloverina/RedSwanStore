@@ -14,208 +14,198 @@
 <h1 class="title"> @Model.Name </h1>
 <div class="game">
 <section class="game_section">
-<div class="video_player">
+    <div class="video_player">
             
-    //add a video here please (
-</div>
+        //add a video here please (
+    </div>
             
-<div class="short-desc">
-    @Model.GameInfo.ShortDescription
+    <div class="short-desc">
+        @Model.GameInfo.ShortDescription
                 
-</div>
+    </div>
             
-<div class="game-info">
-    <div class="game-info__column column">
-        <span class="column_developer">
-            Разработчик
-        </span>
+    <div class="game-info">
+        <div class="game-info__column column">
+            <span class="column_developer">
+                Разработчик
+            </span>
                     
-        <span class="column_developer_name">
-            @Model.Developer
-        </span>
-    </div>
+            <span class="column_developer_name">
+                @Model.Developer
+            </span>
+        </div>
                 
-    <div class="game-info__column column">
-        <span class="column_genre">
-            Жанр
-        </span>
+        <div class="game-info__column column">
+            <span class="column_genre">
+                Жанр
+            </span>
                                     
-        <span class="column_genre_name">
-            @{
-                for (var i = 0; i < Model.GameFilter.Genres.Count; i++)
-                {
-                    @Model.GameFilter.Genres[i].Name@(i == Model.GameFilter.Genres.Count - 1 ? "" : ", ")
+            <span class="column_genre_name">
+                @{
+                    for (var i = 0; i < Model.GameFilter.Genres.Count; i++)
+                    {
+                        @Model.GameFilter.Genres[i].Name@(i == Model.GameFilter.Genres.Count - 1 ? "" : ", ")
+                    }
                 }
-            }
-        </span>
-    </div>
+            </span>
+        </div>
                 
-    <div class="game-info__column column">
-        <span class="column_date">
-            Дата выхода
-        </span>
+        <div class="game-info__column column">
+            <span class="column_date">
+                Дата выхода
+            </span>
                                     
-        <span class="column_date_date">
-            @Model.GameInfo.ReleaseDate.Date.ToShortDateString()
-        </span>
-    </div>
+            <span class="column_date_date">
+                @Model.GameInfo.ReleaseDate.Date.ToShortDateString()
+            </span>
+        </div>
                 
-    <div class="game-info__column column">
-        <span class="column_rate">
-            Средняя оценка
-        </span>
+        <div class="game-info__column column">
+            <span class="column_rate">
+                Средняя оценка
+            </span>
                                                     
-        <span class="column_rate">
-            @Model.GameInfo.Rating.ToString()
-        </span>
-    </div>
+            <span class="column_rate">
+                @Model.GameInfo.Rating.ToString()
+            </span>
+        </div>
                 
 
-</div>
-            
-<div class="description">
-    @Html.Raw(Model.GameInfo.DetailedDescription)
-                
-</div>
-            
-<div class="system-req">
-    <h2> Системные требования </h2>
-    <div class="system-req table">
-        <div class="table_column column">
-            <div class="row">
-                <span class="title">
-                    Минимальные
-                </span>
-            </div>
-                        
-            <div class="row">
-                <span class="title">
-                    ОС
-                </span>
-                            
-                <span>
-                    @Model.GameSystemRequirements.SupportedOses
-                </span>
-            </div>
-                        
-            <div class="row">
-                <span class="title">
-                    Процессор                        
-                </span>
-                                                    
-                <span>
-                    @Model.GameSystemRequirements.MinCpu
-                </span>
-            </div>
-                        
-            <div class="row">
-                <span class="title">
-                    Память                     
-                </span>
-                                                    
-                <span>
-                    @Model.GameSystemRequirements.MinRamMB.ConvertToNormalizedSize(out var t1).ToString() @t1
-                </span>
-            </div>
-                        
-            <div class="row">
-                <span class="title">
-                    Видеокарта
-                </span>
-                                                    
-                <span>
-                    @Model.GameSystemRequirements.MinGpu
-                </span>
-            </div>
-                        
-            <div class="row">
-                <span class="title">
-                    Место на диске
-                </span>
-                                                                            
-                <span>
-                    @Model.GameSystemRequirements.DiskSpaceMB.ConvertToNormalizedSize(out var t2).ToString() @t2
-                </span>
-            </div>
-        </div>
-                    
-                    
-        <div class="table_column column">
-            <div class="row">
-                <span class="title">
-                    Максимальные
-                </span>
-            </div>
-                                            
-            <div class="row">
-                <span class="title">
-                    ОС
-                </span>
-                                                
-                <span>
-                    @Model.GameSystemRequirements.SupportedOses
-                </span>
-            </div>
-                                            
-            <div class="row">
-                <span class="title">
-                    Процессор                        
-                </span>
-                                                                        
-                <span>
-                    @Model.GameSystemRequirements.MaxCpu
-                </span>
-            </div>
-                                            
-            <div class="row">
-                <span class="title">
-                    Память                     
-                </span>
-                                                                        
-                <span>
-                    @Model.GameSystemRequirements.MaxRamMB.ConvertToNormalizedSize(out var t3).ToString() @t3
-                </span>
-            </div>
-                                            
-            <div class="row">
-                <span class="title">
-                    Видеокарта
-                </span>
-                                                                        
-                <span>
-                    @Model.GameSystemRequirements.MaxGpu
-                </span>
-            </div>
-                                            
-            <div class="row">
-                <span class="title">
-                    Место на диске
-                </span>
-                                                                                                
-                <span>
-                    @Model.GameSystemRequirements.DiskSpaceMB.ConvertToNormalizedSize(out var t4).ToString() @t4
-                </span>
-            </div>
-                        
-        </div>
-                    
-        <div class="table_column language">
-            <span class="title">
-                Поддерживаемые языки
-            </span>
-            <span>
-                [ОЗВУЧИВАНИЕ]: @Model.GameSystemRequirements.SupportedVoiceLanguages
-                <br>
-                [ТОЛЬКО ТЕКСТ]: @Model.GameSystemRequirements.SupportedTextLanguages
-            </span>
-        </div>
-                    
-        <div class="table_column legal-info">
-            @Html.Raw(Model.GameInfo.LegalInfo)
-        </div>
-                    
     </div>
-</div>
+            
+    <div class="description">
+        @Html.Raw(Model.GameInfo.DetailedDescription)
+                
+    </div>
+            
+    <div class="system-req">
+        <h2> Системные требования </h2>
+        <div class="system-req table">
+            <div class="table_column column">
+                <div class="row">
+                    <span class="title">
+                        Минимальные
+                    </span>
+                </div>
+                        
+                <div class="row">
+                    <span class="title">
+                        ОС
+                    </span>
+                            
+                    <span>
+                        @Model.GameSystemRequirements.SupportedOses
+                    </span>
+                </div>
+                        
+                <div class="row">
+                    <span class="title">
+                        Процессор                        
+                    </span>
+                                                    
+                    <span>
+                        @Model.GameSystemRequirements.MinCpu
+                    </span>
+                </div>
+                        
+                <div class="row">
+                    <span class="title">
+                        Память                     
+                    </span>
+                                                    
+                    <span>
+                        @Model.GameSystemRequirements.MinRamMB.ConvertToNormalizedSize(out var t1).ToString() @t1
+                    </span>
+                </div>
+                        
+                <div class="row">
+                    <span class="title">
+                        Видеокарта
+                    </span>
+                                                    
+                    <span>
+                        @Model.GameSystemRequirements.MinGpu
+                    </span>
+                </div>
+                        
+                <div class="row">
+                    <span class="title">
+                        Место на диске
+                    </span>
+                                                                            
+                    <span>
+                        @Model.GameSystemRequirements.DiskSpaceMB.ConvertToNormalizedSize(out var t2).ToString() @t2
+                    </span>
+                </div>
+            </div>
+                    
+                    
+            <div class="table_column column">
+                <div class="row">
+                    <span class="title">
+                        Максимальные
+                    </span>
+                </div>
+                                            
+                <div class="row">
+                    <span class="title">
+                        ОС
+                    </span>
+                                                
+                    <span>
+                        @Model.GameSystemRequirements.SupportedOses
+                    </span>
+                </div>
+                                            
+                <div class="row">
+                    <span class="title">
+                        Процессор                        
+                    </span>
+                                                                        
+                    <span>
+                        @Model.GameSystemRequirements.MaxCpu
+                    </span>
+                </div>
+                                            
+                <div class="row">
+                    <span class="title">
+                        Память                     
+                    </span>
+                                                                        
+                    <span>
+                        @Model.GameSystemRequirements.MaxRamMB.ConvertToNormalizedSize(out var t3).ToString() @t3
+                    </span>
+                </div>
+                                            
+                <div class="row">
+                    <span class="title">
+                        Видеокарта
+                    </span>
+                                                                        
+                    <span>
+                        @Model.GameSystemRequirements.MaxGpu
+                    </span>
+                </div>
+
+            </div>
+                    
+            <div class="table_column language">
+                <span class="title">
+                    Поддерживаемые языки
+                </span>
+                <span>
+                    [ОЗВУЧИВАНИЕ]: @Model.GameSystemRequirements.SupportedVoiceLanguages
+                    <br>
+                    [ТОЛЬКО ТЕКСТ]: @Model.GameSystemRequirements.SupportedTextLanguages
+                </span>
+            </div>
+                    
+            <div class="table_column legal-info">
+                @Html.Raw(Model.GameInfo.LegalInfo)
+            </div>
+                    
+        </div>
+    </div>
             
             
         
@@ -223,13 +213,35 @@
 </section>
 
 <aside class="game_buy">
-    <p>
-        ffffffffffffffffffffffffffffffffffffffffffffffffffff
-        ffffffffffffffffffffffffffffffffffffffffffffffffffff
-    </p>
+    <div class="game-picture">
+        
+    </div>
+
+    <div class="price">
+        <div class="price discount"> -100% </div>
+        <div class="price old-price"> 1 599,20 ₽</div>
+        <div class="price new-price"> 0.00 ₽</div>
+
+    </div>
+    
+    <div class="sale">
+        Распродажа заканчивается 17.06.2021 в 18:00
+    </div>
+    
+    <button class="button active" id="buy-btn" type="button">
+        <span> Купить сейчас </span>
+    </button>
+
+    <button class="button button-info"  type="button" disabled>
+        <span> В коллекции </span>
+    </button>
+    
+        
+
 
 </aside>
 </div>
+
 <div class="game-popup hidden">
     <div class="game-popup-window">
         <h2 class="title">Оформить заказ</h2>
@@ -309,7 +321,7 @@
 
 <script src="~/libs/JQuery/jquery-3.6.0.js"></script>
 <script>
-    let buyBtn = document.querySelector('.rightNav__item.download');
+    let buyBtn = document.querySelector('#buy-btn');
     let cancelBtn = document.querySelector('#cancel-btn');
     let popup = document.querySelector('.game-popup');
     let popupContent = $('.game-popup-window__main');

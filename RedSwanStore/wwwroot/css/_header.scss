@@ -136,13 +136,15 @@ header{
       
 
       &__photo {
-        width: 35px;
-        height: 35px;
-        border: 2px solid #7d0011;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #7d0011;
         border-radius: 50%;
         position: absolute;
         left: 10px;
-        //bottom: -14px;
+        object-fit: cover;
+        image-rendering: high-quality;
+        
       }
 
       &__login {

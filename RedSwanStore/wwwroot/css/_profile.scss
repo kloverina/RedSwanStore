@@ -79,6 +79,8 @@
     flex: 1 1 65%;
     img{
       border-radius: 2px;
+      height: 184px;
+      width: 184px;
     }
   }
   
@@ -164,6 +166,17 @@
   div{
     flex: 1 1 50%;
     margin: 0 20px;
+  }
+
+  div.account_forms__reset{
+    //background-color: #f4f4f4;
+    button{
+      background-color: #413838 !important;
+      &:hover{
+        background-color: #4f4444 !important;
+      }
+    }
+    
   }
 }
   

@@ -37,6 +37,7 @@ header nav {
   display: flex;
   flex-wrap: nowrap;
   padding: 20px 0 0;
+  max-height: 50px;
   justify-content: space-between;
 }
 header nav .menu {
@@ -84,12 +85,15 @@ header nav .menu li:not(.store-icon):hover::after {
 header nav .menu li :hover {
   color: white;
 }
+header nav .menu li.store-icon {
+  display: inline-block;
+}
 header nav .rightNav {
   display: flex;
   justify-content: flex-end;
-  max-width: 500px;
   margin: 0;
   padding: 0;
+  max-width: 500px;
   flex: 1 1 30%;
   height: 100%;
 }
@@ -117,13 +121,14 @@ header .dropdown .header-user-info {
   position: relative;
 }
 header .dropdown .header-user-info__photo {
-  width: 35px;
-  height: 35px;
-  border: 2px solid #7d0011;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #7d0011;
   border-radius: 50%;
   position: absolute;
   left: 10px;
-  top: -12px;
+  object-fit: cover;
+  image-rendering: high-quality;
 }
 header .dropdown .header-user-info__login {
   margin-left: 60px;
@@ -158,6 +163,9 @@ header .dropdown__submenu span {
 }
 header .dropdown__submenu span:hover:not(.balance):not(.user_balance) {
   color: white;
+}
+header .dropdown__submenu span.balance {
+  padding: 0;
 }
 header .dropdown:hover .dropdown__submenu {
   display: block;
@@ -509,6 +517,8 @@ p.form_element__checkpass.active {
 }
 .photo-container .photo__username_photo img {
   border-radius: 2px;
+  height: 184px;
+  width: 184px;
 }
 .photo-container .photo__upload {
   flex: 1 1 23%;
@@ -572,6 +582,12 @@ p.form_element__checkpass.active {
   flex: 1 1 50%;
   margin: 0 20px;
 }
+.form__buttons div.account_forms__reset button {
+  background-color: #413838 !important;
+}
+.form__buttons div.account_forms__reset button:hover {
+  background-color: #4f4444 !important;
+}
 
 h1.title {
   font-size: 30px;
@@ -593,7 +609,6 @@ h1.title {
 .game_buy {
   flex: 1 1 30%;
   padding: 20px 40px;
-  background-color: #484848;
 }
 
 .game_section {
@@ -603,7 +618,6 @@ h1.title {
   background-color: darkgreen;
   min-width: 300px;
   min-height: 200px;
-  margin: 20px;
 }
 .game_section .short-desc {
   margin: 40px 0;
@@ -624,6 +638,9 @@ h1.title {
   justify-content: stretch;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0 20px;
+}
+.game_section .game-info__column:last-of-type {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 .game_section .game-info__column span:first-of-type {
   color: rgba(245, 245, 245, 0.6);
@@ -720,6 +737,67 @@ h1.title {
 .game_section .system-req .table .legal-info span {
   letter-spacing: 0.2px;
   padding: 0 30px;
+}
+
+.game_buy {
+  margin-left: 15px;
+}
+.game_buy .game-picture {
+  width: 216px;
+  height: 288px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+}
+.game_buy .game-picture img {
+  object-fit: cover;
+}
+.game_buy .price {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  vertical-align: baseline;
+  justify-content: stretch;
+}
+.game_buy .price.old-price {
+  text-decoration: line-through;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.game_buy .price.discount {
+  font-size: 10px;
+  background-color: #f4f4f4;
+  color: black;
+  padding: 0 7px;
+  border-radius: 5px;
+}
+.game_buy .sale {
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 20px;
+}
+.game_buy .button {
+  justify-content: center;
+  line-height: 15px;
+  font-size: 14px;
+  padding: 15px 20px;
+  height: 50px;
+  background-color: #7d0011;
+  vertical-align: middle;
+  border-radius: 5px;
+  width: 100%;
+  text-transform: uppercase;
+}
+.game_buy .button-info {
+  justify-content: center;
+  line-height: 15px;
+  padding: 15px 20px;
+  height: 50px;
+  background-color: #a0a0a0;
+  color: rgba(0, 0, 0, 0.6);
+  vertical-align: middle;
+  border-radius: 5px;
+  width: 100%;
+  cursor: default;
 }
 
 body {
