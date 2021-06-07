@@ -22,17 +22,30 @@ namespace RedSwanStore.Controllers
             if (User.Identity.IsAuthenticated)
             {
                 User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
-                
-                ViewData["userLogin"] = user.Login;
-                ViewData["userUrl"] = user.UserUrl;
-                ViewData["userPhoto"] = user.Photo;
-                ViewData["userBalance"] = user.Balance.ConvertToPrice();
+
+                ViewBag.User = user;
                 ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
             }
 
             ViewBag.GameId = gameId;
 
             return View("GameNotFound");
+        }
+
+        
+        [Route("access-denied")]
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+
+                ViewBag.User = user;
+                ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+            }
+
+            return View("AccessDenied");
         }
     }
 }
