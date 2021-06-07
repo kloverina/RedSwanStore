@@ -103,7 +103,7 @@
 
 
 .buy-using-wallet {
-    display: flex;
+    /*display: flex;*/
     background-color: #7d0011;
     flex-direction: column;
     justify-content: space-between;
@@ -113,7 +113,7 @@
 }
 
 .buy-using-wallet__main {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     background-color: goldenrod;
 }
@@ -128,7 +128,7 @@
 }
 
 .buy-using-wallet__actual-price {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     background-color: gainsboro;
     justify-content: space-between;
@@ -137,7 +137,7 @@
 }
 
 .buy-using-wallet__discount {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
 }
@@ -158,7 +158,7 @@
 }
 
 .buy-using-wallet__result-price {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
 
@@ -168,7 +168,7 @@
 }
 
 .buy-using-wallet__money-left {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     justify-content: space-between;
 }
@@ -196,7 +196,7 @@
 }
 
 .add-funds {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: space-between;
 
@@ -205,7 +205,7 @@
 }
 
 .add-funds__main {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
 }
 
@@ -228,7 +228,7 @@
 }
 
 .add-funds .expiration-date {
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     margin-top: 3px;
 }

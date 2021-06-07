@@ -6,35 +6,27 @@
     <div class="buy-using-wallet__main">
         <h2 class="title">Оплатить с учетной записи Red Swan</h2>
         <div class="buy-using-wallet__price-block">
-            <!--
             <div class="buy-using-wallet__actual-price">
-                Номинальная цена: <span>@Model.ActualPrice.ConvertToPrice()</span>
+                <span>Номинальная цена: </span>
+                <span>@Model.ActualPrice.ConvertToPrice()</span>
             </div>
             <div class="buy-using-wallet__discount">
-                Скидка: <span>- @Model.DiscountAmount.ConvertToPrice()</span>
+                <span>Скидка:</span> 
+                <span>- @Model.DiscountAmount.ConvertToPrice()</span>
             </div>
-            </div>
-            <div class="buy-using-wallet__result-block">
+        
+        
+        
             <div class="buy-using-wallet__result-price">
-                Итого: <span>@Model.ResultPrice.ConvertToPrice()</span>
+                <span>Итого: </span>
+                <span>@Model.ResultPrice.ConvertToPrice()</span>
             </div>
             <div class="buy-using-wallet__money-left">
-                После покупки у Вас останется: <span>@Model.MoneyLeft.ConvertToPrice()</span>
+                <span>Остаток на счёте: </span>
+                <span class="balance">@Model.MoneyLeft.ConvertToPrice()</span>
             </div>
-            -->
-            <div class="buy-using-wallet_column column">
-                <span> Номинальная цена: </span>
-                <span> Номинальная цена </span>
-                <span> Номинальная цена </span>
-                <span> Номинальная цена </span>
-                
-            </div>
-            <div class="buy-using-wallet_column column">
-                <span> </span>
-                
-            </div>
-            
         </div>
+        
     </div>
     <div class="form_element">
         <button class="form_element__button button active" id="commit-transaction" type="submit" readonly>
