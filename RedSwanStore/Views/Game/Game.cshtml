@@ -214,31 +214,44 @@
 
 <aside class="game_buy">
     <div class="game-picture">
-        
+        <!-- <img src="@Model.GameInfo.Cover" alt="@Model.Name"> -->  
     </div>
 
     <div class="price">
-        <div class="price discount"> -100% </div>
-        <div class="price old-price"> 1 599,20 ₽</div>
-        <div class="price new-price"> 0.00 ₽</div>
-
+        @if (Model.GameInfo.Discount != 0)
+        {
+            <div class="price discount"> @(Math.Round(Model.GameInfo.Discount * 100, 0).ToString()) %</div>
+            <div class="price old-price">@(Model.GameInfo.Price.ConvertToPrice())</div>
+        }
+        <div class="price new-price">@((Model.GameInfo.Price * (decimal)(1 - Model.GameInfo.Discount)).ConvertToPrice())</div>
     </div>
     
-    <div class="sale">
-        Распродажа заканчивается 17.06.2021 в 18:00
-    </div>
-    
-    <button class="button active" id="buy-btn" type="button">
-        <span> Купить сейчас </span>
-    </button>
-
-    <button class="button button-info"  type="button" disabled>
-        <span> В коллекции </span>
-    </button>
-    
+    @if (Model.GameInfo.Discount != 0)
+    {
+        var discountEnd = Model.GameInfo.DiscountEndDate;
+        var discountEndDate = discountEnd.Date.ToShortDateString();
+        var discountEndHour = discountEnd.Hour < 10 ? $"0{discountEnd.Hour.ToString()}" : discountEnd.Hour.ToString();
+        var discountEndMinute = discountEnd.Minute < 10 ? $"0{discountEnd.Minute.ToString()}" : discountEnd.Minute.ToString();
         
+        <div class="sale">
+            Распродажа заканчивается @discountEndDate в @discountEndHour:@discountEndMinute
+        </div>
+    }
 
-
+    
+    @if (ViewBag.hasGameInLib)
+    {
+        <button class="button button-info"  type="button" disabled>
+            <span> В коллекции </span>
+        </button>
+    }
+    else
+    {
+        <button class="button active" id="buy-btn" type="button">
+            <span> Купить сейчас </span>
+        </button>
+    }
+    
 </aside>
 </div>
 
