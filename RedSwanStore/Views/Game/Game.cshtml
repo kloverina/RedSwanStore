@@ -9,7 +9,7 @@
     Layout = layout;
   }
 }
-<link rel="stylesheet" href="~/css/game-popup-window.css"/>
+
 <div class="container">
 <h1 class="title"> @Model.Name </h1>
 <div class="game">
@@ -236,8 +236,6 @@
         <span> В коллекции </span>
     </button>
     
-        
-
 
 </aside>
 </div>
@@ -297,16 +295,17 @@
                 </div>
                 <script src="~/js/popup/add-funds.js"></script>
             </div>
-            <div class="game-popup-window__game-info">
+            
+            <div class="game-popup-window__game-info game-info">
                 <h2 class="title">Описание заказа</h2>
-                <div class="game-popup-window__image">
+                <div class="game-popup-window_el game-info__image">
                     <img src="@Model.GameInfo.Cover" alt="@Model.Name">
                 </div>
-                <div class="game-popup-window__game-description">
-                    <div class="game-popup-window__game-title">@Model.Name</div>
-                    <div class="game-popup-window__game-dev">От: @Model.Developer</div>
-                    <div class="game-popup-window__game-rating">Средняя оценка: @Model.GameInfo.Rating.ToString()</div>
-                    <div class="game-popup-window__game-release-date">Дата выхода: @Model.GameInfo.ReleaseDate.ToShortDateString()</div>
+                <div class="game-popup-window_el game-info__game-description">
+                    <div class="game-popup-window_el game-info__game-title">@Model.Name</div>
+                    <div class="game-popup-window_el game-info__game-dev">От: @Model.Developer</div>
+                    <div class="game-popup-window_el game-info__game-rating">Средняя оценка: @Model.GameInfo.Rating.ToString()</div>
+                    <div class="game-popup-window_el game-info__game-release-date">Дата выхода: @Model.GameInfo.ReleaseDate.ToShortDateString()</div>
                     <div class="form_element">
                         <button class="form_element__button button active" id="cancel-btn" type="submit" readonly>
                             <span class="button-label"> Отменить </span>

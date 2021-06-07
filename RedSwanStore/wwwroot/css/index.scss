@@ -19,7 +19,7 @@ body{
 .container{
   max-width: 100%;
   padding: 0;
-  
+  position: relative;
   margin: 80px auto 0;
 }
 
@@ -370,5 +370,8 @@ h4{
     }
   }
 }
+
+
+
 
 
