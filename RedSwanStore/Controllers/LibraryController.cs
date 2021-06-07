@@ -108,7 +108,7 @@ namespace RedSwanStore.Controllers
             IEnumerable<UserLibraryGame> filteredGames =
                 (filter == LibraryFilters.Favourite ? userLibraryGames.Where(lg => lg.IsFavourite) : userLibraryGames);
 
-            IEnumerable<LibraryGameCard> libraryGameCards = userLibraryGames.Select(lg => new LibraryGameCard{
+            IEnumerable<LibraryGameCard> libraryGameCards = filteredGames.Select(lg => new LibraryGameCard{
                 HoursPlayed = lg.HoursPlayed,
                 LastPlayed = lg.LastPlayed.Date,
                 CoverUrl = gamesTable.GetGameById(lg.GameId)!.GameInfo.Cover,

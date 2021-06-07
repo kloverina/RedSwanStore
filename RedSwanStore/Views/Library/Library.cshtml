@@ -33,7 +33,7 @@
             <h4>Фильтр:</h4><span class="dropdown_button__toggleLabel">Все</span>
           </button>
 
-          <div class="dropdown__submenu submenu hidden" id="games-cards">
+          <div class="dropdown__submenu submenu hidden" >
             @foreach (KeyValuePair<string, KeyValuePair<string, LibraryFilters>> item in LibraryViewModel.FilterOptions)
             {
               <button class="submenu__button library-filter-btn" data-controller-arg="@item.Key"><span> @item.Value.Key </span></button>
@@ -44,8 +44,24 @@
 
       
       
-      <div class="section__games games library">
+      <div class="section__games games library" id="games-cards">
         @await Html.PartialAsync("_LibraryGamesListPartial", Model.GameCards)
+      </div>
+      
+      <div class="section_empty empty hidden">
+              
+        <div class="empty__title">
+          <span>
+            Нет результатов
+          </span>
+        </div>
+      
+        <div class="empty__description">
+          <span>
+            К сожалению, по Вашему запросу ничего не найдено :(
+          </span>
+        </div>
+      
       </div>
       
     </section>
