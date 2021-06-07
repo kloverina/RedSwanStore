@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
+using RedSwanStore.Utils;
 
 namespace RedSwanStore.Controllers
 {
@@ -31,6 +32,7 @@ namespace RedSwanStore.Controllers
                 ViewData["userLogin"] = user.Login;
                 ViewData["userUrl"] = user.UserUrl;
                 ViewData["userPhoto"] = user.Photo;
+                ViewData["userBalance"] = user.Balance.ConvertToPrice();
                 ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
             }
             

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
 using RedSwanStore.Data.ViewModels;
+using RedSwanStore.Utils;
 
 namespace RedSwanStore.Controllers
 {
@@ -63,6 +64,7 @@ namespace RedSwanStore.Controllers
             ViewData["userLogin"] = currentUser.Login;
             ViewData["userUrl"] = currentUser.UserUrl;
             ViewData["userPhoto"] = currentUser.Photo;
+            ViewData["userBalance"] = currentUser.Balance.ConvertToPrice();
             ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
 
             return View(libraryViewModel);
