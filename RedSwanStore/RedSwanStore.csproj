@@ -22,4 +22,8 @@
       <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.6" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\img\users-photos" />
+    </ItemGroup>
+
 </Project>
