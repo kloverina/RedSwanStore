@@ -66,7 +66,7 @@
             </span>
                                                     
             <span class="column_rate">
-                @Model.GameInfo.Rating.ToString()
+                @(Model.GameInfo.Rating == 0 ? "Отсутствует" : Model.GameInfo.Rating.ToString())
             </span>
         </div>
                 
@@ -268,7 +268,7 @@
                 <div class="game-popup-window__game-description">
                     <div class="game-popup-window__game-title">@Model.Name</div>
                     <div class="game-popup-window__game-dev">От: @Model.Developer</div>
-                    <div class="game-popup-window__game-rating">Средняя оценка: @Model.GameInfo.Rating.ToString()</div>
+                    <div class="game-popup-window__game-rating">Средняя оценка: @(Model.GameInfo.Rating == 0 ? "Отсутствует" : Model.GameInfo.Rating.ToString())</div>
                     <div class="game-popup-window__game-release-date">Дата выхода: @Model.GameInfo.ReleaseDate.ToShortDateString()</div>
                     <div class="form_element">
                         <button class="form_element__button button active" id="cancel-btn" type="submit" readonly>
