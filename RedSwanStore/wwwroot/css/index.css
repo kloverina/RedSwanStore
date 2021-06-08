@@ -516,8 +516,8 @@ p.form_element__checkpass.active {
   flex: 1 1 65%;
 }
 .photo-container .photo__username_photo img {
-  border-radius: 5px;
   border: 1px solid;
+  border-radius: 5px;
   height: 184px;
   width: 184px;
 }
@@ -616,9 +616,22 @@ h1.title {
   padding: 0 10px;
 }
 .game_section .video_player {
-  background-color: darkgreen;
-  min-width: 300px;
-  min-height: 200px;
+  position: relative;
+  max-width: 745px;
+  text-align: center;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.game_section .video_player .owl-carousel {
+  position: relative;
+  background-size: cover;
+  width: auto;
+  height: auto;
+}
+.game_section .video_player .owl-carousel .item-video {
+  height: 420px;
 }
 .game_section .short-desc {
   margin: 40px 0;
@@ -742,18 +755,18 @@ h1.title {
 
 .game_buy {
   margin-left: 15px;
+  padding-top: 0;
 }
-.game_buy .game-picture {
+.game_buy .game-picture img {
   width: 216px;
   height: 288px;
   border-radius: 5px;
-  background-color: #f4f4f4;
-}
-.game_buy .game-picture img {
   object-fit: cover;
+  margin: 0;
+  padding: 0;
 }
 .game_buy .price {
-  margin: 10px 0;
+  margin-bottom: 5px;
   display: flex;
   flex-direction: row;
   vertical-align: baseline;

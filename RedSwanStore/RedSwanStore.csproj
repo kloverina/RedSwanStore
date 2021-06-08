@@ -24,6 +24,22 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\img\users-photos" />
+      <Folder Include="wwwroot\libs\Owl" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\owl.carousel.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\owl.carousel.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\owl.theme.default.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\owl.theme.green.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_animate.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_autoheight.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_core.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_lazyload.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_theme.default.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_theme.green.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_theme.scss" />
+      <_ContentIncludedByDefault Remove="wwwroot\libs\Owl\css\_video.scss" />
     </ItemGroup>
 
 </Project>

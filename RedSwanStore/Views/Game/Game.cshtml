@@ -9,14 +9,27 @@
     Layout = layout;
   }
 }
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <div class="container">
 <h1 class="title"> @Model.Name </h1>
 <div class="game">
 <section class="game_section">
     <div class="video_player">
+        <div class="owl-carousel owl-theme">
+            <div class="item-video">
+                <a class="owl-video" href=" https://www.youtube.com/watch?v=lQ4FRcu_bjs"> </a>
+            </div>
             
-        //add a video here please (
+            <div>
+                <img src="https://i.ibb.co/1b6h5bx/ftl1.jpg" alt="game-photo">
+            </div>
+            
+            <div>
+                <img src="https://i.ibb.co/PMh9qbj/ftl2.jpg" alt="game-photo">
+            </div>
+           
+        </div>
     </div>
             
     <div class="short-desc">
@@ -214,7 +227,7 @@
 
 <aside class="game_buy">
     <div class="game-picture">
-        <!-- <img src="@Model.GameInfo.Cover" alt="@Model.Name"> -->  
+        <img src="@Model.GameInfo.Cover" alt="@Model.Name">   
     </div>
 
     <div class="price">
@@ -283,6 +296,9 @@
 </div>
 
 <script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="js/owl.js"> </script>
+
 <script>
     let buyBtn = document.querySelector('#buy-btn');
     let cancelBtn = document.querySelector('#cancel-btn');

@@ -26,14 +26,25 @@ h1.title{
 }
 
 .game_section{
-  //background-color: #2B2B2B;
-  //border: 1px solid goldenrod;
+ 
   padding: 0 10px ;
   .video_player{
-    background-color: darkgreen;
-    min-width: 300px;
-    min-height: 200px;
-    //margin: 20px;
+    position: relative;
+    max-width: 745px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    .owl-carousel{
+      position: relative;
+      background-size: cover;
+      width: auto;
+      height: auto;
+      .item-video {
+        height: 420px;
+      }
+    }
   }
   
   .short-desc{
@@ -187,20 +198,21 @@ h1.title{
 .game_buy{
   //background-color: #7d0011;
   margin-left: 15px;
+  padding-top: 0;
   .game-picture{
-    width: $image_width * 1.2;
-    height: $image_height * 1.2;
-    //margin: 0 20px;
-    border-radius: 5px;
-    background-color: #f4f4f4;
-
     img {
+      width: $image_width * 1.2;
+      height: $image_height * 1.2;
+      border-radius: 5px;
       object-fit: cover;
+      margin: 0;
+      padding: 0;
+      //background-color: #f4f4f4;
     }
   }
   
   .price{
-    margin: 10px 0;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: row;
     vertical-align: baseline;
