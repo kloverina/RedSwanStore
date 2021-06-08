@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RedSwanStore.Data;
 
 namespace RedSwanStore.Migrations
 {
     [DbContext(typeof(RedSwanStoreDBContent))]
-    partial class RedSwanStoreDBContentModelSnapshot : ModelSnapshot
+    [Migration("20210607223410_AddRolePropertyForUser")]
+    partial class AddRolePropertyForUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -350,9 +352,6 @@ namespace RedSwanStore.Migrations
                     b.Property<bool>("GetNewsOnEmail")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsAdmin")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -370,6 +369,11 @@ namespace RedSwanStore.Migrations
                     b.Property<string>("Photo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Surname")
                         .IsRequired()

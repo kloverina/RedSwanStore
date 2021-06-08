@@ -3,8 +3,9 @@
     <User>
         <Name>RedSwanStore</Name>
         <UserUrl>admin</UserUrl>
+        <IsAdmin>true</IsAdmin>
         <Surname>Admin</Surname>
-        <Login>admin</Login>
+        <Login>Admin</Login>
         <Email>redswanstore@yandex.ru</Email>
         <GetNewsOnEmail>true</GetNewsOnEmail>
         <Password>admin</Password>

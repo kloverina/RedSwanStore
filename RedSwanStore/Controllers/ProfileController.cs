@@ -1,7 +1,11 @@
+using System.IO;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
+using RedSwanStore.Utils;
 
 namespace RedSwanStore.Controllers
 {
@@ -10,10 +14,12 @@ namespace RedSwanStore.Controllers
     public class ProfileController : Controller
     {
         private readonly IUserRepo usersTable;
+        private readonly IWebHostEnvironment appEnv;
 
-        public ProfileController(IUserRepo userR)
+        public ProfileController(IUserRepo userR, IWebHostEnvironment appEnv)
         {
             usersTable = userR;
+            this.appEnv = appEnv;
         }
         
         [Route("user")]
@@ -22,9 +28,7 @@ namespace RedSwanStore.Controllers
         {
             User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
                 
-            ViewData["userLogin"] = user.Login;
-            ViewData["userUrl"] = user.UserUrl;
-            ViewData["userPhoto"] = user.Photo;
+            ViewBag.User = user;
             ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
             
             return View(user);
@@ -32,11 +36,23 @@ namespace RedSwanStore.Controllers
 
         
         [HttpPost]
-        public IActionResult SaveChanges(string login, string url, string name, string surname, string oldPassword, string newPassword)
+        public IActionResult SaveChanges(IFormFile? photo, string login, string url, string name, string surname, string oldPassword, string newPassword)
         {
             User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
             UpdateResult result = new UpdateResult();
 
+            if (photo != null)
+            {
+                string path = "/img/users-photos/" + photo.FileName;
+
+                using (var fs = new FileStream(appEnv.WebRootPath + path, FileMode.Create))
+                {
+                    photo.CopyTo(fs);
+                }
+                
+                usersTable.UpdateUserPhoto(user, ".." + path);
+            }
+            
             result.IsCorrectLogin = UpdateLogin(user, login);
             result.IsCorrectUrl = UpdateUrl(user, url);
             result.IsCorrectName = UpdateName(user, name);

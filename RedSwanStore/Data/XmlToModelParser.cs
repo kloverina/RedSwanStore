@@ -280,6 +280,7 @@ namespace RedSwanStore.Data
                     GetNewsOnEmail = Convert.ToBoolean(fieldsList.GetNodeInnerText(nameof(User.GetNewsOnEmail))),
                     Password = fieldsList.GetNodeInnerText(nameof(User.Password)),
                     Photo = fieldsList.GetNodeInnerText(nameof(User.Photo)),
+                    IsAdmin = Convert.ToBoolean(fieldsList.GetNodeInnerText(nameof(User.IsAdmin))),
                     Balance = Convert.ToDecimal(
                         fieldsList.GetNodeInnerText(nameof(User.Balance)),
                         CultureInfo.CurrentCulture

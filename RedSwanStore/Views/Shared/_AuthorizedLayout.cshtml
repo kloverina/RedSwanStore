@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using RedSwanStore.Utils
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8"/>
@@ -9,46 +10,57 @@
 </head>
 <body>
 <header>
-      
+    
+    @{
+        User user = ViewBag.User;
+    }
+
     <nav>
         <ul class="menu">
             <li class="store-icon">
-                
+
                 <a asp-area="" asp-controller="Home" asp-action="Index">
                     <div class="store-icon"></div>
                 </a>
             </li>
-            
+
             <li><a asp-area="" asp-controller="Home" asp-action="Index">Магазин</a></li>
             <li><a href="#search">Поиск</a></li>
-            
+
         </ul>
         <div class="rightNav">
             <div class="rightNav__item sign-in dropdown">
-                
-                
+
+
                 <span class="dropdown_button__toggleLabel">
-                    <a class="header-user-info" href="/profile/user?@ViewData["userUrl"]">
-                        <img class="header-user-info__photo" src="@ViewData["userPhoto"]" alt="photo" width="45" height="45">
-                        <span class="header-user-info__login">@ViewData["userLogin"]</span>
+                    <a class="header-user-info" href="/profile/user?@user.UserUrl">
+                        <img class="header-user-info__photo" src="@user.Photo" alt="photo" width="45" height="45">
+                        @if (user.IsAdmin)
+                        {
+                            <span class="header-user-info__login">@user.Login</span><span style="color: gold">&nbsp;&nbsp;[Admin]</span>
+                        }
+                        else
+                        {
+                            <span class="header-user-info__login">@user.Login</span>
+                        }
                     </a>
                 </span>
 
                 <div class="dropdown__submenu submenu">
-                    
-                    <button class="submenu__button">
-                        
-                        <span class="user_balance"> Баланс
-                            <span class="balance">
-                                999.00
-                            </span> ₽
-                        </span>
-                   
-                    </button>
-                    
 
                     <button class="submenu__button">
-                        <a href="/library/user?@ViewData["userUrl"]">
+
+                        <span class="user_balance"> Баланс
+                            <span class="balance">
+                                @user.Balance.ConvertToPrice()
+                            </span>
+                        </span>
+
+                    </button>
+
+
+                    <button class="submenu__button">
+                        <a href="/library/user?@user.UserUrl">
                             <span> Библиотека </span>
                         </a>
                     </button>
@@ -60,11 +72,11 @@
                 </div>
 
             </div>
-            
+
             <div class="rightNav__item download"><a href="#download">Установить приложение</a></div>
         </div>
     </nav>
-      
+
 </header>
 <div class="container">
     <main role="main" class="pb-3">

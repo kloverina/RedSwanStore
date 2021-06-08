@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
+using RedSwanStore.Utils;
 
 namespace RedSwanStore.Controllers
 {
@@ -26,9 +27,7 @@ namespace RedSwanStore.Controllers
             
             cartTable.DeleteItem(user.Email);
                 
-            ViewData["userLogin"] = user.Login;
-            ViewData["userUrl"] = user.UserUrl;
-            ViewData["userPhoto"] = user.Photo;
+            ViewBag.User = user;
             ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
 
             return View();

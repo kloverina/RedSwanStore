@@ -214,29 +214,44 @@
 
 <aside class="game_buy">
     <div class="game-picture">
-        
+        <!-- <img src="@Model.GameInfo.Cover" alt="@Model.Name"> -->  
     </div>
 
     <div class="price">
-        <div class="price discount"> -100% </div>
-        <div class="price old-price"> 1 599,20 ₽</div>
-        <div class="price new-price"> 0.00 ₽</div>
-
+        @if (Model.GameInfo.Discount != 0)
+        {
+            <div class="price discount"> @(Math.Round(Model.GameInfo.Discount * 100, 0).ToString()) %</div>
+            <div class="price old-price">@(Model.GameInfo.Price.ConvertToPrice())</div>
+        }
+        <div class="price new-price">@((Model.GameInfo.Price * (decimal)(1 - Model.GameInfo.Discount)).ConvertToPrice())</div>
     </div>
     
-    <div class="sale">
-        Распродажа заканчивается 17.06.2021 в 18:00
-    </div>
-    
-    <button class="button active" id="buy-btn" type="button">
-        <span> Купить сейчас </span>
-    </button>
+    @if (Model.GameInfo.Discount != 0)
+    {
+        var discountEnd = Model.GameInfo.DiscountEndDate;
+        var discountEndDate = discountEnd.Date.ToShortDateString();
+        var discountEndHour = discountEnd.Hour < 10 ? $"0{discountEnd.Hour.ToString()}" : discountEnd.Hour.ToString();
+        var discountEndMinute = discountEnd.Minute < 10 ? $"0{discountEnd.Minute.ToString()}" : discountEnd.Minute.ToString();
+        
+        <div class="sale">
+            Распродажа заканчивается @discountEndDate в @discountEndHour:@discountEndMinute
+        </div>
+    }
 
-    <button class="button button-info"  type="button" disabled>
-        <span> В коллекции </span>
-    </button>
     
-
+    @if (ViewBag.hasGameInLib)
+    {
+        <button class="button button-info"  type="button" disabled>
+            <span> В коллекции </span>
+        </button>
+    }
+    else
+    {
+        <button class="button active" id="buy-btn" type="button">
+            <span> Купить сейчас </span>
+        </button>
+    }
+    
 </aside>
 </div>
 
@@ -244,59 +259,8 @@
     <div class="game-popup-window">
         <h2 class="title">Оформить заказ</h2>
         <div class="game-popup-window__main">
-            <div class="add-funds">
-                <div class="add-funds__main">
-                    <h2 class="title">Оплатить картой VISA / MASTERCARD</h2>
-                    <div class="add-funds__not-enough-money">
-                        На Вашей учетной записи недостаточно средств для совершения покупки.
-                    </div>
-                    <form class="login-element form">
-                        <div class="form_element card-number">
-                            <label for="cardNumber">Номер карты</label>
-                            <input class="form-element" name="cardNumber" id="cardNumber" placeholder="Номер карты"
-                                   type="text" aria-label="Номер карты" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"
-                                   maxlength="16" required>
-                        </div>
-                                
-                        <div class="form_element card-holder">
-                            <label for="cardHolder">Владелец карты</label>
-                            <input class="form_element" name="cardHolder" id="cardHolder" placeholder="Владелец карты"
-                                   type="text" aria-label="Владелец карты" pattern="[A-Z]+ [A-Z]+" required>
-                        </div>
-                                
-                        <div class="expiration-date__wrapper">
-                            <label for="expirationMonth">Дата истечения срока действия</label>
-                            <div class="expiration-date">
-                                <div class="form_element expiration-month">
-                                    <input class="form_element" name="expirationMonth" id="expirationMonth" placeholder="Месяц"
-                                           type="text" aria-label="Месяц истечения срока действия" pattern="[0-9]{1,2}"
-                                           maxlength="2" min="1" max="12" required>
-                                </div>
-                                <div class="form_element expiration-year">
-                                    <input class="form_element" name="expirationYear" placeholder="Год"
-                                           type="text" aria-label="Год истечения срока действия" pattern="[0-9]{2}"
-                                           maxlength="2" min="21" max="99" required>
-                                </div>
-                            </div>
-                        </div>
-                                
-                                
-                        <div class="form_element cvc">
-                            <label for="cvc">Cvc</label>
-                            <input class="form_element" name="expirationYear" id="cvc" placeholder="CVC"
-                                   type="password" aria-label="CVC" maxlength="3" pattern="[0-9]{3}" required>
-                        </div>
-                    </form>
-                </div>
-                <div class="form_element">
-                    <button class="form_element__button button active" readonly>
-                        <span class="button-label"> Оплатить </span>
-                    </button>
-                </div>
-                <script src="~/js/popup/add-funds.js"></script>
-            </div>
-            
-            <div class="game-popup-window__game-info game-info">
+            <div class="add-funds"></div>
+            <div class="game-popup-window__game-info">
                 <h2 class="title">Описание заказа</h2>
                 <div class="game-popup-window_el game-info__image">
                     <img src="@Model.GameInfo.Cover" alt="@Model.Name">

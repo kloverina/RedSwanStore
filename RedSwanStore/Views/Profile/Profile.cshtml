@@ -12,14 +12,23 @@
     <div class="profile">
         
         <div class="personal_info">
-            <p class="title main-title">
-                Настойки профиля
-            </p>
+            @if (Model.IsAdmin)
+            {
+                <p class="title main-title">
+                    Настойки профиля<span style="color: gold">&nbsp;&nbsp;[Admin]</span>
+                </p>
+            }
+            else
+            {
+                <p class="title main-title">
+                    Настойки профиля
+                </p>
+            }
             <p class="description">
                 Управляйте данными учетной записи, включая ваше имя, контактные данные и прочую информацию.
             </p>
         </div>
-        <form class="form account_forms" method="post" data-ajax="true" data-ajax-method="post" data-ajax-url="@Url.Action("SaveChanges")" data-ajax-complete="onSaveChanges">
+        <form class="form account_forms" enctype="multipart/form-data" method="post" data-ajax="true" data-ajax-method="post" data-ajax-url="@Url.Action("SaveChanges")" data-ajax-complete="onSaveChanges">
             <div class="profile__photo photo">
                 <p class="title"> Аватар </p>
                 <p class="description">
@@ -31,7 +40,7 @@
                         <img src="@Model.Photo" alt="Example" width="184px" height="184px">
                     </div>
                     <div class="photo__upload">
-                        <input type="file" accept="image/jpeg,image/png" class="photo__upload input">
+                        <input type="file" name="photo" accept="image/jpeg,image/png" class="photo__upload input">
                         <p class="description">
                             Загрузите файл со своего устройсва. Нужно квадратное изображение хотя бы 
                             184 на 184 пикселя.

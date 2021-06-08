@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using RedSwanStore.Data.Interfaces;
 using RedSwanStore.Data.Models;
 using RedSwanStore.Data.ViewModels;
+using RedSwanStore.Utils;
 
 namespace RedSwanStore.Controllers
 {
@@ -59,10 +60,8 @@ namespace RedSwanStore.Controllers
             }
             else
                 libraryViewModel.GameCards = new List<LibraryGameCard>();
-            
-            ViewData["userLogin"] = currentUser.Login;
-            ViewData["userUrl"] = currentUser.UserUrl;
-            ViewData["userPhoto"] = currentUser.Photo;
+
+            ViewBag.User = currentUser;
             ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
 
             return View(libraryViewModel);
@@ -106,7 +105,7 @@ namespace RedSwanStore.Controllers
             IEnumerable<UserLibraryGame> filteredGames =
                 (filter == LibraryFilters.Favourite ? userLibraryGames.Where(lg => lg.IsFavourite) : userLibraryGames);
 
-            IEnumerable<LibraryGameCard> libraryGameCards = userLibraryGames.Select(lg => new LibraryGameCard{
+            IEnumerable<LibraryGameCard> libraryGameCards = filteredGames.Select(lg => new LibraryGameCard{
                 HoursPlayed = lg.HoursPlayed,
                 LastPlayed = lg.LastPlayed.Date,
                 CoverUrl = gamesTable.GetGameById(lg.GameId)!.GameInfo.Cover,

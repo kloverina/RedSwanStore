@@ -1,0 +1,27 @@
+﻿@{
+    var layout = ViewData["layout"] as string;
+  
+    if (layout != null){
+        Layout = layout;
+    }
+}
+
+<div class="container">
+    <div class="game-not-found error-page">
+        <div class="section_empty empty">
+          
+            <div class="empty__title">
+                <span>
+                    Отказано в доступе.
+                </span>
+            </div>
+  
+            <div class="empty__description">
+                <span>
+                    К сожалению, для доступа к этой странице необходимо обладать правами администратора :(
+                </span>
+            </div>
+  
+        </div>
+    </div>
+</div>

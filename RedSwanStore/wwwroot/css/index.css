@@ -516,7 +516,8 @@ p.form_element__checkpass.active {
   flex: 1 1 65%;
 }
 .photo-container .photo__username_photo img {
-  border-radius: 2px;
+  border-radius: 5px;
+  border: 1px solid;
   height: 184px;
   width: 184px;
 }
