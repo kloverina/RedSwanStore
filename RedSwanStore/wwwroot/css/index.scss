@@ -96,10 +96,18 @@ $image_width: 180px;
     .video_player {
       max-width: 900px;
       .item-video {
-        height: 220px;
+        height: 520px;
       }
     }
   }
+}
+
+.owl-video-tn {
+  background-size: cover !important;
+}
+
+iframe + .owl-video-play-icon {
+  display: none !important;
 }
 
 

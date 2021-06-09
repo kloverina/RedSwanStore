@@ -995,12 +995,24 @@ body {
     max-width: 900px;
   }
   .game .video_player .item-video {
-    height: 220px;
+    height: 520px;
+  }
+  
+  .owl-video-wrapper {
+    height: 520px !important;
   }
 }
 a {
   text-decoration: none;
   color: white;
+}
+
+.owl-video-tn {
+  background-size: cover !important;
+}
+
+iframe + .owl-video-play-icon {
+  display: none !important;
 }
 
 button {

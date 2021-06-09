@@ -17,18 +17,25 @@
 <section class="game_section">
     <div class="video_player">
         <div class="owl-carousel owl-theme">
-            <div class="item-video">
-                <a class="owl-video" href=" https://www.youtube.com/watch?v=lQ4FRcu_bjs"> </a>
-            </div>
-            
-            <div>
-                <img src="https://i.ibb.co/1b6h5bx/ftl1.jpg" alt="game-photo">
-            </div>
-            
-            <div>
-                <img src="https://i.ibb.co/PMh9qbj/ftl2.jpg" alt="game-photo">
-            </div>
-           
+            @{
+                var screenshotsLinksList = Model.GameMedia.Screenshots.SplitLinksToList();
+                var trailersLinksList = Model.GameMedia.Trailers.SplitLinksToList();
+
+                foreach (var trailer in trailersLinksList)
+                {
+                    <div class="item-video">
+                        <a class="owl-video" href="@trailer"> </a>
+                    </div>
+                }
+                
+                foreach (var screenshot in screenshotsLinksList)
+                {
+                    <div>
+                        <img src="@screenshot" alt="@Model.Name - screenshot">
+                    </div>
+                }
+            }
+
         </div>
     </div>
             
@@ -299,6 +306,7 @@
 <script src="~/libs/JQuery/jquery-3.6.0.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="js/owl.js"> </script>
+
 
 <script>
     let buyBtn = document.querySelector('#buy-btn');

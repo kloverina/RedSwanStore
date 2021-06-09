@@ -168,15 +168,13 @@ namespace RedSwanStore.Utils
         /// <returns>The list of separated links.</returns>
         public static List<string> SplitLinksToList(this string str, char separator = ',')
         {
-            string[] split = str.Split(',');
+            string[] split = str.Split(',', StringSplitOptions.RemoveEmptyEntries);
             
             var result = new List<string?>();
 
             for (var i = 0; i < split.Length; i++)
             {
-                result.Add(split[i].Where(sym => 
-                    !char.IsWhiteSpace(sym) && !char.IsControl(sym) && !char.IsSeparator(sym)) as string
-                );
+                result.Add(split[i].Trim().Replace("\n", "").Replace("\r", ""));
             }
             
             return result.All(s => s == null) ? new List<string>() : new List<string>(result!);
