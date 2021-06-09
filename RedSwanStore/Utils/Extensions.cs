@@ -170,13 +170,13 @@ namespace RedSwanStore.Utils
         {
             string[] split = str.Split(',');
             
-            var result = new List<string?>(split.Length);
+            var result = new List<string?>();
 
             for (var i = 0; i < split.Length; i++)
             {
-                result[i] = split[i].Where(sym => 
-                    !char.IsWhiteSpace(sym) && !char.IsControl(sym) && !char.IsSeparator(sym)
-                ) as string;
+                result.Add(split[i].Where(sym => 
+                    !char.IsWhiteSpace(sym) && !char.IsControl(sym) && !char.IsSeparator(sym)) as string
+                );
             }
             
             return result.All(s => s == null) ? new List<string>() : new List<string>(result!);
