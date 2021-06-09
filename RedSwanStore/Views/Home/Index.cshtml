@@ -10,9 +10,28 @@
 }
 
 <div class="container">
+  <div class="search">
+    <form class="form hidden" id="search_form">
+      <div class="search form_element">
+        <input type="text" id="search" name="search" placeholder="Поиск" maxlength="60">
+      </div>
+      <button class="search_button button" type="submit">
+        <span class="form_icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 20" preserveAspectRatio="xMidYMid meet">
+            <g transform="scale(1 -1) rotate(-45 -11.93502884 -2)" stroke="currentColor" stroke-width="1.65" fill="none" fill-rule="evenodd">
+              <circle cx="7.70710678" cy="7.70710678" r="7"></circle>
+              <path d="M15.2071068 8.62132034h5.6923881" stroke-linecap="square"></path>
+            </g>
+          </svg>
+        </span>
+      </button>
+    </form>
+  </div>
+  
   <div class="game-catalog">
+
     <section class="game-catalog__browse section">
-      
+
       <div class="section_dropdown">
         <div class="dropdown">
           <button class="dropdown_button" aria-expanded="false" aria-haspopup="true">
@@ -27,16 +46,16 @@
           </div>
         </div>
       </div>
-      
+
       <!-- game card  -->
       <div class="section__games games" id="games-cards">
         @await Html.PartialAsync("_GamesListPartial", Model.Games)
       </div>
-      
+
       <!-- no-game-was-found message -->
-      
+
       <div class="section_empty empty hidden">
-        
+
         <div class="empty__title">
           <span>
             Нет результатов
@@ -51,7 +70,7 @@
 
       </div>
     </section>
-    
+
     <aside class="game-catalog__filter filter">
       <h4 class="check">Фильтр</h4>
       <ul class="filter__options options">

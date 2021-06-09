@@ -7,7 +7,7 @@ $(function() {
         items: 1,
         loop: true,
         lazyLoad:false,
-        margin: 10,
+        margin: 50,
         merge: false,
         center:true,
         nav: false,

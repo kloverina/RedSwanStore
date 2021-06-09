@@ -51,11 +51,32 @@ $image_width: 180px;
     min-height: $image_height;
     min-width: $image_width;
   }
+
+  .game {
+    .video_player {
+      max-width: 750px;
+      margin: 0 auto;
+      .item-video {
+        //height: 300px;
+        //margin: 0 auto;
+      }
+    }
+  }
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 1080px;
+  }
+  
+
+  .game {
+    .video_player {
+      max-width: 750px;
+      .item-video {
+        height: 420px;
+      }
+    }
   }
 
 }
@@ -64,6 +85,20 @@ $image_width: 180px;
   /* styles for browsers larger than 1440px; */
   .container {
     max-width: 1240px;
+  }
+  .game-card__image {
+    img {
+      min-height: $image_height * 1.15;
+      min-width: $image_width * 1.15;
+    }
+  }
+  .game {
+    .video_player {
+      max-width: 900px;
+      .item-video {
+        height: 220px;
+      }
+    }
   }
 }
 
@@ -93,7 +128,54 @@ h4{
 }
 
 
+.search {
+  
+  form {
+    position: relative;
+    margin: 80px 0 0 10px;
+    padding: 0 12px;
+    min-width: auto;
+    max-width: 70%;
+    //box-sizing: border-box;
+    //top: -10px;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #484848;
+    border-radius: 5px;
+    font-size: 16px;
+    
+    &.hidden{
+      display: none;
+    }
 
+
+    input {
+      margin: 0;
+      padding: 10px 10px;
+      height: auto;
+      background-color: inherit;
+
+      &:active, &:focus {
+        background-color: initial;
+        outline: none;
+      }
+    }
+
+    button {
+      position: relative;
+      display: inline-block;
+      outline: 0;
+      margin: 0;
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      width: 15px;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+}
 
 //основной контент страницы магазина
 .game-catalog {
@@ -101,14 +183,17 @@ h4{
   min-height: 500px;
   display: flex;
   justify-content: space-between;
-  margin: 30px auto 0;
+  margin: 20px auto 0;
 
   &__browse {
-    flex: 5 1 85%;
+    box-sizing: border-box;
+    flex: 5 1 70%;
+    
   }
 
   &__filter {
-    flex: 1 5 15%;
+    box-sizing: border-box;
+    flex: 1 5 20%;
     margin-left: 10px;
   }
   
@@ -201,9 +286,9 @@ h4{
     line-height: 20px;
     
   }
-  margin: 0;
+  margin: 0 auto;
   display: flex;
-  justify-content: flex-start;
+  justify-content: stretch;
   align-items: flex-start;
   flex-flow: row wrap;
 }

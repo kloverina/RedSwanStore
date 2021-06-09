@@ -25,8 +25,7 @@
             </li>
 
             <li><a asp-area="" asp-controller="Home" asp-action="Index">Магазин</a></li>
-            <li><a href="#search">Поиск</a></li>
-
+            <li id="search_button"><a>Поиск</a></li>
         </ul>
         <div class="rightNav">
             <div class="rightNav__item sign-in dropdown">
@@ -78,12 +77,13 @@
     </nav>
 
 </header>
-<div class="container">
-    <main role="main" class="pb-3">
-        @RenderBody()
-    </main>
-</div>
+<main role="main" class="pb-3">
+    
+    @RenderBody()
+</main>
+
 
 @await RenderSectionAsync("Scripts", required: false)
 </body>
+<script src="js/search.js"></script>
 </html>

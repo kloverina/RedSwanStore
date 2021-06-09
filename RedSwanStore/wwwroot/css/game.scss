@@ -13,13 +13,13 @@ h1.title{
   justify-content: space-between;
   
   &_info{
-    flex: 3 1 70%;
+    flex: 3 1 60%;
     padding: 30px 10px;
     background-color: goldenrod;
   }
   
   &_buy{
-    flex: 1 1 30%;
+    flex: 1 1 40%;
     padding: 20px 40px;
     //background-color: #484848;
   }
@@ -34,7 +34,7 @@ h1.title{
     text-align: center;
     width: auto;
     height: auto;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     .owl-carousel{
       position: relative;
