@@ -1,10 +1,42 @@
 ﻿$image_height: 240px;
 $image_width: 180px;
 
+.wrapper{
+  //background-color: #7d0011;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  //height: 10px;
+}
 h1.title{
+  //background-color: #7d0011;
   font-size: 30px;
   line-height: 35px;
   font-family: inherit;
+}
+
+.admin_panel{
+  
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: stretch;
+  margin-right: 40px;
+  a{
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left: 15px;
+    padding: 5px 40px;
+    img{
+      object-fit: cover;
+      color: white;
+      filter: invert(1);
+    }
+  }
+ 
+ 
+  
+  
 }
 .game{
   width: 100%;
