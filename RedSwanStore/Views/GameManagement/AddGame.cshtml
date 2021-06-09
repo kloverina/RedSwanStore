@@ -1,0 +1,382 @@
+﻿@model GameManagementViewModel
+
+@{
+  var layout = ViewData["layout"] as string;
+  
+  if (layout != null){
+    Layout = layout;
+  }
+}
+
+<link rel="stylesheet" href="~/css/game-management.css"/>
+<div class="container">
+    <div class="profile game-profile">
+        
+        <div class="personal_info">
+            <p class="title main-title">
+               Добавить игру
+            </p>
+            <p class="description">
+                Внесите все необходимые данные для новой игры.
+            </p>
+        </div>
+        <div class="form account_forms">
+            <div class="profile__photo photo">
+                <p class="title"> Основная информация </p>
+                <div class="account account-container">
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Название игры
+                        </p>
+                        <input class="" name="Name" id="Name" maxlength="100" type="text" placeholder="Название игры" value="">
+                    </div>
+                    
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Разработчик
+                        </p>
+                        <input class="" name="Developer" id="Developer" maxlength="100" type="text" placeholder="Разработчик" value="">
+                    </div>
+                    
+                    <div class="form_element account_forms__email">
+                        <p class="form_desc description">
+                            Идентификатор (собственная ссылка) игры
+                        </p>
+                        <input class="form_element__url" name="GameUrl" id="GameUrl" maxlength="100" type="text" placeholder="Идентификатор игры" value="">
+                        <span>
+                            Страница игры будет находиться по адресу: https://redswanstore/game?gameid=<span id="dynamic-link"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="account_forms genres-and-filters">
+                <p class="title"> Фильтры</p>
+                <div class="form__personal_info account-container">
+                    <div class="form_element">
+                        <span class="form_desc description">
+                            Жанры
+                        </span>
+                        @{
+                            var i = 1;
+                            foreach (Genre genre in Model.Genres)
+                            {
+                                var id = $"genre{i}";
+                                <div class="form_element_checkbox">
+                                    <label class="custom-checkbox" for="@id">
+                                        <input class="form_element__checkbox" id="@id" name="genre" data-url="@genre.UrlId" type="checkbox">
+                                        <div class="custom-checkbox"> </div>
+                                        <span>
+                                            @genre.Name
+                                        </span>
+                                    </label>
+                                </div>
+                                i++;
+                            }
+                        }
+                    </div>
+                    
+                    <div class="form_element">
+                        <span class="form_desc description">
+                            Фильтры
+                        </span>
+                        @{
+                            i = 1;
+                            foreach (Feature feature in Model.Features)
+                            {
+                                var id = $"genre {i}";
+                                <div class="form_element_checkbox">
+                                    <label class="custom-checkbox" for="@id">
+                                        <input class="form_element__checkbox" id="@id" name="feature" data-url="@feature.UrlId" type="checkbox">
+                                        <div class="custom-checkbox"> </div>
+                                        <span>
+                                            @feature.Name
+                                        </span>
+                                    </label>
+                                </div>
+                                i++;
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        
+            <div class=" account_forms">
+                <p class="title"> Дополнительная информация </p>
+
+                <div class="form__personal_info account-container">
+                    <div class="form_element">
+                        <label>
+                            <p class="form_desc description">
+                                Цена
+                            </p>
+                            <input class="" name="Price" id="Price" max="100000" type="text" placeholder="Цена" value="">
+                        </label>
+                    </div>
+
+                    <div class="form_element">
+                        <label>
+                            <p class="form_desc description">
+                                Скидка
+                            </p>
+                            <input class="" name="Discount" id="Discount" maxlength="3" max="100" type="text" placeholder="Скидка" value="">
+                        </label>
+                    </div>
+                    
+                    <div class="form_element ">
+                        <label>
+                            <p class="form_desc description">
+                                Дата окончания скидки
+                            </p>
+                            @{
+                                var today = $"{DateTime.Today.Year.ToString()}-" +
+                                            $"{(DateTime.Today.Month > 10 ? "" : "0")}{DateTime.Today.Month.ToString()}-" +
+                                            $"{(DateTime.Today.Day > 10 ? "" : "0")}{DateTime.Today.Day.ToString()}";
+                            }
+                            <input class="" name="DiscountEndDate" id="DiscountEndDate" type="date" min="@today"
+                                   placeholder="Дата окончания скидки" value="">
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form__personal_info account-container">
+                    <div class="form_element ">
+                        <label>
+                            <p class="form_desc description">
+                                Дата выхода
+                            </p>
+                            <input class="" name="ReleaseDate" id="ReleaseDate" type="date" placeholder="Дата выхода" value="">
+                        </label>
+                    </div>
+                    
+                    <div class="form_element ">
+                        <label>
+                            <p class="form_desc description">
+                                Рейтинг
+                            </p>
+                            <input class="" name="Rating" maxlength="3" id="Rating" max="100" type="text" placeholder="Рейтинг" value="">
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                    <div class="form_element game-short-description">
+                        <label>
+                            <p class="form_desc description">
+                                Краткое описание
+                            </p>
+                            <textarea class="" name="ShortDescription" id="ShortDescription" type="text" maxlength="1000" value=""></textarea>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                    <div class="form_element game-detailed-description">
+                        <label>
+                            <p class="form_desc description">
+                                Полное описание
+                            </p>
+                            <textarea class="" name="DetailedDescription" id="DetailedDescription" type="text" maxlength="10000" value=""></textarea>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class=" account_forms">
+                <p class="title"> Правовая информация </p>
+                <div class="account account-container">
+                    <div class="form_element game-legal-info">
+                        <label>
+                            <p class="form_desc description">
+                                Правовая информация
+                            </p>
+                            <textarea class="" name="LegalInfo" id="LegalInfo" type="text" maxlength="900" value=""></textarea>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                     <div class="form_element">
+                         <p class="form_desc description">
+                             Политика конфиденциальности
+                         </p>
+                         <input class="" name="LegalInfoLink" id="LegalInfoLink" type="text" placeholder="Ссылка на страницу" value="">
+                     </div>
+                </div>
+            </div>
+            
+            <div class="account_forms system-requirements">
+                <p class="title"> Системные требования </p>
+                <div class="account account-container">
+                    <p class="title">Минимальные</p>
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Процессор
+                        </p>
+                        <input class="" name="MinCpu" id="MinCpu" type="text" placeholder="Описание процессоров" value="">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Оперативная память
+                        </p>
+                        <input class="" name="MinRam" id="MinRam" type="text" placeholder="Количество памяти в мегабайтах" value="">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Видеокарта
+                        </p>
+                        <input class="" name="MinGpu" id="MinGpu" type="text" placeholder="Описание видеокарт" value="">
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                    <p class="title">Рекомендуемые</p>
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Процессор
+                        </p>
+                        <input class="" name="MaxCpu" id="MaxCpu" type="text" placeholder="Описание процессоров" value="">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Оперативная память
+                        </p>
+                        <input class="" name="MaxRam" id="MaxRam" type="text" placeholder="Количество памяти в мегабайтах" value="">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Видеокарта
+                        </p>
+                        <input class="" name="MaxGpu" id="MaxGpu" type="text" placeholder="Описание видеокарт" value="">
+                    </div>
+                </div>
+                
+                <div class="account account-container"><p class="title">Прочие</p></div>
+                
+                <div class="form__personal_info account-container other-requirements">
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Место на диске
+                        </p>
+                        <input class="" name="DiskSpace" id="DiskSpace" type="text" placeholder="Количество памяти в мегабайтах" value="">
+                    </div>
+                    
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Версия DirectX
+                        </p>
+                        <input class="" name="DirectX" id="DirectX" type="text" placeholder="Номер минимально необходимой версии" value="">
+                    </div>
+                </div>  
+                
+                <div class="account account-container other-requirements">
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Поддерживаемые ОС
+                        </p>
+                        <input class="" name="SupportedOses" id="SupportedOses" type="text" placeholder="Информация о поддерживаемых ОС" value="">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Дополнительная информация
+                        </p>
+                        <input class="" name="ExtraInfo" id="ExtraInfo" type="text" placeholder="" value="">
+                    </div>
+                </div>
+                
+            </div>
+            
+        <div class=" account_forms game-languages-info">
+            <p class="title"> Поддерживаемые языки </p>
+            <div class="account account-container">
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Языки озвучки
+                        </p>
+                        <textarea class="" name="SupportedVoiceLanguages" id="SupportedVoiceLanguages" type="text" value=""></textarea>
+                    </label>
+                </div>
+                
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Языки текста
+                        </p>
+                        <textarea class="" name="SupportedTextLanguages" id="SupportedTextLanguages" type="text" value=""></textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class=" account_forms game-medias">
+            <p class="title"> Медиаконтент </p>
+            <p class="description">
+                Здесь указываются ссылки на публичные медиафайлы, хранимые на соответствующих хостингах, через запятую.
+            </p>
+            <div class="account account-container">
+                <div class="form_element">
+                    <p class="form_desc description">
+                        Обложка
+                    </p>
+                    <input class="" name="Cover" id="Cover" type="text" 
+                           placeholder="Ссылка на публичную обложку игры, хранимую на фотохостинге" value="">
+                </div>
+                
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Скриншоты
+                        </p>
+                        <textarea class="" name="Screenshots" id="Screenshots" type="text" value=""></textarea>
+                    </label>
+                </div>
+
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Трейлеры
+                        </p>
+                        <textarea class="" name="Trailers" id="Trailers" type="text" value=""></textarea>
+                    </label>
+                </div>
+            </div>
+            
+        </div>
+            
+            
+            
+        <div class="buttons-container">
+                <div class="form__buttons account-container">
+                    <div class="form_element account_forms__reset">
+                        <button class="form_element__button button active" id="reset_changes" type="reset" readonly>
+                            <span class="button-label"> Очистить </span>
+                        </button>
+                    </div>
+
+
+                    <div class="form_element account_forms__submit">
+                        <button class="form_element__button button active" id="save_changes" readonly>
+                            <span class="button-label"> Добавить игру </span>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        
+
+   
+    </div>
+</div>
+
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/js/game-management.js"></script>
