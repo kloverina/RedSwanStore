@@ -78,5 +78,13 @@ namespace RedSwanStore.Data.Interfaces
         /// <param name="searchString">The string to search games by.</param>
         /// <returns>The collection of game models.</returns>
         public IEnumerable<Game> SearchGames(string searchString);
+
+
+        /// <summary>
+        /// Add new game to the database. 
+        /// </summary>
+        /// <param name="game">A game to add.</param>
+        /// <returns>True - if game was added successfully.</returns>
+        public string? AddGame(Game game);
     }
 }

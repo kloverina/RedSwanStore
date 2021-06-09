@@ -1,0 +1,75 @@
+﻿.game-profile .form__personal_info {
+    flex-wrap: nowrap;
+}
+
+.game-profile textarea {
+    resize: none;
+    
+    box-sizing: border-box;
+    
+    background-color: #2B2B2B;
+    
+    font: inherit;
+    font-size: 14px;
+    color: #f4f4f4;
+    
+    padding: 0 5px;
+
+    width: 100%;
+}
+
+.game-profile .game-short-description textarea {
+    height: 200px;
+}
+
+.game-profile .game-detailed-description textarea {
+    height: 500px;
+}
+
+.game-profile .game-legal-info textarea {
+    height: 100px;
+}
+
+.game-profile .game-languages-info textarea,
+.game-profile .game-medias textarea {
+    height: 150px;
+}
+
+.game-profile .system-requirements .account-container .title {
+    font-size: 20px;
+}
+
+.game-profile .system-requirements .account-container .title:after {
+    display: none;
+}
+
+.game-profile .system-requirements .account-container:not(:first-of-type):not(.other-requirements) {
+    margin-top: 40px !important;
+}
+
+.game-profile .system-requirements .account-container.other-requirements {
+    margin-top: -15px;
+}
+
+.game-profile .form__personal_info p {
+    margin: 5px 10px 5px 0;
+}
+
+.game-profile .genres-and-filters .form__personal_info div:last-of-type {
+    margin-left: 0;
+}
+
+.game-profile .genres-and-filters .form_element {
+    flex-direction: column;
+    display: flex;
+    text-align-last: center;
+}
+
+.game-profile .genres-and-filters .form_element .description {
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+.game-profile .genres-and-filters .form_element .form_element_checkbox {
+    max-height: 30px;
+}
