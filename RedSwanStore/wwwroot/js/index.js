@@ -52,7 +52,6 @@ dropdowns.forEach(function (dropdown) {
 })
 
 
-
 /* ----- FILTERS AND SORTS FUNCTIONALITY ----- */
 
 // the filters and sort chosen by user
