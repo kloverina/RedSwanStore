@@ -14,6 +14,8 @@ namespace RedSwanStore.Data.Models
         [Required]
         public bool IsAdmin { get; set; }
         
+        public int CurrentlyEditedGameId { get; set; }
+        
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public string Name { get; set; }

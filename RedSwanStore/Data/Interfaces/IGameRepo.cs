@@ -84,7 +84,14 @@ namespace RedSwanStore.Data.Interfaces
         /// Add new game to the database. 
         /// </summary>
         /// <param name="game">A game to add.</param>
-        /// <returns>True - if game was added successfully.</returns>
+        /// <returns>Error message, or null if game added successfully.</returns>
         public string? AddGame(Game game);
+
+        /// <summary>
+        /// Update a game in the database.
+        /// </summary>
+        /// <param name="game">A game to update.</param>
+        /// <returns>Error message, or null if game updated successfully.</returns>
+        public string? UpdateGame(Game game);
     }
 }

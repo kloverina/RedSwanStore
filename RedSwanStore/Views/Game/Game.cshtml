@@ -24,7 +24,7 @@
 
         <div class="admin_panel">
 
-            <a class="admin_panel__edit" href="#nothing">
+            <a class="admin_panel__edit" asp-controller="GameManagement" asp-action="EditGame" asp-route-gameId="@Model.Id.ToString()">
                 <img src="img/pencil.png" alt="edit">
             </a>
 

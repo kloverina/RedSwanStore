@@ -114,6 +114,13 @@ namespace RedSwanStore.Data.Repositories
             return TryUpdate(user);
         }
 
+        public void SetCurrentlyEditedGame(User user, int gameId)
+        {
+            user.CurrentlyEditedGameId = gameId;
+
+            TryUpdate(user);
+        }
+
         public bool UpdateUserLogin(User user, string login)
         {
             if (login.Length < 2 || login.Length > 20)

@@ -48,6 +48,35 @@ namespace RedSwanStore.Controllers
             return View(viewModel);
         }
 
+        
+        [Route("edit-game")]
+        [HttpGet]
+        public IActionResult EditGame(int gameId)
+        {
+            Game? game = gamesTable.GetGameById(gameId);
+
+            if (game is null)
+                return RedirectToAction("GameNotFound", "ErrorPage");
+            
+            
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            ViewBag.User = user;
+            ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+            
+            if (!user.IsAdmin)
+                return RedirectToAction("AccessDenied", "ErrorPage");
+            
+            usersTable.SetCurrentlyEditedGame(user, game.Id);
+            
+            viewModel = new GameManagementViewModel {
+                Game = game,
+                Genres = genresTable.GetAllGenres(),
+                Features = featuresTable.GetAllFeatures()
+            };
+
+            return View(viewModel);
+        }
+
 
         [Route("save-added-game")]
         [HttpPost]
@@ -83,10 +112,10 @@ namespace RedSwanStore.Controllers
                     SupportedVoiceLanguages = data.SupportedVoiceLanguages
                 };
 
-                var discount = float.Parse(data.Discount);
+                var discount = float.Parse(data.Discount.Replace('.', ','));
                 
                 DateTime discountEndDate = discount != 0 && !string.IsNullOrEmpty(data.DiscountEndDate)
-                    ? Convert.ToDateTime(data.Discount)
+                    ? Convert.ToDateTime(data.DiscountEndDate)
                     : DateTime.MinValue;
 
                 var releaseDate = Convert.ToDateTime(data.ReleaseDate);
@@ -125,5 +154,90 @@ namespace RedSwanStore.Controllers
 
             return Content("");
         }
+
+
+        [Route("save-edited-game")]
+        [HttpPost]
+        public IActionResult SaveEditedGame(AddGameModel data)
+        {
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            Game game = gamesTable.GetGameById(user.CurrentlyEditedGameId)!;
+            
+            try
+            {
+                List<Genre> genres = data.Genres.Select(g => genresTable.GetGenreByUrlId(g)!).ToList();
+                List<Feature> features = data.Features.Select(f => featuresTable.GetFeatureByUrlId(f)!).ToList();
+
+                game.GameFilter.Features = features;
+                game.GameFilter.Genres = genres;
+
+
+                game.GameMedia.Screenshots = data.Screenshots is null ? "" : data.Screenshots;
+                game.GameMedia.Trailers = data.Trailers is null ? "" : data.Trailers;
+
+
+                game.GameSystemRequirements.MinCpu = data.MinCpu == null ? "" : data.MinCpu;
+                game.GameSystemRequirements.MaxCpu = data.MaxCpu == null ? "" : data.MaxCpu;
+                game.GameSystemRequirements.MinRamMB = data.MinRamMB;
+                game.GameSystemRequirements.MaxRamMB = data.MaxRamMB;
+                game.GameSystemRequirements.MinGpu = data.MinGpu == null ? "" : data.MinGpu;
+                game.GameSystemRequirements.MaxGpu = data.MaxGpu == null ? "" : data.MaxGpu;
+                game.GameSystemRequirements.DiskSpaceMB = data.DiskSpaceMB;
+                game.GameSystemRequirements.DirectX = data.DirectX;
+                game.GameSystemRequirements.SupportedOses = data.SupportedOses == null ? "" : data.SupportedOses;
+                game.GameSystemRequirements.ExtraInfo = data.ExtraInfo == null ? "" : data.ExtraInfo;
+                game.GameSystemRequirements.SupportedTextLanguages = data.SupportedTextLanguages == null ? "" : data.SupportedTextLanguages;
+                game.GameSystemRequirements.SupportedVoiceLanguages = data.SupportedVoiceLanguages == null ? "" : data.SupportedVoiceLanguages;
+                
+
+                var discount = float.Parse(data.Discount.Replace('.', ','));
+                
+                DateTime discountEndDate = discount != 0 && !string.IsNullOrEmpty(data.DiscountEndDate)
+                    ? Convert.ToDateTime(data.DiscountEndDate)
+                    : DateTime.MinValue;
+
+                var releaseDate = Convert.ToDateTime(data.ReleaseDate);
+
+
+                game.GameInfo.Cover = data.Cover == null ? "" : data.Cover;
+                game.GameInfo.Price = data.Price;
+                game.GameInfo.Discount = discount;
+                game.GameInfo.DiscountEndDate = discountEndDate;
+                game.GameInfo.ReleaseDate = releaseDate;
+                game.GameInfo.Rating = data.Rating;
+                game.GameInfo.ShortDescription = data.ShortDescription == null ? "" : data.ShortDescription;
+                game.GameInfo.DetailedDescription = data.DetailedDescription == null ? "" : data.DetailedDescription;
+                game.GameInfo.LegalInfo = data.LegalInfo == null ? "" : data.LegalInfo;
+
+
+                game.Name = data.Name == null ? "" : data.Name;
+                game.Developer = data.Developer == null ? "" : data.Developer;
+                game.GameUrl = data.GameUrl == null ? "" : data.GameUrl;
+                
+
+                var success = gamesTable.UpdateGame(game);
+
+                if (!string.IsNullOrEmpty(success))
+                    return Content(success);
+            }
+            catch (Exception e)
+            {
+                return Content($"{e.Message}\n{e.StackTrace}");
+            }
+
+            return Content($"/game?gameid={game.GameUrl}");
+        }
+
+
+        [Route("cancel")]
+        [HttpPost]
+        public IActionResult CancelEdit()
+        {
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            
+            var gameUrl = gamesTable.GetGameById(user.CurrentlyEditedGameId)!.GameUrl;
+            return Content($"/game?gameid={gameUrl}");
+        }
     }
+    
 }

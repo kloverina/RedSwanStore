@@ -217,5 +217,19 @@ namespace RedSwanStore.Data.Repositories
                 return $"{e.Message}\n{e.StackTrace}";
             }
         }
+
+        public string? UpdateGame(Game game)
+        {
+            try
+            {
+                dbContent.Games.Update(game);
+                dbContent.SaveChanges();
+                return null;
+            }
+            catch (Exception e)
+            {
+                return $"{e.Message}\n{e.StackTrace}";
+            }
+        }
     }
 }

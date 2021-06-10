@@ -92,6 +92,14 @@ namespace RedSwanStore.Data.Interfaces
         /// <returns>True - if url was successfully updated.</returns>
         public bool UpdateUserUrl(User user, string url);
 
+
+        /// <summary>
+        /// Set the game id that is currently being edited.
+        /// </summary>
+        /// <param name="user">The user to set the game id for,</param>
+        /// <param name="gameId">The id of the edited game.</param>
+        public void SetCurrentlyEditedGame(User user, int gameId);
+
         /// <summary>
         /// Add a specified game to the user's library in the database.
         /// </summary>

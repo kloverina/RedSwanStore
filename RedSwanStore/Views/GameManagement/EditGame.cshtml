@@ -1,0 +1,443 @@
+﻿@model GameManagementViewModel
+
+@{
+    var layout = ViewData["layout"] as string;
+
+    if (layout != null){
+    Layout = layout;
+    }
+
+    Game g = Model.Game;
+}
+
+<link rel="stylesheet" href="~/css/game-management.css"/>
+<div class="container">
+    <div class="profile game-profile">
+        
+        <div class="personal_info">
+            <p class="title main-title">
+               Редактировать информацию об игре
+            </p>
+            <p class="description">
+                Измените существующую информацию об игре и не забудьте сохранить её.
+            </p>
+        </div>
+        <div class="form account_forms">
+            <div class="profile__photo photo">
+                <p class="title"> Основная информация </p>
+                <div class="account account-container">
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Название игры
+                        </p>
+                        <input class="" name="Name" id="Name" maxlength="100" type="text" placeholder="Название игры" value="@g.Name">
+                    </div>
+                    
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Разработчик
+                        </p>
+                        <input class="" name="Developer" id="Developer" maxlength="100" type="text" placeholder="Разработчик" value="@g.Developer">
+                    </div>
+                    
+                    <div class="form_element account_forms__email">
+                        <p class="form_desc description">
+                            Идентификатор (собственная ссылка) игры
+                        </p>
+                        <input class="form_element__url" name="GameUrl" id="GameUrl" maxlength="100" type="text" placeholder="Идентификатор игры" value="@g.GameUrl">
+                        <span>
+                            Страница игры будет находиться по адресу: https://redswanstore/game?gameid=<span id="dynamic-link">@g.GameUrl</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="account_forms genres-and-filters">
+                <p class="title"> Фильтры</p>
+                <div class="form__personal_info account-container">
+                    <div class="form_element">
+                        <span class="form_desc description">
+                            Жанры
+                        </span>
+                        @{
+                            var i = 1;
+                            foreach (Genre genre in Model.Genres)
+                            {
+                                var id = $"genre{i}";
+                                <div class="form_element_checkbox">
+                                    <label class="custom-checkbox" for="@id">
+                                        <input class="form_element__checkbox" id="@id" name="genre" data-url="@genre.UrlId" type="checkbox"
+                                        value="@(g.GameFilter.Genres.Contains(genre).ToString().ToLower())">
+                                        <div class="custom-checkbox @(!g.GameFilter.Genres.Contains(genre) ? "" : "checked")"> </div>
+                                        <span>
+                                            @genre.Name
+                                        </span>
+                                    </label>
+                                </div>
+                                i++;
+                            }
+                        }
+                    </div>
+                    
+                    <div class="form_element">
+                        <span class="form_desc description">
+                            Фильтры
+                        </span>
+                        @{
+                            i = 1;
+                            foreach (Feature feature in Model.Features)
+                            {
+                                var id = $"genre {i}";
+                                <div class="form_element_checkbox">
+                                    <label class="custom-checkbox" for="@id">
+                                        <input class="form_element__checkbox" id="@id" name="feature" data-url="@feature.UrlId" type="checkbox"
+                                        value="@(g.GameFilter.Features.Contains(feature).ToString().ToLower())">
+                                        <div class="custom-checkbox @(!g.GameFilter.Features.Contains(feature) ? "" : "checked")"> </div>
+                                        <span>
+                                            @feature.Name
+                                        </span>
+                                    </label>
+                                </div>
+                                i++;
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        
+            <div class=" account_forms">
+                <p class="title"> Дополнительная информация </p>
+
+                <div class="form__personal_info account-container">
+                    <div class="form_element">
+                        <label>
+                            <p class="form_desc description">
+                                Цена
+                            </p>
+                            <input class="" name="Price" id="Price" max="100000" type="text" placeholder="Цена" value="@decimal.Round(g.GameInfo.Price, 0).ToString()">
+                        </label>
+                    </div>
+
+                    <div class="form_element">
+                        <label>
+                            <p class="form_desc description">
+                                Скидка
+                            </p>
+                            <input class="" name="Discount" id="Discount" maxlength="3" max="100" type="text" placeholder="Скидка" value="@((g.GameInfo.Discount * 100).ToString())">
+                        </label>
+                    </div>
+                    
+                    <div class="form_element ">
+                        <label>
+                            <p class="form_desc description">
+                                Дата окончания скидки
+                            </p>
+                            @{
+                                string discountEndDate = "";
+
+                                if (g.GameInfo.DiscountEndDate > DateTime.MinValue)
+                                {
+                                    discountEndDate = $"{g.GameInfo.DiscountEndDate.Year.ToString()}-" +
+                                                      $"{(g.GameInfo.DiscountEndDate.Month >= 10 ? "" : "0")}{g.GameInfo.DiscountEndDate.Month.ToString()}-" +
+                                                      $"{(g.GameInfo.DiscountEndDate.Day >= 10 ? "" : "0")}{g.GameInfo.DiscountEndDate.Day.ToString()}";
+                                }
+                                
+                                var today = $"{DateTime.Today.Year.ToString()}-" +
+                                                $"{(DateTime.Today.Month >= 10 ? "" : "0")}{DateTime.Today.Month.ToString()}-" +
+                                                $"{(DateTime.Today.Day >= 10 ? "" : "0")}{DateTime.Today.Day.ToString()}";
+                            }
+                            <input class="" name="DiscountEndDate" id="DiscountEndDate" type="date" min="@today"
+                                   placeholder="Дата окончания скидки" value="@discountEndDate">
+                        </label>
+                    </div>
+                </div>
+                
+                @{
+                    var releaseDate = $"{g.GameInfo.ReleaseDate.Year.ToString()}-" +
+                                      $"{(g.GameInfo.ReleaseDate.Month >= 10 ? "" : "0")}{g.GameInfo.ReleaseDate.Month.ToString()}-" +
+                                      $"{(g.GameInfo.ReleaseDate.Day >= 10 ? "" : "0")}{g.GameInfo.ReleaseDate.Day.ToString()}";
+                }
+                
+                <div class="form__personal_info account-container">
+                    <div class="form_element ">
+                        <label>
+                            <p class="form_desc description">
+                                Дата выхода
+                            </p>
+                            <input class="" name="ReleaseDate" id="ReleaseDate" type="date" placeholder="Дата выхода" value="@releaseDate">
+                        </label>
+                    </div>
+                    
+                    <div class="form_element ">
+                        <label>
+                            <p class="form_desc description">
+                                Рейтинг
+                            </p>
+                            <input class="" name="Rating" maxlength="3" id="Rating" max="100" type="text" placeholder="Рейтинг" value="@g.GameInfo.Rating.ToString()">
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                    <div class="form_element game-short-description">
+                        <label>
+                            <p class="form_desc description">
+                                Краткое описание
+                            </p>
+                            @{
+                                var shortDescription = g.GameInfo.ShortDescription.Trim()
+                                    .Replace("\r", "")
+                                    .Replace("\n", "")
+                                    .Replace("  ", "");
+                            }
+                            <textarea class="" name="ShortDescription" id="ShortDescription" type="text" maxlength="1000" value="">@shortDescription</textarea>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                    <div class="form_element game-detailed-description">
+                        <label>
+                            <p class="form_desc description">
+                                Полное описание
+                            </p>
+                            @{ var detailedDescription = g.GameInfo.DetailedDescription.Trim().Replace("\r", "");}
+                            <textarea class="" name="DetailedDescription" id="DetailedDescription" type="text" maxlength="10000" value="">@detailedDescription</textarea>
+                        </label>
+                    </div>
+                </div>
+                
+            </div>
+            
+            @{
+                var info = g.GameInfo.LegalInfo.Trim()
+                    .Replace("\r", "")
+                    .Replace("  ", "")
+                    .Replace("\n", "");
+            
+                var legalInfoStartIndex = info.IndexOf("<span class=\"legal-info__main-info\">", StringComparison.Ordinal)
+                                          + "<span class=\"legal-info__main-info\">".Length;
+
+                var legalInfoLastIndex = info.IndexOf("</span>", legalInfoStartIndex, StringComparison.Ordinal);
+
+                var legalInfo = info.Substring(legalInfoStartIndex, legalInfoLastIndex - legalInfoStartIndex).Trim().Replace("\r", "");
+
+
+                var linkStartIndex = info.IndexOf("href=\"", StringComparison.Ordinal) + "href=\"".Length;
+                var linkLastIndex = info.IndexOf("\"", linkStartIndex, StringComparison.Ordinal);
+                
+                
+                var link = info.Substring(linkStartIndex, linkLastIndex - linkStartIndex);
+            }
+        
+            <div class=" account_forms">
+                <p class="title"> Правовая информация </p>
+                <div class="account account-container">
+                    <div class="form_element game-legal-info">
+                        <label>
+                            <p class="form_desc description">
+                                Правовая информация
+                            </p>
+                            <textarea class="" name="LegalInfo" id="LegalInfo" type="text" maxlength="900" value="">@legalInfo</textarea>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                     <div class="form_element">
+                         <p class="form_desc description">
+                             Политика конфиденциальности
+                         </p>
+                         <input class="" name="LegalInfoLink" id="LegalInfoLink" type="text" placeholder="Ссылка на страницу" value="@link">
+                     </div>
+                </div>
+            </div>
+            
+            <div class="account_forms system-requirements">
+                <p class="title"> Системные требования </p>
+                <div class="account account-container">
+                    <p class="title">Минимальные</p>
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Процессор
+                        </p>
+                        <input class="" name="MinCpu" id="MinCpu" type="text" placeholder="Описание процессоров" value="@g.GameSystemRequirements.MinCpu">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Оперативная память
+                        </p>
+                        <input class="" name="MinRam" id="MinRam" type="text" placeholder="Количество памяти в мегабайтах" value="@g.GameSystemRequirements.MinRamMB.ToString()">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Видеокарта
+                        </p>
+                        <input class="" name="MinGpu" id="MinGpu" type="text" placeholder="Описание видеокарт" value="@g.GameSystemRequirements.MinGpu">
+                    </div>
+                </div>
+                
+                <div class="account account-container">
+                    <p class="title">Рекомендуемые</p>
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Процессор
+                        </p>
+                        <input class="" name="MaxCpu" id="MaxCpu" type="text" placeholder="Описание процессоров" value="@g.GameSystemRequirements.MaxCpu">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Оперативная память
+                        </p>
+                        <input class="" name="MaxRam" id="MaxRam" type="text" placeholder="Количество памяти в мегабайтах" value="@g.GameSystemRequirements.MaxRamMB.ToString()">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Видеокарта
+                        </p>
+                        <input class="" name="MaxGpu" id="MaxGpu" type="text" placeholder="Описание видеокарт" value="@g.GameSystemRequirements.MaxGpu">
+                    </div>
+                </div>
+                
+                <div class="account account-container"><p class="title">Прочие</p></div>
+                
+                <div class="form__personal_info account-container other-requirements">
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Место на диске
+                        </p>
+                        <input class="" name="DiskSpace" id="DiskSpace" type="text" placeholder="Количество памяти в мегабайтах" value="@g.GameSystemRequirements.DiskSpaceMB.ToString()">
+                    </div>
+                    
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Версия DirectX
+                        </p>
+                        <input class="" name="DirectX" id="DirectX" type="text" placeholder="Номер минимально необходимой версии" value="@g.GameSystemRequirements.DirectX.ToString()">
+                    </div>
+                </div>  
+                
+                <div class="account account-container other-requirements">
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Поддерживаемые ОС
+                        </p>
+                        <input class="" name="SupportedOses" id="SupportedOses" type="text" placeholder="Информация о поддерживаемых ОС" value="@g.GameSystemRequirements.SupportedOses">
+                    </div>
+
+                    <div class="form_element">
+                        <p class="form_desc description">
+                            Дополнительная информация
+                        </p>
+                        <input class="" name="ExtraInfo" id="ExtraInfo" type="text" placeholder="" value="@g.GameSystemRequirements.ExtraInfo.Trim()">
+                    </div>
+                </div>
+                
+            </div>
+            
+        <div class=" account_forms game-languages-info">
+            <p class="title"> Поддерживаемые языки </p>
+            <div class="account account-container">
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Языки озвучки
+                        </p>
+                        @{
+                            var voiceLangs = g.GameSystemRequirements.SupportedVoiceLanguages.Trim()
+                                .Replace("\r", "")
+                                .Replace("  ", "")
+                                .Replace("\n", "");
+                        }
+                        <textarea class="" name="SupportedVoiceLanguages" id="SupportedVoiceLanguages" type="text" value="">@voiceLangs</textarea>
+                    </label>
+                </div>
+                
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Языки текста
+                        </p>
+                        @{
+                            var textLangs = g.GameSystemRequirements.SupportedTextLanguages.Trim()
+                                .Replace("\r", "")
+                                .Replace("  ", "")
+                                .Replace("\n", "");
+                        }
+                        <textarea class="" name="SupportedTextLanguages" id="SupportedTextLanguages" type="text" value="">@textLangs</textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class=" account_forms game-medias">
+            <p class="title"> Медиаконтент </p>
+            <p class="description">
+                Здесь указываются ссылки на публичные медиафайлы, хранимые на соответствующих хостингах, через запятую.
+            </p>
+            <div class="account account-container">
+                <div class="form_element">
+                    <p class="form_desc description">
+                        Обложка
+                    </p>
+                    <input class="" name="Cover" id="Cover" type="text" 
+                           placeholder="Ссылка на публичную обложку игры, хранимую на фотохостинге" value="@g.GameInfo.Cover">
+                </div>
+                
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Скриншоты
+                        </p>
+                        @{ var screenshots = g.GameMedia.Screenshots.Trim().Replace("\r", "").Replace(" ", "");}
+                        <textarea class="" name="Screenshots" id="Screenshots" type="text" value="">@screenshots</textarea>
+                    </label>
+                </div>
+
+                <div class="form_element game-legal-info">
+                    <label>
+                        <p class="form_desc description">
+                            Трейлеры
+                        </p>
+                        @{ var trailers = g.GameMedia.Trailers.Trim().Replace("\r", "").Replace(" ", "");}
+                        <textarea class="" name="Trailers" id="Trailers" type="text" value="">@trailers</textarea>
+                    </label>
+                </div>
+            </div>
+            
+        </div>
+            
+            
+            
+        <div class="buttons-container">
+                <div class="form__buttons account-container">
+                    <div class="form_element account_forms__reset">
+                        <button class="form_element__button button active" id="reset_changes" type="reset" readonly>
+                            <span class="button-label"> Отменить </span>
+                        </button>
+                    </div>
+
+
+                    <div class="form_element account_forms__submit">
+                        <button class="form_element__button button active" id="save_changes" readonly>
+                            <span class="button-label"> Сохранить изменения </span>
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+        
+
+   
+    </div>
+</div>
+
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/js/edit-game.js"></script>
