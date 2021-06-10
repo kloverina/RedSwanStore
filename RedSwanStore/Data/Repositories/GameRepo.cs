@@ -231,5 +231,13 @@ namespace RedSwanStore.Data.Repositories
                 return $"{e.Message}\n{e.StackTrace}";
             }
         }
+
+
+        public void RemoveFromStore(Game game)
+        {
+            game.IsRemoved = true;
+            dbContent.Games.Update(game);
+            dbContent.SaveChanges();
+        }
     }
 }

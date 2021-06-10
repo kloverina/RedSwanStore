@@ -32,7 +32,7 @@ namespace RedSwanStore.Controllers
             bool hasGameInLib = false;
             Game? game = gamesTable.GetGameByUrl(gameId);
             
-            if (game == null)
+            if (game == null || game.IsRemoved)
                 return RedirectToAction("GameNotFound", "ErrorPage", new {GameId = gameId});
             
             if (User.Identity.IsAuthenticated)

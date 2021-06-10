@@ -1023,6 +1023,10 @@ body {
     height: 520px;
   }
 }
+.owl-carousel .owl-video-wrapper {
+  height: 520px !important;
+}
+
 .owl-video-tn {
   background-size: cover !important;
 }

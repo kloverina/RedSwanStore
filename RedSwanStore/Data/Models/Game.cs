@@ -19,6 +19,9 @@ namespace RedSwanStore.Data.Models
         [Required]
         [StringLength(100, MinimumLength = 2)]
         public string Developer { get; set; }
+
+        [Required] 
+        public bool IsRemoved { get; set; } = false;
         
         public GameInfo GameInfo { get; set; } // 'single to single' relation with GameInfo
         

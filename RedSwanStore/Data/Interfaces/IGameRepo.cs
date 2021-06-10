@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using RedSwanStore.Data.Models;
+using RedSwanStore.Data.ViewModels;
 
 namespace RedSwanStore.Data.Interfaces
 {
@@ -93,5 +94,11 @@ namespace RedSwanStore.Data.Interfaces
         /// <param name="game">A game to update.</param>
         /// <returns>Error message, or null if game updated successfully.</returns>
         public string? UpdateGame(Game game);
+
+        /// <summary>
+        /// Remove specified game from the store (set IsRemoved as true in database).
+        /// </summary>
+        /// <param name="game">The game to remove from the store.</param>
+        public void RemoveFromStore(Game game);
     }
 }

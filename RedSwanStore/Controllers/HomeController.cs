@@ -30,7 +30,7 @@ namespace RedSwanStore.Controllers
         /// <returns>Collection of game cards.</returns>
         private IEnumerable<GameCard> CreateGameCards(IEnumerable<Game> games)
         {
-            IEnumerable<GameCard> gameCards = games.Select(g => new GameCard {
+            IEnumerable<GameCard> gameCards = games.Where(g => !g.IsRemoved).Select(g => new GameCard {
                 Title = g.Name,
                 Developer = g.Developer,
                 CoverUrl = g.GameInfo.Cover,

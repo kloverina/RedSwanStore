@@ -55,7 +55,7 @@ namespace RedSwanStore.Controllers
         {
             Game? game = gamesTable.GetGameById(gameId);
 
-            if (game is null)
+            if (game is null || game.IsRemoved)
                 return RedirectToAction("GameNotFound", "ErrorPage");
             
             
@@ -75,6 +75,44 @@ namespace RedSwanStore.Controllers
             };
 
             return View(viewModel);
+        }
+
+        
+        [Route("delete-game")]
+        [HttpGet]
+        public IActionResult DeleteGame(int gameId)
+        {
+            Game? game = gamesTable.GetGameById(gameId);
+
+            if (game is null || game.IsRemoved)
+                return RedirectToAction("GameNotFound", "ErrorPage");
+            
+            
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            ViewBag.User = user;
+            ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+            
+            if (!user.IsAdmin)
+                return RedirectToAction("AccessDenied", "ErrorPage");
+            
+            
+            usersTable.SetCurrentlyEditedGame(user, game.Id);
+            ViewBag.GameTitle = game.Name;
+
+            return View();
+        }
+
+
+        [Route("remove-from-store")]
+        [HttpPost]
+        public IActionResult HideFromStore()
+        {
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            Game game = gamesTable.GetGameById(user.CurrentlyEditedGameId)!;
+            
+            gamesTable.RemoveFromStore(game);
+
+            return Content("/home");
         }
 
 

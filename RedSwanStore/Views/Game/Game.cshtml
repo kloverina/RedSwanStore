@@ -28,7 +28,7 @@
                 <img src="img/pencil.png" alt="edit">
             </a>
 
-            <a class="admin_panel__delete" href="#nothing">
+            <a class="admin_panel__delete" asp-controller="GameManagement" asp-action="DeleteGame" asp-route-gameId="@Model.Id.ToString()">
                 <img src="img/trash-can.png" alt="delete">
             </a>
         </div>

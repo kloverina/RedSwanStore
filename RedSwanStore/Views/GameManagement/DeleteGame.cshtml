@@ -1,0 +1,52 @@
+﻿@{
+    var layout = ViewData["layout"] as string;
+  
+    if (layout != null){
+        Layout = layout;
+    }
+}
+<style>
+    .error-page.game-not-found .game-not-found__game-id {
+        font-style: italic;
+        color: #DF0011;
+    }
+</style>
+<div class="container">
+    <div class="game-not-found error-page">
+        <div class="section_empty empty">
+          
+            <div class="empty__title">
+                <span>
+                    Удалить игру?
+                </span>
+            </div>
+  
+            <div class="empty__description">
+                <span>
+                    Вы действительно хотите удалить игру <span class="game-not-found__game-id">@ViewBag.GameTitle</span> из магазина?
+                    Игра НЕ будет удалена из базы данных и останется у пользователей в библиотеке, но в магазине её больше не будет.
+                </span>
+            </div>
+  
+            <div class="buttons-container" style="margin-top: 100px;">
+                <div class="form__buttons account-container">
+                    <div class="form_element account_forms__reset">
+                        <button class="form_element__button button active" id="reset_changes" type="reset" readonly>
+                            <span class="button-label"> Отменить </span>
+                        </button>
+                    </div>
+
+
+                    <div class="form_element account_forms__submit">
+                        <button class="form_element__button button active" id="save_changes" readonly>
+                            <span class="button-label"> Удалить </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/js/delete-game.js"></script>
