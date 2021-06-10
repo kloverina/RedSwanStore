@@ -60,7 +60,7 @@ namespace RedSwanStore.Controllers
         
         
         [Microsoft.AspNetCore.Mvc.Route("")]
-        public IActionResult Index()
+        public IActionResult Index(bool search)
         {
             homeViewModel.Games = CreateGameCards(gamesTable.GetAllGames());
             
@@ -72,6 +72,8 @@ namespace RedSwanStore.Controllers
                 ViewBag.User = user;
                 ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
             }
+
+            ViewBag.isRedirectedFromOtherPageBySearchBtn = search;
             
             return View(homeViewModel);
         }

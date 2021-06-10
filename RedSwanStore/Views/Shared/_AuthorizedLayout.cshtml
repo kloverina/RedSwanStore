@@ -13,6 +13,10 @@
     
     @{
         User user = ViewBag.User;
+
+        // determine whether this page is a Home page
+        var currentAction = Url.ActionContext.ActionDescriptor.DisplayName;
+        var isHomePage = currentAction.Contains("HomeController.Index");
     }
 
     <nav>
@@ -25,8 +29,8 @@
             </li>
 
             <li><a asp-controller="Home" asp-action="Index">Магазин</a></li>
-            <li><a asp-controller="GameManagement" asp-action="AddGame">Добавить игру</a></li>
-            <li id="search_button"><a>Поиск</a></li>
+            @{if(user.IsAdmin){<li><a asp-controller="GameManagement" asp-action="AddGame">Добавить игру</a></li>}}
+            <li id="search_button"><a @(isHomePage ? "" : $"href={Url.Action("Index", "Home", new {search = true})}")>Поиск</a></li>
         </ul>
         <div class="rightNav">
             <div class="rightNav__item sign-in dropdown">

@@ -3,15 +3,19 @@
 
 @{
   var layout = ViewData["layout"] as string;
-  
+
   if (layout != null){
     Layout = layout;
   }
+
+  // if user clicked 'Search' button on the other page and was redirected to home page, then open search input 
+  bool isRedirectedFromOtherPageBySearchBtn = ViewBag.isRedirectedFromOtherPageBySearchBtn;
+  var hidden = isRedirectedFromOtherPageBySearchBtn ? "" : "hidden";
 }
 
 <div class="container">
   <div class="search">
-    <form class="form hidden" id="search_form">
+    <form class="form @hidden" id="search_form">
       <div class="search form_element">
         <input type="text" id="search" name="search" placeholder="Поиск" maxlength="60">
       </div>
@@ -27,6 +31,13 @@
       </button>
     </form>
   </div>
+  
+  @{
+    if (isRedirectedFromOtherPageBySearchBtn)
+    {
+      <script>document.querySelector('#search_form input').focus()</script>
+    }
+  }
   
   <div class="game-catalog">
 
