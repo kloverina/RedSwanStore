@@ -147,10 +147,10 @@ namespace RedSwanStore.Utils
                     result = games.OrderBy(g => g.Name);
                     break;
                 case SortingTypes.PriceDescending:
-                    result = games.OrderByDescending(g => g.GameInfo.Price);
+                    result = games.OrderByDescending(g => (decimal)(1 - g.GameInfo.Discount) * g.GameInfo.Price);
                     break;
                 case SortingTypes.PriceAscending:
-                    result = games.OrderBy(g => g.GameInfo.Price);
+                    result = games.OrderBy(g => (decimal)(1 - g.GameInfo.Discount) * g.GameInfo.Price);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(sortType), sortType, null);
