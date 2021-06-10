@@ -1224,7 +1224,7 @@ h4 {
 }
 .game-card__image span.favourite {
   background: url("../img/star .png") no-repeat center center;
-  background-size: 90%;
+  background-size: 100%;
 }
 .game-card__title {
   flex: 1 0 10%;
