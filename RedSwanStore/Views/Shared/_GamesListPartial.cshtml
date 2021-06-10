@@ -5,7 +5,8 @@
   <div class="games__item">
     <a class="game-card" asp-area="" asp-controller="Game" asp-action="Game" asp-route-gameid="@gamecard.Id">
       <div class="game-card__image">
-        <img src="@gamecard.CoverUrl" alt="@gamecard.Title">  
+        <img src="@gamecard.CoverUrl" alt="@gamecard.Title"> 
+        
       </div>
       <div class="game-card__title"> @gamecard.Title  </div>
       <div class="game-card__dev"> @gamecard.Developer </div>

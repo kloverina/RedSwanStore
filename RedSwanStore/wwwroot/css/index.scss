@@ -317,16 +317,42 @@ h4{
   &__image {
     
     flex: 7 0 70%;
-    
+    position: relative;
     align-self: flex-start;
     margin-bottom: 15px;
+    
+    &:hover{
+      img {
+        filter: brightness(0.5);
+      }
+    }
     img{
       background-color: black;
       width: $image_width;
       height: $image_height;
       border-radius: 5px;
       object-fit: cover;
+    }
+    span{
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 5px;
+      top: 5px;
+      border-radius: 5px;
+      z-index: 20;
       
+        
+      &.empty{
+        background: url(../img/empty-star.png) no-repeat center center;
+        background-size: 90%;
+        filter: invert(1);
+      }
+      &.favourite{
+        background: url("../img/star .png") no-repeat center center;
+        background-size: 100%;
+        
+      }
     }
 
   }

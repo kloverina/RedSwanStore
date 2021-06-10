@@ -1022,16 +1022,7 @@ body {
   .game .video_player .item-video {
     height: 520px;
   }
-  
-  .owl-video-wrapper {
-    height: 520px !important;
-  }
 }
-a {
-  text-decoration: none;
-  color: white;
-}
-
 .owl-video-tn {
   background-size: cover !important;
 }
@@ -1042,6 +1033,11 @@ iframe + .owl-video-play-icon {
 
 #search_button a {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
 
 button {
@@ -1198,8 +1194,12 @@ h4 {
 }
 .game-card__image {
   flex: 7 0 70%;
+  position: relative;
   align-self: flex-start;
   margin-bottom: 15px;
+}
+.game-card__image:hover img {
+  filter: brightness(0.5);
 }
 .game-card__image img {
   background-color: black;
@@ -1207,6 +1207,24 @@ h4 {
   height: 240px;
   border-radius: 5px;
   object-fit: cover;
+}
+.game-card__image span {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 5px;
+  top: 5px;
+  border-radius: 5px;
+  z-index: 20;
+}
+.game-card__image span.empty {
+  background: url(../img/empty-star.png) no-repeat center center;
+  background-size: 90%;
+  filter: invert(1);
+}
+.game-card__image span.favourite {
+  background: url("../img/star .png") no-repeat center center;
+  background-size: 100%;
 }
 .game-card__title {
   flex: 1 0 10%;
