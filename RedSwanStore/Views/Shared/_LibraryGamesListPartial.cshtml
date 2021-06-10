@@ -2,15 +2,17 @@
 
 @foreach (var gamecard in Model)
 {
+    var favIconType = gamecard.IsFavourite ? "favourite" : "empty";
+    
     <div class="games__item">
         <a class="game-card" href="#game-page">
-            <div class="game-card__image">
+            <div class="game-card__image" data-game-id="@gamecard.GameId.ToString()">
                 <img src="@gamecard.CoverUrl" alt="@gamecard.Title">
-                <span class="fav_icon empty"> </span>
+                <span class="fav_icon @favIconType"> </span>
             </div>
             <div class="game-card__title"> @gamecard.Title  </div>
             <div class="game-card__dev"> @gamecard.HoursPlayed.ToString() ч.</div>
-            <div class="game-card__price"> @(gamecard.LastPlayed == DateTime.MinValue ? "" : gamecard.LastPlayed.ToShortDateString()) </div>
+            <div class="game-card__price">Последний запуск: @(gamecard.LastPlayed == DateTime.MinValue ? "Никогда" : gamecard.LastPlayed.ToShortDateString()) </div>
         </a>
     </div>
 }

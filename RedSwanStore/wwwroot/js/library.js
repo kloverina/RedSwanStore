@@ -61,5 +61,18 @@ for (let i = 0; i < cover_block.length; i++) {
     button.onclick = function () {
         button.classList.toggle('empty');
         button.classList.toggle('favourite');
+        
+        let gameId = parseInt(cover.getAttribute('data-game-id'));
+        let isFavourite = button.classList.contains('favourite');
+        
+        $.ajax({
+            url: '/library/set-favourite',
+            type: 'post',
+            data: {
+                gameId: gameId,
+                isFavourite: isFavourite
+            },
+            success: () => {window.location.reload(true)}
+        })
     }
 }

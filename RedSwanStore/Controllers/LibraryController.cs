@@ -28,15 +28,17 @@ namespace RedSwanStore.Controllers
     {
         private readonly IUserRepo usersTable;
         private readonly IGameRepo gamesTable;
+        private readonly IGameLibraryRepo libraryGamesTable;
 
         
         private User currentUser;
         private LibraryViewModel libraryViewModel;
         
-        public LibraryController(IUserRepo userR, IGameRepo gameR)
+        public LibraryController(IUserRepo userR, IGameRepo gameR, IGameLibraryRepo libraryGamesR)
         {
             usersTable = userR;
             gamesTable = gameR;
+            libraryGamesTable = libraryGamesR;
             
             libraryViewModel = new LibraryViewModel();
         }
@@ -63,10 +65,18 @@ namespace RedSwanStore.Controllers
 
             ViewBag.User = currentUser;
             ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+            
 
             return View(libraryViewModel);
         }
 
+        [Route("set-favourite")]
+        [HttpPost]
+        public void SetFavourite(int gameId, bool isFavourite)
+        {
+            UserLibraryGame game = libraryGamesTable.GetGameById(gameId)!;
+            libraryGamesTable.SetFavourite(game, isFavourite);
+        }
         
         [HttpPost]
         public IActionResult SortAndFilter(string sortId, string filterId)
@@ -106,8 +116,10 @@ namespace RedSwanStore.Controllers
                 (filter == LibraryFilters.Favourite ? userLibraryGames.Where(lg => lg.IsFavourite) : userLibraryGames);
 
             IEnumerable<LibraryGameCard> libraryGameCards = filteredGames.Select(lg => new LibraryGameCard{
+                GameId = lg.Id,
                 HoursPlayed = lg.HoursPlayed,
                 LastPlayed = lg.LastPlayed.Date,
+                IsFavourite = lg.IsFavourite,
                 CoverUrl = gamesTable.GetGameById(lg.GameId)!.GameInfo.Cover,
                 Title = gamesTable.GetGameById(lg.GameId)!.Name
             });

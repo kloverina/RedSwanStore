@@ -44,6 +44,7 @@ namespace RedSwanStore
             services.AddTransient<IGameRepo, GameRepo>();
             services.AddTransient<IUserRepo, UserRepo>();
             services.AddTransient<ICartRepo, CartRepo>();
+            services.AddTransient<IGameLibraryRepo, GameLibraryRepo>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
                 options.LoginPath = new PathString("/login");
