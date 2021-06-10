@@ -1040,6 +1040,10 @@ iframe + .owl-video-play-icon {
   display: none !important;
 }
 
+#search_button a {
+  cursor: pointer;
+}
+
 button {
   padding: 0;
   margin: 0;
