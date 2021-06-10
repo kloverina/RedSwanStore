@@ -1,0 +1,28 @@
+﻿@{
+    var layout = ViewData["layout"] as string;
+  
+    if (layout != null){
+        Layout = layout;
+    }
+}
+
+<div class="container">
+    <div class="game-not-found error-page">
+        <div class="section_empty empty">
+          
+            <div class="empty__title">
+                <span>
+                    Спасибо за пополнение счета!
+                </span>
+            </div>
+  
+            <div class="empty__description">
+                <span>
+                    Счет вашей учетной записи Red Swan был успешно пополнен :) <br>
+                    Благодарим Вас за то, что пользуетесь нашим магазином!
+                </span>
+            </div>
+  
+        </div>
+    </div>
+</div>

@@ -32,5 +32,18 @@ namespace RedSwanStore.Controllers
 
             return View();
         }
+
+
+        [Route("funds-successfully-added")]
+        [HttpGet]
+        public IActionResult ThanksForAddingFunds()
+        {
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            
+            ViewBag.User = user;
+            ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+
+            return View();
+        }
     }
 }

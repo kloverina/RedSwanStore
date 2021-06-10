@@ -1,0 +1,36 @@
+﻿.profile-add-funds {
+    width: 450px;
+    position: absolute;
+    top: calc(15%);
+    left: calc(50% - 225px)
+}
+
+.profile-add-funds input {
+    margin-top: 5px;
+}
+
+.profile-add-funds .form_element {
+    margin-bottom: 10px;
+}
+
+.profile-add-funds .expiration-date__wrapper {
+    width: 100%;
+}
+
+.profile-add-funds .expiration-date {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-add-funds .expiration-date .expiration-year {
+    width: 100px;
+    margin-left: 10px;
+}
+
+.profile-add-funds .expiration-date .expiration-month {
+    width: 100px;
+}
+
+.profile-add-funds .cvc input {
+    width: 100px;
+}

@@ -1,0 +1,66 @@
+﻿@{
+    var layout = ViewData["layout"] as string;
+  
+    if (layout != null){
+        Layout = layout;
+    }
+}
+
+<link rel="stylesheet" href="~/css/profile-add-funds.css"/>
+<div class="add-funds profile-add-funds">
+    <div class="add-funds__main">
+        <h2 class="title">Оплатить картой VISA / MASTERCARD</h2>
+        <form class="login-element form">
+            <div class="form_element money-amount">
+                <label for="cardNumber">Сумма</label>
+                <input class="form-element" name="money-amount" id="money-amount" placeholder="Сумма"
+                       type="text" aria-label="Сумма" pattern="[0-9]{16}"
+                       maxlength="16" required>
+            </div>
+            
+            <div class="form_element card-number">
+                <label for="cardNumber">Номер карты</label>
+                <input class="form-element" name="cardNumber" id="cardNumber" placeholder="Номер карты"
+                       type="text" aria-label="Номер карты" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}"
+                       maxlength="16" required>
+            </div>
+
+            <div class="form_element card-holder">
+                <label for="cardHolder">Владелец карты</label>
+                <input class="form_element" name="cardHolder" id="cardHolder" placeholder="Владелец карты"
+                       type="text" aria-label="Владелец карты" pattern="[A-Z]+ [A-Z]+" required>
+            </div>
+
+            <div class="expiration-date__wrapper">
+                <label for="expirationMonth">Дата истечения срока действия</label>
+                <div class="expiration-date">
+                    <div class="form_element expiration-month">
+                        <input class="form_element" name="expirationMonth" id="expirationMonth" placeholder="Месяц"
+                               type="text" aria-label="Месяц истечения срока действия" pattern="[0-9]{1,2}"
+                               maxlength="2" min="1" max="12" required>
+                    </div>
+                    <div class="form_element expiration-year">
+                        <input class="form_element" name="expirationYear" placeholder="Год"
+                               type="text" aria-label="Год истечения срока действия" pattern="[0-9]{2}"
+                               maxlength="2" min="21" max="99" required>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form_element cvc">
+                <label for="cvc">Cvc</label>
+                <input class="form_element" name="expirationYear" id="cvc" placeholder="CVC"
+                       type="password" aria-label="CVC" maxlength="3" pattern="[0-9]{3}" required>
+            </div>
+        </form>
+    </div>
+    <div class="form_element">
+        <button class="form_element__button button active" id="commit-transaction" readonly>
+            <span class="button-label"> Оплатить </span>
+        </button>
+    </div>
+</div>
+
+<script src="~/libs/JQuery/jquery-3.6.0.js"></script>
+<script src="~/js/add-funds.js"></script>

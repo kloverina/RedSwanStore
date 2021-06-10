@@ -33,6 +33,30 @@ namespace RedSwanStore.Controllers
             
             return View(user);
         }
+        
+        
+        [Route("add-funds")]
+        [HttpGet]
+        public IActionResult AddFunds()
+        {
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+            
+            ViewBag.User = user;
+            ViewData["layout"] = "~/Views/Shared/_AuthorizedLayout.cshtml";
+
+            return View();
+        }
+
+
+        [Route("update-balance")]
+        [HttpPost]
+        public void UpdateUserBalance(string moneyAmount)
+        {
+            User user = usersTable.GetUserByEmail(User.Identity.Name!)!;
+
+            var amount = uint.Parse(moneyAmount);
+            usersTable.UpdateUserBalance(user, amount);
+        }
 
         
         [HttpPost]
