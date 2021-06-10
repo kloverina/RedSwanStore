@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
 <div class="container">
-@if (user.IsAdmin)
+@if (user != null && user.IsAdmin)
 {
     <div class="wrapper">
         <h1 class="title"> @Model.Name </h1>
