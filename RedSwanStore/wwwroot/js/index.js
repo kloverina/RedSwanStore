@@ -114,6 +114,8 @@ class ControllerArgs {
      * specified in constructor 'gamesCardsBlock' block.
      */
     sendDataToServer() {
+        let searchStr = document.querySelector('#search').value;
+        
         $.ajax({
             type: 'post',
             url: '/home/sort-and-filter',
@@ -121,7 +123,8 @@ class ControllerArgs {
                 genresIds: this.#collections["genre"],
                 featuresIds: this.#collections["feature"],
                 pricesIds: this.#collections["price"],
-                sortsIds: this.#collections["sort"]
+                sortsIds: this.#collections["sort"],
+                searchStr: searchStr === null ? "" : searchStr
             },
             dataType: 'html',
             error: (message) => {

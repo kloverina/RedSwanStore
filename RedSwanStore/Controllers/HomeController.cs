@@ -81,8 +81,15 @@ namespace RedSwanStore.Controllers
 
         [Microsoft.AspNetCore.Mvc.Route("sort-and-filter")]
         [Microsoft.AspNetCore.Mvc.HttpPost]
-        public IActionResult SortAndFilter(string[] genresIds, string[] featuresIds, string[] pricesIds, string[] sortsIds )
+        public IActionResult SortAndFilter(string[] genresIds, string[] featuresIds, string[] pricesIds, string[] sortsIds, string searchStr)
         {
+            searchStr = searchStr is null ? "" : searchStr;
+            
+            if (!string.IsNullOrEmpty(searchStr))
+                ViewBag.isRedirectedFromOtherPageBySearchBtn = true;
+            
+            IEnumerable<Game> foundGames = gamesTable.SearchGames(searchStr);
+            
             // construct all filters by data received from page
             GameFilter? filter = new GameFilter {
                 Genres = genresIds.Select(id => genresTable.GetGenreByUrlId(id)).ToList()!,
@@ -106,7 +113,20 @@ namespace RedSwanStore.Controllers
                 .GetGamesByFilter(filter!, categories)
                 .SortBy(sortType);
 
-            IEnumerable<GameCard> gameCards = CreateGameCards(filteredAndSortedGames);
+
+            IEnumerable<Game> result;
+
+            // to avaoid multiple enumeration
+            IEnumerable<Game> foundAsList = foundGames as Game[] ?? foundGames.ToArray();
+            IEnumerable<Game> filteredAndSortedAsList = filteredAndSortedGames as Game[] ?? filteredAndSortedGames.ToArray();
+            
+            // find intersection between found games and filtered games
+            result = filteredAndSortedAsList.Where(
+                g => foundAsList.FirstOrDefault(fg => fg.Id == g.Id) != null
+            );
+            
+            
+            IEnumerable<GameCard> gameCards = CreateGameCards(result);
 
             return PartialView("_GamesListPartial", gameCards);
         }
