@@ -49,3 +49,17 @@ let onSuccess = (html) => {
     else
         message.classList.add("hidden");
 }
+
+
+//add game to favoutite
+let cover_block = document.querySelectorAll('.game-card__image')
+for (let i = 0; i < cover_block.length; i++) {
+    let cover = cover_block[i];
+    let button = cover.querySelector('span');
+    let game_image = cover.querySelector('img')
+    
+    button.onclick = function () {
+        button.classList.toggle('empty');
+        button.classList.toggle('favourite');
+    }
+}
