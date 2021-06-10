@@ -46,3 +46,11 @@
 document.querySelector('button[type=reset]').addEventListener('click', function (e) {
    window.location.reload(true); 
 });
+
+
+/* DYNAMIC SHOWING THE PROFILE LINK WHILE INPUT */
+let dynamicLinkElement = document.querySelector('#account_url + span > span');
+let accountLinkInput = document.querySelector('#account_url');
+accountLinkInput.addEventListener('input', function() {
+    dynamicLinkElement.textContent = accountLinkInput.value.trimEnd();
+});
