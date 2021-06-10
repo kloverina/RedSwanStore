@@ -170,14 +170,14 @@ namespace RedSwanStore.Utils
         {
             string[] split = str.Split(',', StringSplitOptions.RemoveEmptyEntries);
             
-            var result = new List<string?>();
+            var result = new List<string>();
 
             for (var i = 0; i < split.Length; i++)
             {
                 result.Add(split[i].Trim().Replace("\n", "").Replace("\r", ""));
             }
             
-            return result.All(s => s == null) ? new List<string>() : new List<string>(result!);
+            return new List<string>(result.Where(s => !string.IsNullOrEmpty(s)));
         }
         
         
