@@ -85,7 +85,7 @@
     <aside class="game-catalog__filter filter">
       <h4 class="check">Фильтр</h4>
       <ul class="filter__options options">
-        <li class="options__item options__genres"> <span> Жанр </span>
+        <li class="options__item options__genres "> <span> Жанр </span>
           <ul>
             @foreach (var item in Model.GenresFilters)
             {
@@ -93,7 +93,7 @@
             }
           </ul>
         </li>
-        <li class="options__item"> <span>Цена</span>
+        <li class="options__item options__item_hidden"> <span>Цена</span>
           <ul>
             @foreach (var item in Model.PriceFilters.OrderByDescending(pc => pc.MinPrice))
             {
@@ -101,7 +101,7 @@
             }
           </ul>
         </li>
-        <li class="options__item"> <span>Особенности</span>
+        <li class="options__item options__item_hidden"> <span>Особенности</span>
           <ul>
             @foreach (var item in Model.FeaturesFilters)
             {
